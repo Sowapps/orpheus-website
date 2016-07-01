@@ -1,0 +1,6 @@
+/vendor/
+/.composer
+/composer.phar
+/store/*
+/logs/*
+/configs/database.ini
