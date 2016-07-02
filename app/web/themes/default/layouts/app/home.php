@@ -6,7 +6,7 @@ HTMLRendering::useLayout('page_skeleton');
 <div class="jumbotron">
 	<h1>Hello PHP developer !</h1>
 	<p>
-Get the power with the new Orpheus, all features fit your needs !
+Get the power with the new Orpheus, the PHP framework from your dreams, coming with all features you need !
 This framework is made for you, you want to develop your website quickly with something easy-to-use, optimized,
 secured and standardized by easiest way to use it and the maximum customizing capabilities.
 	</p>
