@@ -19,7 +19,7 @@ define('IS_WEB',		array_key_exists('REQUEST_METHOD', $_SERVER));
 define('IS_CONSOLE',	!IS_WEB);
 
 if( isset($SRCPATHS) ) {
-	$t	= $SRCPATHS; unset($SRCPATHS);
+	$t = $SRCPATHS; unset($SRCPATHS);
 }
 require_once 'loader.php';
 // Now on packagist (orpheus-core)
@@ -228,6 +228,7 @@ try {
 	// This class MUST extends Orpheus\Config\ConfigCore
 	defifn('DEFAULT_CONFIG_CLASS', 'Orpheus\Config\IniConfig');
 	
+	echo "Autoload path of vendors )> ".VENDORPATH.'autoload.php';
 	if( file_exists(VENDORPATH.'autoload.php') ) {
 		/* @var Composer\Autoload\ClassLoader $PackageLoader */
 		$PackageLoader = require VENDORPATH.'autoload.php';
@@ -239,14 +240,20 @@ try {
 // 	require_once CONSTANTSPATH;
 	require_once pathOf('configs/libraries.php');
 	
-	if( empty($Libraries) ) {
-		throw new Exception('Unable to load libraries, the config variable $Libraries is empty, please edit your configs/libraries.php file.');
+	if( !empty($Libraries) ) {
+		foreach( $Libraries as $lib ) {
+			if( !existsPathOf(LIBSDIR.$lib.'/_loader.php', $path) ) { continue; }
+			require_once $path;
+		}
 	}
+// 	if( empty($Libraries) ) {
+// 		throw new Exception('Unable to load libraries, the config variable $Libraries is empty, please edit your configs/libraries.php file.');
+// 	}
 	
-	foreach( $Libraries as $lib ) {
-		if( !existsPathOf(LIBSDIR.$lib.'/_loader.php', $path) ) { continue; }
-		require_once $path;
-	}
+// 	foreach( $Libraries as $lib ) {
+// 		if( !existsPathOf(LIBSDIR.$lib.'/_loader.php', $path) ) { continue; }
+// 		require_once $path;
+// 	}
 	
 	// After Lib loading
 // 	class_alias(DEFAULT_CONFIG_CLASS, 'Orpheus\Config\Config', true);
