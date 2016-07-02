@@ -70,7 +70,7 @@ label label-warning
 		<legend>Try to create you own DemoTest object</legend>
 		<div class="form-group">
 			<label for="inputValue">Create it from a new value</label>
-			<input class="form-control" type="text" name="data[name]" placeholder="Type new value, longer than 10 characters" id="inputValue">
+			<input class="form-control" type="text" name="data[name]" placeholder="Type new value, longer than 3 characters" id="inputValue">
 		</div>
 		<span class="help-block">Submit a new value to see this working test in action.</span>
 		<button id="submitDemoTest" type="submit" class="btn btn-primary">Insert it !</button>
