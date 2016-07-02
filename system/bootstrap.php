@@ -228,12 +228,13 @@ try {
 	// This class MUST extends Orpheus\Config\ConfigCore
 	defifn('DEFAULT_CONFIG_CLASS', 'Orpheus\Config\IniConfig');
 	
-	echo "Autoload path of vendors )> ".VENDORPATH.'autoload.php';
+	echo "Autoload path of vendors )> ".VENDORPATH.'autoload.php<br>';
 	if( file_exists(VENDORPATH.'autoload.php') ) {
 		/* @var Composer\Autoload\ClassLoader $PackageLoader */
 		$PackageLoader = require VENDORPATH.'autoload.php';
 // 		$PackageLoader->
 	}
+	die();
 	
 // 	defifn('CONSTANTSPATH', pathOf('configs/constants.php'));
 // 	// Edit the constant file according to the system context (OS, directory tree ...).
