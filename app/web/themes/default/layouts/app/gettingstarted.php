@@ -8,8 +8,12 @@ HTMLRendering::useLayout('page_skeleton');
 
 <p class="lead">
 Orpheus PHP Framework comes with an easy-to-use installer allowing you to create an Orpheus project with a single line command.
-You could also directly download the archive from GitHub.
+You could also manually download the archive from GitHub.
 </p>
+
+<div class="alert alert-info" role="alert">
+Orpheus Blossoming will come soon. For now, this is a WIP, expect some interesting changes.
+</div>
 
 <h2>Use the Installer Setup</h2>
 <p>
@@ -35,7 +39,7 @@ You could also create a project by yourself, just download directly Orpheus.
 	</div>
 	<div class="col-sm-4">
 		<h3 id="browser-releases">The Releases</h3>
-		<p>All releases, get the version you want byt browsing it on GitHub.</p>
+		<p>All releases, get the version you want by browsing our repos on GitHub.</p>
 		<p><a href="<?php _u(ROUTE_DOWNLOAD_RELEASES); ?>" class="btn btn-lg btn-primary" target="_blank">Browse Releases</a></p>
 	</div>
 	<div class="col-sm-4">
@@ -46,8 +50,37 @@ You could also create a project by yourself, just download directly Orpheus.
 </div>
 
 <h1>How to start with Orpheus Framework ?</h1>
-
 <p class="lead">
 The Orpheus Framework is entirely customizable but it started with MVC Library, an ORM and all features you need to get an enhanced website.
 </p>
+
+<h3>Understanding Orpheus</h3>
+<p>
+Orpheus separates different package features in namespaces and composer is helping you to maintain your application up-to-date by taking care of your dependencies.<br>
+Web access point is /app/web and you will find some themes in it, each theme has its own css, js and layout files,
+basic layout files are in PHP and the default theme is... default.<br>
+You should put your own sources in /libs/src, you will find some sample here to help you to start.
+</p>
+
+<h3>Create your very first page</h3>
+<p>
+We are calling a route and access point to a controller, who is in charge to process the request and return a result, like a rendered view.
+So, with Orpheus, you totally control how a user is getting in and what to return to him.
+</p>
+<div class="row">
+	<div class="col-sm-4">
+		<h4>1. Get a new Controller</h4>
+		<p>Start by creating a Controller in your src folder, there is a HomeController class to help you.</p>	
+	</div>
+	<div class="col-sm-4">
+		<h4>2. Draw a new template</h4>
+		<p>Add your layout in the layout/app folder of your theme, all used template a relative to the layout folder.</p>	
+	</div>
+	<div class="col-sm-4">
+		<h4>3. Link a new route</h4>
+		<p>To get it online, create a route in the file configs/routes.yaml using instructions and examples we provided.</p>	
+	</div>
+</div>
+<blockquote>This is so easy, you know.</blockquote>
+
 

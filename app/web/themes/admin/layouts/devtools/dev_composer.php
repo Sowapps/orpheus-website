@@ -28,14 +28,22 @@ includeHTMLAdminFeatures();
 <?php
 // echo $FORM_TOKEN;
 // debug('$formData[composer]', $formData['composer']);
-?>
+/*
 <input type="hidden" name="items" value="<?php echo htmlFormATtr(array_filterbykeys($formData['composer'], array('authors', 'require'))); ?>" />
+<input type="hidden" name="authors" value="<?php echo htmlFormATtr($formData['composer']['authors']); ?>" />
+<input type="hidden" name="require" value="<?php echo htmlFormATtr($formData['composer']['require']); ?>" />
+*/
+?>
+<input type="hidden" name="authors" value="<?php echo htmlFormATtr(array()); ?>" />
+<input type="hidden" name="require" value="<?php echo htmlFormATtr((object) array()); ?>" />
 
 <ul class="nav nav-tabs mb15" role="tablist">
-	<li role="presentation" class="active"><a href="#ComposerGeneral"
-		aria-controls="ComposerGeneral" role="tab" data-toggle="tab"><?php _t('tab_general', DOMAIN_COMPOSER) ?></a></li>
-	<li role="presentation"><a href="#ComposerDependencies"
-		aria-controls="ComposerDependencies" role="tab" data-toggle="tab"><?php _t('tab_dependencies', DOMAIN_COMPOSER) ?></a></li>
+	<li role="presentation" class="active">
+		<a href="#ComposerGeneral" aria-controls="ComposerGeneral" role="tab" data-toggle="tab"><?php _t('tab_general', DOMAIN_COMPOSER) ?></a>
+	</li>
+	<li role="presentation">
+		<a href="#ComposerDependencies" aria-controls="ComposerDependencies" role="tab" data-toggle="tab"><?php _t('tab_dependencies', DOMAIN_COMPOSER) ?></a>
+	</li>
 </ul>
 
 <div class="tab-content">
@@ -62,8 +70,8 @@ includeHTMLAdminFeatures();
 					<?php _adm_htmlTextInput('composer/type'); ?>
 				</div>
 				<div class="form-group">
-					<label><?php _t('keywords', DOMAIN_COMPOSER); ?></label> <select
-						name="composer[keywords]" multiple id="InputComposerKeywords">
+					<label><?php _t('keywords', DOMAIN_COMPOSER); ?></label>
+					<select name="composer[keywords]" multiple id="InputComposerKeywords">
 					<?php
 					foreach( $formData['composer']['keywords'] as $keyword ) {
 						echo '
@@ -127,8 +135,8 @@ includeHTMLAdminFeatures();
 				<p><?php _t('seeComposerDocumentation', DOMAIN_COMPOSER, 'https://getcomposer.org/doc/03-cli.md#install'); ?></p>
 
 				<div class="text-center">
-					<button name="submitUpdateInstall" type="submit"
-						class="btn btn-primary btn-lg"><?php _t('update_install', DOMAIN_COMPOSER); ?></button>
+					<button name="submitUpdateInstall" type="submit" class="btn btn-primary btn-lg" data-submittext="Updating in progress...">
+						<?php _t('update_install', DOMAIN_COMPOSER); ?></button>
 				</div>
 			
 			<?php HTMLRendering::endCurrentLayout(array(
@@ -140,7 +148,7 @@ includeHTMLAdminFeatures();
 			<?php HTMLRendering::useLayout('panel-default'); ?>
 			
 			<ul class="list-group list-authors">
-				<li class="list-group-item item item-authors item_model">
+				<li class="list-group-item item item-authors item_model" data-model_type="authors">
 					<i class="fa fa-user fa-fw text-success"></i> {{name}}
 					<a href="mailto:{{email}}" data-model_require="email" target="_blank">&lt;{{email}}&gt;</a>
 					<span data-model_require="role"> ({{role}})</span>
@@ -150,7 +158,7 @@ includeHTMLAdminFeatures();
 						<button class="btn btn-default btn-sm action-delete" type="button"><i class="fa fa-fw fa-times"></i></button>
 					</div>
 				</li>
-				<li class="list-group-item item item-authors item_placeholder">
+				<li class="list-group-item item item-authors model_placeholder">
 					<p>There is currently no authors, <a class="action-create create_authors" href="#">click here</a> to add one.</p>
 				</li>
 			<?php
@@ -199,7 +207,7 @@ includeHTMLAdminFeatures();
 			?>
 			
 			<ul class="list-group list-require">
-				<li class="list-group-item item item-require item_model">
+				<li class="list-group-item item item-require item_model" data-model_type="require">
 					<i class="fa fa-folder fa-fw text-success"></i> {{_key_}}
 					({{_value_}})
 					<div class="pull-right">
@@ -207,7 +215,7 @@ includeHTMLAdminFeatures();
 						<button class="btn btn-default btn-sm action-delete" type="button"><i class="fa fa-fw fa-times"></i></button>
 					</div>
 				</li>
-				<li class="list-group-item item item-require item_placeholder">
+				<li class="list-group-item item item-require model_placeholder">
 					<p>There is currently no dependency, <a class="action-create create_require" href="#">click here</a> to add one.</p>
 				</li>
 			</ul>
@@ -354,7 +362,7 @@ function getModel(itemName) {
 		models[itemName] = {
 			"list": model.parent(),
 			"model": model.removeClass("item_model").addClass("model_item").detach(),
-			"placeholder": $(".item_placeholder.item-"+itemName+"").detach()
+			"placeholder": $(".model_placeholder.item-"+itemName+"").detach()
 		};
 	}
 	return models[itemName].model;
@@ -665,7 +673,7 @@ $(function() {
 
 <style>
 .list-group-item.item_model,
-.list-group-item.item_placeholder {
+.list-group-item.model_placeholder {
 	display: none;
 }
 
