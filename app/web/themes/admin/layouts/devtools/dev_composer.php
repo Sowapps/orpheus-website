@@ -6,6 +6,7 @@ use Orpheus\Rendering\HTMLRendering;
 /* @var array $composerConfig */
 
 HTMLRendering::useLayout('page_skeleton');
+HTMLRendering::addJSFile('model.js', HTMLRendering::LINK_TYPE_CUSTOM);
 
 global $formData;
 $formData = array('composer' => (array) $composerConfig);
@@ -16,6 +17,8 @@ if( isset($formData['composer']['keywords']) ) {
 	apath_setp($formData, 'composer/authors', array(), false);
 	apath_setp($formData, 'composer/require', array(), false);
 }
+
+// debug('$formData ', $formData); die();
 
 includeHTMLAdminFeatures();
 
@@ -32,10 +35,12 @@ includeHTMLAdminFeatures();
 <input type="hidden" name="items" value="<?php echo htmlFormATtr(array_filterbykeys($formData['composer'], array('authors', 'require'))); ?>" />
 <input type="hidden" name="authors" value="<?php echo htmlFormATtr($formData['composer']['authors']); ?>" />
 <input type="hidden" name="require" value="<?php echo htmlFormATtr($formData['composer']['require']); ?>" />
+<input type="hidden" name="authors" value="<?php echo htmlFormATtr((array) array()); ?>" />
+<input type="hidden" name="require" value="<?php echo htmlFormATtr((object) array()); ?>" />
 */
 ?>
-<input type="hidden" name="authors" value="<?php echo htmlFormATtr(array()); ?>" />
-<input type="hidden" name="require" value="<?php echo htmlFormATtr((object) array()); ?>" />
+<input type="hidden" class="input-authors" name="composer[authors]" value="<?php echo htmlFormATtr((array) $formData['composer']['authors']); ?>" />
+<input type="hidden" class="input-require" name="composer[require]" value="<?php echo htmlFormATtr((object) $formData['composer']['require']); ?>" />
 
 <ul class="nav nav-tabs mb15" role="tablist">
 	<li role="presentation" class="active">
@@ -71,7 +76,7 @@ includeHTMLAdminFeatures();
 				</div>
 				<div class="form-group">
 					<label><?php _t('keywords', DOMAIN_COMPOSER); ?></label>
-					<select name="composer[keywords]" multiple id="InputComposerKeywords">
+					<select name="composer[keywords][]" multiple id="InputComposerKeywords">
 					<?php
 					foreach( $formData['composer']['keywords'] as $keyword ) {
 						echo '
@@ -347,133 +352,6 @@ includeHTMLAdminFeatures();
 var EditAuthorDialog;
 var EditDependencyDialog;
 
-function url_host(url) {
-	if( !url ) {
-		return "";
-	}
-	var location = getLocation(url);
-	return location.host;
-}
-
-var models = {};
-function getModel(itemName) {
-	if( !isDefined(models[itemName]) ) {
-		var model = $(".item_model.item-"+itemName);
-		models[itemName] = {
-			"list": model.parent(),
-			"model": model.removeClass("item_model").addClass("model_item").detach(),
-			"placeholder": $(".model_placeholder.item-"+itemName+"").detach()
-		};
-	}
-	return models[itemName].model;
-}
-function getPlaceholder(itemName) {
-	return models[itemName].placeholder;
-}
-
-function modelClone(itemName, itemData) {
-	var model = getModel(itemName);
-// 	console.log("Model ", model);
-	var cloneHTML = model.outerHTML();
-//		console.log("Model html", cloneHTML);
-	// Fill
-	// Replace all fields
-	cloneHTML = cloneHTML.replace(new RegExp("\\{\\{([^\\}\\|]+)(?:\\|([^\\}\\|]+))?\\}\\}", 'g'), function myFunction(string, field, formatter, offset){
-//			console.log("Replace", string, field, formatter, offset);
-		if( !isSet(itemData[field]) ) {
-			return string;
-		}
-		var value = itemData[field];
-		if( isDefined(formatter) ) {
-//				console.log("formatter is defined");
-			var fn = window[formatter];
-//				console.log("formatter function", fn);
-			if( isFunction(fn) ) {
-//					console.log("formatter is a function");
-				value = fn(value);
-			}
-		}
-		return value;
-	});
-// 	console.log("cloneHTML ", cloneHTML);
-	/*
-	// Search fields
-	for( var key in itemData ) {
-		var value = data[itemName];
-		if( !isString(value) ) {
-			continue;
-		}
-		cloneHTML = cloneHTML.replace(new RegExp("\{\{"++"\}\}", 'g'), function myFunction(x){return x.toUpperCase();});
-	}
-	*/
-	var clone = $(cloneHTML).data("itemdata", itemData).data("itemtype", itemName).uniqueId();
-// 	var clone = $(cloneHTML).removeClass("item_model").addClass("model_item").data("itemdata", itemData).data("itemtype", itemName).uniqueId();
-	
-	// Hide invalid requires
-	clone.find("[data-model_require]").each(function() {
-		if( !itemData[$(this).data("model_require")] ) {
-			// Remove (or hide ?)
-			$(this).remove();
-		}
-	});
-	
-// 	console.log("Generated clone ", clone);
-	return clone;
-}
-
-function modelItemAdd(itemName, itemData) {
-// 	console.log("Model of "+itemName, $(".item_model.item-"+itemName), itemData);
-	// Add clone to the end
-// 	console.log("model", getModel(itemName));
-// 	console.log("model", getModel(itemName));
-	// Add after last item or model
-	var clone = modelClone(itemName, itemData);// do it before, init model
-	models[itemName].list.append(clone);
-// 	getModel(itemName).parent().find(".item.item-"+itemName).last().after(modelClone(itemName, itemData));
-}
-
-function modelItemUpdate(itemRow, itemData) {
-	// Update clone, preserve ID
-	itemRow = $(itemRow);
-// 	console.log("itemRow.data ", itemRow.data(), itemRow);
-	itemRow.after(modelClone(itemRow.data("itemtype"), itemData).attr("id", itemRow.attr("id"))).remove();
-}
-
-var Config;
-function saveItems() {
-	for( var itemName in Config ) {
-		if( !isObject(Config[itemName]) ) {
-			continue;
-		}
-		Config[itemName] = isArray(Config[itemName]) ? [] : {};
-// 		console.log("Scan existing "+itemName);
-		var count = 0;
-		$(".item.model_item.item-"+itemName).each(function(index) {
-			var data = jQuery.extend({}, $(this).data("itemdata"));
-// 			console.log(data);
-			if( isDefined(data._key_) ) {
-				index = data._key_;
-				delete data._key_;
-			}
-			if( isDefined(data._value_) ) {
-				data = data._value_;
-			}
-// 			console.log(index+" => ", data);
-			Config[itemName][index] = data;
-			count++;
-		});
-// 		console.log("Config["+itemName+"]", Config[itemName]);
-		if( isDefined(models[itemName]) ) {
-			if( count ) {
-				models[itemName].placeholder.hide().detach();
-			} else {
-				models[itemName].list.append(models[itemName].placeholder.show());
-			}
-		}
-	}
-	$(":input[name=items]").val(JSON.stringify(Config));
-}
-
 $(function() {
 	$("#InputComposerKeywords").select2({
 		tags: true,
@@ -501,8 +379,9 @@ $(function() {
 
 	$(".list-authors").on("click", ".item-authors .action-delete", function() {
 		var itemRow = $(this).closest(".model_item.item-authors");
-		itemRow.remove();
-		saveItems();
+		itemRow.model("removeItem");
+// 		itemRow.remove();
+// 		saveItems();
 	});
 
 	EditAuthorDialog.find(".save_author").click(function() {
@@ -522,12 +401,19 @@ $(function() {
 			return;
 		}
 		if( update ) {
-			modelItemUpdate(itemRow, itemData);
+			itemRow.model("updateItem", itemData);
 		} else {
-			modelItemAdd($(this).data("itemtype"), itemData);
+// 			$(this).data("itemtype")
+// 			itemRow.model("addItem", itemData);
+			Model.get($(this).data("itemtype")).model("addItem", itemData);
 		}
+// 		if( update ) {
+// 			modelItemUpdate(itemRow, itemData);
+// 		} else {
+// 			modelItemAdd($(this).data("itemtype"), itemData);
+// 		}
 		EditAuthorDialog.modal("hide");
-		saveItems();
+// 		saveItems();
 	});
 	
 	EditDependencyDialog = $("#EditDependencyDialog").modal({show:false});
@@ -553,8 +439,9 @@ $(function() {
 
 	$(".list-require").on("click", ".item-require .action-delete", function() {
 		var itemRow = $(this).closest(".model_item.item-require");
-		itemRow.remove();
-		saveItems();
+		itemRow.model("removeItem");
+// 		itemRow.remove();
+// 		saveItems();
 	});
 
 	// TODO: Remove/Disable already registered dependencies
@@ -576,44 +463,17 @@ $(function() {
 			return;
 		}
 		if( update ) {
-			modelItemUpdate(itemRow, itemData);
+			itemRow.model("updateItem", itemData);
+// 			modelItemUpdate(itemRow, itemData);
 		} else {
-			modelItemAdd($(this).data("itemtype"), itemData);
+			Model.get($(this).data("itemtype")).model("addItem", itemData);
+// 			itemRow.model("addItem", itemData);
+// 			modelItemAdd($(this).data("itemtype"), itemData);
 		}
 		EditDependencyDialog.modal("hide");
-		saveItems();
+// 		saveItems();
 	});
-
-	// TODO: Use one input per model
-	// TODO: Model specify if assoc or indexed
-	(function() {
-		Config = $.parseJSON($(":input[name=items]").val());
-		for( var itemName in Config ) {
-			var items = Config[itemName];
-			if( !isObject(items) ) {
-				continue;
-			}
-			var c = 0;
-			// Associative takes care of key
-			// key will be saved in _key_
-			var assoc = isPureObject(items);
-			for( var i in items ) {
-				var itemData = items[i];
-				c++;
-				if( isScalar(itemData) ) {
-					itemData = {"_value_": itemData};
-				} else
-				if( !isObject(itemData) ) {
-					continue;
-				}
-				if( assoc ) {
-					itemData._key_ = i;
-				}
-				modelItemAdd(itemName, itemData);
-			}
-		}
-	})();
-
+	
 	$("#InputDependencyName").select2({
 		ajax: {
 			//https://packagist.org/apidoc

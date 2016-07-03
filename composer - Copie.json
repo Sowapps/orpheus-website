@@ -27,6 +27,5 @@
 			"homepage" : "http://sowapps.com",
 			"role" : "Developer"
 		}
-	],
-	"minimum-stability" : "stable"
+	]
 }

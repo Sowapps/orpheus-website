@@ -5,29 +5,10 @@ function Model(model) {
 	this.list = model.parent();
 	this.model = model.first().removeClass("item_model").addClass("model_item").detach();
 	this.placeholder = $(".model_placeholder.item-"+this.type).detach();
-	this.items = $.parseJSON($(":input[name="+this.type+"]").val());
+//	console.log(":input[name="+this.type+"]", $(":input[name="+this.type+"]").val());
+//	this.items = $.parseJSON($(":input[name="+this.type+"]").val());
 	this.associative = this.model.data("associative");
-	if( !isDefined(this.associative) ) {
-		this.associative = isPureObject(items);
-	}
 	var _ = this;
-	
-	(function() {
-		// Init - Load items in model
-		for( var i in this.items ) {
-			var itemData = items[i];
-			if( isScalar(itemData) ) {
-				itemData = {"_value_": itemData};
-			} else
-			if( !isObject(itemData) ) {
-				continue;
-			}
-			if( _.associative ) {
-				itemData._key_ = i;
-			}
-			_.addItem(itemData);
-		}
-	})();
 	
 //	var models = {};
 //	function getModel(_.type) {
@@ -37,6 +18,11 @@ function Model(model) {
 //		return models[_.type].placeholder;
 //	}
 
+	this.getInput = function() {
+		return $(":input.input-"+_.type);
+//		return $(":input[name="+_.type+"]");
+	};
+	
 	this.createClone = function(itemData) {
 //		var model = getModel(_.type);
 //	 	console.log("Model ", model);
@@ -82,12 +68,13 @@ function Model(model) {
 				$(this).remove();
 			}
 		});
+		clone.data('model', _);
 		
 //	 	console.log("Generated clone ", clone);
 		return clone;
-	}
+	};
 
-	this.addItem = function(itemData) {
+	this.addItem = function(itemData, noSave) {
 //	 	console.log("Model of "+_.type, $(".item_model.item-"+_.type), itemData);
 		// Add clone to the end
 //	 	console.log("model", getModel(_.type));
@@ -96,20 +83,28 @@ function Model(model) {
 //		var clone = modelClone(_.type, itemData);// do it before, init model
 //		_.list.append(clone);
 		_.list.append(_.createClone(itemData));
+		if( !noSave ) {
+			_.saveItems();
+		}
 //	 	getModel(_.type).parent().find(".item.item-"+_.type).last().after(modelClone(_.type, itemData));
-	}
+	};
 	
+//	this.updateItem = function(itemRow, itemData, noSave) {
 	this.updateItem = function(itemRow, itemData) {
 		// Update clone, preserve ID
 		itemRow = $(itemRow);
 //	 	console.log("itemRow.data ", itemRow.data(), itemRow);
 		itemRow.after(_.createClone(itemData).attr("id", itemRow.attr("id"))).remove();
-	}
+//		if( !noSave ) {
+		_.saveItems();
+//		}
+	};
 
 	this.saveItems = function() {
-		Config[itemName] = isArray(Config[itemName]) ? [] : {};
+//		Config[itemName] = isArray(Config[itemName]) ? [] : {};
+		var items = _.associative ? {} : [];
 		var count = 0;
-		$(".item.model_item.item-"+itemName).each(function(index) {
+		$(".item.model_item.item-"+_.type).each(function(index) {
 			var data = jQuery.extend({}, $(this).data("itemdata"));
 //		 			console.log(data);
 			if( isDefined(data._key_) ) {
@@ -120,23 +115,95 @@ function Model(model) {
 				data = data._value_;
 			}
 //		 			console.log(index+" => ", data);
-			Config[itemName][index] = data;
+			items[index] = data;
 			count++;
 		});
 //		 		console.log("Config["+itemName+"]", Config[itemName]);
-		if( isDefined(models[itemName]) ) {
-			if( count ) {
-				models[itemName].placeholder.hide().detach();
-			} else {
-				models[itemName].list.append(models[itemName].placeholder.show());
-			}
+//		if( isDefined(models[itemName]) ) {
+		if( count ) {
+			_.placeholder.hide().detach();
+		} else {
+			_.list.append(_.placeholder.show());
 		}
-	}
+		_.getInput().val(JSON.stringify(items));
+	};
+	
+//	console.log("OUT - Init model "+_.type);
+	
+	(function() {
+//		console.log("IN - Init model "+_.type);
+		// Init - Load items in model
+		Model.instances[_.type] = _;
+//		var items = $.parseJSON($(":input[name="+_.type+"]").val());
+		var items = $.parseJSON(_.getInput().val());
+		if( !isDefined(_.associative) ) {
+			_.associative = isPureObject(items);
+		}
+		for( var i in items ) {
+			var itemData = items[i];
+			if( isScalar(itemData) ) {
+				itemData = {"_value_": itemData};
+			} else
+			if( !isObject(itemData) ) {
+				continue;
+			}
+			if( _.associative ) {
+				itemData._key_ = i;
+			}
+			_.addItem(itemData, true);
+		}
+	})();
 }
+
+Model.instances = {};
+
+Model.get = function(type) {
+//	return $(".item_model.item-"+type);
+	var model = Model.instances[type];
+	return model ? model.model : null;
+};
+
+$.fn.model = function(option, param1) {
+	var model = $(this).data("model");
+	if( !model ) {
+		console.warn("No model for item ", this);
+		return null;
+	}
+	console.log("option => "+option);
+	switch( option ) {
+		case "removeItem": {
+			$(this).remove();
+			model.saveItems();
+		};
+		case "addItem": {
+			console.log("AddItem to model ", model, "with param", param1);
+			model.addItem(param1);
+		};
+		case "updateItem": {
+			// TODO: Check is not model
+			model.updateItem($(this), param1);
+		};
+//		case "save": {
+//			model.saveItems();
+//		};
+	}
+	return model;
+};
 
 $(function() {
 	
+	$(".item.item_model").each(function() {
+		$(this).data("model", new Model($(this)));
+	});
 	
 });
 
+
+function url_host(url) {
+	if( !url ) {
+		return "";
+	}
+	var location = getLocation(url);
+	return location.host;
+}
 

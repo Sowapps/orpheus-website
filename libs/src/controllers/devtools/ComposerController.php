@@ -32,12 +32,34 @@ class ComposerController extends DevToolsController {
 // 				throw new UserException('composerFileNotWritable');
 			}
 			
-			if( $request->hasData('submitUpdate') ) {
+			// Always save data
+			if( ($data=$request->getArrayData('composer')) && is_array($data) ) {
+// 				debug('$data', $data);
+// 				die();
 				$composerConfig = json_decode(file_get_contents($composerFile));
-// 				$composerConfig->test = 'Test property'; 
+				
+				debug('$data', $data);
+				foreach( $data as $property => $value ) {
+					$composerConfig->$property = $value;
+				}
+				if( !empty($composerConfig->authors) ) {
+					$composerConfig->authors = json_decode($composerConfig->authors);
+				} else {
+					unset($composerConfig->authors);
+				}
+				if( !empty($composerConfig->require) ) {
+					$composerConfig->require = json_decode($composerConfig->require);
+				} else {
+					unset($composerConfig->require);
+				}
+				
+// 				$composerConfig->test = 'Test property';
+// 				debug('$composerConfig', $composerConfig);
 				file_put_contents($composerFile, json_encode($composerConfig));
 				
-			} else
+			}
+			unset($data);
+			
 			if( $request->hasData('submitUpdateInstall') ) {
 				
 				$command	= $request->hasData('update/refresh') ? 'update' : 'install';
