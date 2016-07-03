@@ -85,19 +85,19 @@ class UploadedFile {
 		}
 		
 		if( $this->type !== NULL ) {
-			$ext	= $this->getExtension();
+			$ext = $this->getExtension();
 			if( $ext === $this->allowedExtensions || (is_array($this->allowedExtensions) && !in_array($ext, $this->allowedExtensions)) ) {
 				throw new UserException('invalidExtension');
 			}
 		}
 		if( $this->allowedExtensions !== NULL ) {
-			$ext	= $this->getExtension();
+			$ext = $this->getExtension();
 			if( $ext === $this->allowedExtensions || (is_array($this->allowedExtensions) && !in_array($ext, $this->allowedExtensions)) ) {
 				throw new UserException('invalidExtension');
 			}
 		}
 		if( $this->allowedMimeTypes !== NULL) {
-			$mt		= $this->getMIMEType();
+			$mt = $this->getMIMEType();
 			if( $mt === $this->allowedMimeTypes || (is_array($this->allowedMimeTypes) && !in_array($mt, $this->allowedMimeTypes)) ) {
 				throw new UserException('invalidMimeType');	
 			}
@@ -105,7 +105,7 @@ class UploadedFile {
 	}
 	
 	protected static function loadPath($from, &$files=array(), $path='') {
-		$fileName	= $path==='' ? $from['name'] : apath_get($from['name'], $path);
+		$fileName = $path==='' ? $from['name'] : apath_get($from['name'], $path);
 // 		debug('LoadPath('.$path.') - $fileName', $fileName);
 		if( empty($fileName) ) { return $files; }
 		if( is_array($fileName) ) {
