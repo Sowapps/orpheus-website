@@ -1,29 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
-	<buildpathentry kind="src" path="vendor/orpheus/orpheus-rendering/src"/>
 	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus Publisher"/>
-	<buildpathentry kind="src" path="vendor/orpheus/orpheus-sqladapter/src"/>
-	<buildpathentry kind="src" path="vendor/orpheus/orpheus-webtools/src"/>
 	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus Core"/>
-	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus Form"/>
-	<buildpathentry kind="src" path="vendor/composer"/>
-	<buildpathentry kind="src" path="vendor/orpheus/orpheus-form/src"/>
-	<buildpathentry kind="src" path="vendor/orpheus/orpheus-publisher/src"/>
-	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus SQL Adapter"/>
-	<buildpathentry kind="src" path="vendor/orpheus/orpheus-hook/src"/>
-	<buildpathentry kind="src" path="vendor/orpheus/orpheus-core/src"/>
-	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
-	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus YAML"/>
-	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus WebTools"/>
-	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus Input Controller"/>
-	<buildpathentry kind="src" path="vendor/orpheus/orpheus-cache/src"/>
-	<buildpathentry kind="src" path="vendor/orpheus/orpheus-initernationalization/src"/>
 	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus Entity Descriptor"/>
 	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus Cache"/>
 	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus Initernationalization"/>
 	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus Hook"/>
+	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus Form"/>
+	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus SQL Adapter"/>
 	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus Rendering"/>
-	<buildpathentry kind="src" path="vendor/orpheus/orpheus-inputcontroller/src"/>
-	<buildpathentry kind="src" path="vendor/orpheus/orpheus-yaml/src"/>
-	<buildpathentry kind="src" path="vendor/orpheus/orpheus-entitydescriptor/src"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus YAML"/>
+	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus WebTools"/>
+	<buildpathentry combineaccessrules="false" kind="prj" path="/Orpheus Input Controller"/>
 </buildpath>

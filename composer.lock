@@ -54,12 +54,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-core.git",
-                "reference": "6c582a89e9204525d69e41e64183094133adcb36"
+                "reference": "d16c6efca8977ef928dc35832573fdd1e35fcc64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-core/zipball/6c582a89e9204525d69e41e64183094133adcb36",
-                "reference": "6c582a89e9204525d69e41e64183094133adcb36",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-core/zipball/d16c6efca8977ef928dc35832573fdd1e35fcc64",
+                "reference": "d16c6efca8977ef928dc35832573fdd1e35fcc64",
                 "shasum": ""
             },
             "require": {
@@ -91,7 +91,7 @@
                 "core",
                 "orpheus"
             ],
-            "time": "2016-06-30 06:09:40"
+            "time": "2016-07-03 12:08:14"
         },
         {
             "name": "orpheus/orpheus-entitydescriptor",
@@ -537,12 +537,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-yaml.git",
-                "reference": "689d9c39851ba1bcc6ef2a8727d30c3bd69aa614"
+                "reference": "f96f92d0703ea3cd5501edca142acde6ea768d3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-yaml/zipball/689d9c39851ba1bcc6ef2a8727d30c3bd69aa614",
-                "reference": "689d9c39851ba1bcc6ef2a8727d30c3bd69aa614",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-yaml/zipball/f96f92d0703ea3cd5501edca142acde6ea768d3a",
+                "reference": "f96f92d0703ea3cd5501edca142acde6ea768d3a",
                 "shasum": ""
             },
             "require": {
@@ -571,7 +571,7 @@
                 "orpheus",
                 "yaml"
             ],
-            "time": "2016-07-03 10:55:03"
+            "time": "2016-07-03 11:35:21"
         }
     ],
     "packages-dev": [],
