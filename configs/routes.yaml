@@ -103,9 +103,22 @@ http:
         restrictTo:
           role: developer
         
-    dev_entities:
-        path: "/admin/dev_entities.html"
-        controller: "DevEntitiesController"
+    file_download:
+        path: "/download/{id:fileID}"
+        controller: "FileDownloadController"
+    
+    
+    # Dev Area
+    
+    dev_home:
+        path: "/admin/dev_home.html"
+        controller: "DevHomeController"
+        restrictTo:
+          role: developer
+    
+    dev_system:
+        path: "/admin/dev_system.html"
+        controller: "DevSystemController"
         restrictTo:
           role: developer
         
@@ -113,10 +126,15 @@ http:
         path: "/developer/composer.html"
         controller: "ComposerController"
         
-    file_download:
-        path: "/download/{id:fileID}"
-        controller: "FileDownloadController"
-        
+    dev_entities:
+        path: "/admin/dev_entities.html"
+        controller: "DevEntitiesController"
+        restrictTo:
+          role: developer
+    
+    
+    # Setup
+    
     setup_start:
         path: "/setup/"
         controller: "StartSetupController"

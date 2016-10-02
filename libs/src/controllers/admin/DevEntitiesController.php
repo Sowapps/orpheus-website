@@ -9,7 +9,7 @@ use Orpheus\SQLAdapter\SQLAdapter;
 use Orpheus\EntityDescriptor\LangGenerator;
 use Orpheus\EntityDescriptor\EntityDescriptor;
 
-class DevEntitiesController extends AdminController {
+class DevEntitiesController extends DevController {
 	
 	/**
 	 * @param HTTPRequest $request The input HTTP request

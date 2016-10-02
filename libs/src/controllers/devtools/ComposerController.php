@@ -3,7 +3,8 @@
 use Orpheus\Exception\UserException;
 use Orpheus\InputController\HTTPController\HTTPRequest;
 
-class ComposerController extends DevToolsController {
+// class ComposerController extends DevToolsController {
+class ComposerController extends DevController {
 	
 	/**
 	 * @param HTTPRequest $request The input HTTP request
