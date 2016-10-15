@@ -48,6 +48,7 @@ You could also create a project by yourself, just download directly Orpheus.
 		<p><a href="<?php echo AppConfig::instance()->get('github_url'); ?>" class="btn btn-lg btn-info" target="_blank">See our GitHub</a></p>
 	</div>
 </div>
+<br>
 
 <h1>How to start with Orpheus Framework ?</h1>
 <p class="lead">
