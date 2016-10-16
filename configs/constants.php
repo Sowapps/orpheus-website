@@ -53,6 +53,9 @@ define('ROUTE_ADM_USERS',		'adm_users');
 define('ROUTE_ADM_USER',		'adm_user');
 define('ROUTE_ADM_MYSETTINGS',	'adm_mysettings');
 
+define('ROUTE_DEV_LOGS',		'dev_logs');
+define('ROUTE_DEV_LOG_VIEW',	'dev_log_view');
+
 // Route
 defifn('DEFAULTROUTE',			ROUTE_HOME);
 defifn('DEFAULTMEMBERROUTE',	ROUTE_ADM_DEMO);
@@ -60,8 +63,8 @@ defifn('DEFAULTMEMBERROUTE',	ROUTE_ADM_DEMO);
 defifn('DEFAULTHOST',		'yourdomain.com');
 defifn('DEFAULTPATH',		'');
 
-defifn('AUTHORNAME',		'Your name');
-defifn('SITENAME',			'Your App Name');// See also translation app_name
+defifn('AUTHORNAME',		'Florent HAZARD');
+defifn('SITENAME',			'Orpheus');// See also translation app_name
 defifn('ADMINEMAIL',		'contact@orpheus-framework.com');
 
 define('CRAC_CONTEXT_APPLICATION',	1);

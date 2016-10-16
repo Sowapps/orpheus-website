@@ -247,14 +247,10 @@ function displayRawException(Exception $Exception) {
 	displayExceptionStackTrace($Exception);
 }
 
-function displayExceptionStackTrace(Exception $Exception) {
+function displayStackTrace($backtrace) {
 	?>
 	<ol>
 	<?php
-	$backtrace = $Exception->getTrace();
-	if( $Exception->getCode() == 1 && is_array($GLOBALS['DEBUG_BACKTRACE']) ) {
-		$backtrace = $GLOBALS['DEBUG_BACKTRACE'];
-	}
 	foreach( $backtrace as $trace ) {
 		// file, line, function, args
 		if( !isset($trace['class']) ) {
@@ -289,6 +285,14 @@ function displayExceptionStackTrace(Exception $Exception) {
 		?>
 	</ol>
 	<?php
+}
+
+function displayExceptionStackTrace(Exception $Exception) {
+	$backtrace = $Exception->getTrace();
+	if( $Exception->getCode() == 1 && is_array($GLOBALS['DEBUG_BACKTRACE']) ) {
+		$backtrace = $GLOBALS['DEBUG_BACKTRACE'];
+	}
+	displayStackTrace($backtrace);
 }
 
 function convertExceptionAsHTMLPage(Exception $Exception, $code, $action) {

@@ -48,6 +48,8 @@ addAutoload('DevController',					'src/controllers/admin/DevController');
 addAutoload('DevHomeController',				'src/controllers/admin/DevHomeController');
 addAutoload('DevSystemController',				'src/controllers/admin/DevSystemController');
 addAutoload('DevEntitiesController',			'src/controllers/admin/DevEntitiesController');
+addAutoload('DevLogListController',				'src/controllers/admin/DevLogListController');
+addAutoload('DevLogViewController',				'src/controllers/admin/DevLogViewController');
 
 
 // addAutoload('DevToolsController',				'src/controllers/devtools/DevToolsController');

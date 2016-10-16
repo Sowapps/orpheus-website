@@ -32,7 +32,7 @@ http:
         controller: "HomeController"
         
     user_login:
-        path: "/user_login.html"
+        path: "/user/signin.html"
         controller: "UserLoginController"
         restrictTo:
           role: visitor
@@ -111,13 +111,13 @@ http:
     # Dev Area
     
     dev_home:
-        path: "/admin/dev_home.html"
+        path: "/developer/home.html"
         controller: "DevHomeController"
         restrictTo:
           role: developer
     
     dev_system:
-        path: "/admin/dev_system.html"
+        path: "/developer/system.html"
         controller: "DevSystemController"
         restrictTo:
           role: developer
@@ -127,8 +127,20 @@ http:
         controller: "ComposerController"
         
     dev_entities:
-        path: "/admin/dev_entities.html"
+        path: "/developer/entities.html"
         controller: "DevEntitiesController"
+        restrictTo:
+          role: developer
+        
+    dev_logs:
+        path: "/developer/logs.html"
+        controller: "DevLogListController"
+        restrictTo:
+          role: developer
+        
+    dev_log_view:
+        path: "/developer/view_log.html"
+        controller: "DevLogViewController"
         restrictTo:
           role: developer
     
