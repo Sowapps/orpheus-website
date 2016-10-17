@@ -19,10 +19,11 @@ HTMLRendering::useLayout('page_skeleton');
 		<div class="list-group">
 		<?php
 // 		try {
-		if( is_readable(LOGSPATH.$log->file) ) {
+// 		if( is_readable(LOGSPATH.$log->file) ) {
 // 			debug('$Controller->listLogsOfFile()', $Controller->listLogsOfFile($log->file));
-			foreach( $Controller->listLogsOfFile($log->file) as $file ) {
-				$filePath = (object) pathinfo($file);
+		$c = 0;
+		foreach( $Controller->listLogsOfFile($log->file) as $file ) {
+			$filePath = (object) pathinfo($file);
 			?>
 			<a class="list-group-item log_file" href="<?php echo u(ROUTE_DEV_LOG_VIEW).'?file='.$filePath->basename; ?>">
 				<i class="fa fa-fw log_nothover"></i>
@@ -30,8 +31,9 @@ HTMLRendering::useLayout('page_skeleton');
 				<strong><?php echo $filePath->basename; ?></strong> of size <?php echo formatInt(filesize($file)); ?> bytes and modified at <?php echo dt(filemtime($file)); ?>.
 			</a>
 			<?php
-			}
-		} else {
+			$c++;
+		}
+		if( !$c ) {
 			?>
 			<div class="list-group-item"><?php _t('no_logs', DOMAIN_LOGS); ?></div>
 			<?php

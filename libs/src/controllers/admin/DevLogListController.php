@@ -29,6 +29,8 @@ class DevLogListController extends DevController {
 				reportError('unableToEraseFile');
 			}
 		}
+
+		$this->addThisToBreadcrumb();
 		return $this->renderHTML('app/dev_loglist', array(
 // 			'logFolder' => LOGSPATH,
 			'logs' => $logs

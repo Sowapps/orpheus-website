@@ -13,6 +13,10 @@ use Orpheus\Publisher\Email\Email;
 addAutoload('File',								'src/File');
 addAutoload('UploadedFile',						'src/UploadedFile');
 
+addAutoload('AbstractFile',						'src/AbstractFile');
+addAutoload('TextFile',							'src/TextFile');
+addAutoload('GZFile',							'src/GZFile');
+
 // addAutoload('GlobalConfig',						'src/GlobalConfig');
 addAutoload('User',								'src/User');
 

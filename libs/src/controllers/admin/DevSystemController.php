@@ -10,6 +10,7 @@ class DevSystemController extends DevController {
 	 * @see HTTPController::run()
 	 */
 	public function run(HTTPRequest $request) {
+		$this->addThisToBreadcrumb();
 		return $this->renderHTML('app/dev_system');
 	}
 

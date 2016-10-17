@@ -132,7 +132,7 @@ http:
         restrictTo:
           role: developer
         
-    dev_logs:
+    dev_loglist:
         path: "/developer/logs.html"
         controller: "DevLogListController"
         restrictTo:

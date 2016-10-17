@@ -96,6 +96,8 @@ class ComposerController extends DevController {
 			reportError($e, DOMAIN_COMPOSER);
 		}
 		$composerConfig = json_decode(file_get_contents($composerFile));
+
+		$this->addThisToBreadcrumb();
 	
 		return $this->renderHTML('devtools/dev_composer', array(
 			'composerConfig'	=> $composerConfig,
