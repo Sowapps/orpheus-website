@@ -38,7 +38,7 @@ class DevComposerController extends DevController {
 // 				die();
 				$composerConfig = json_decode(file_get_contents($composerFile));
 				
-				debug('$data', $data);
+// 				debug('$data', $data);
 				foreach( $data as $property => $value ) {
 					$composerConfig->$property = $value;
 				}
