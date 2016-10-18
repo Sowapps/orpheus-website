@@ -146,7 +146,7 @@ class DevEntitiesController extends DevController {
 				reportError($e);
 			}
 		}
-		return $this->renderHTML('app/dev_entities', $env);
+		return $this->renderHTML('devtools/dev_entities', $env);
 	}
 
 }

@@ -24,10 +24,10 @@ defifn('LAYOUT_MENU',		'menu-bootstrap3');
 
 // LIB Initernationalization
 defifn('LANGDIR',			'languages/');
-defifn('LANG',				'en_US');
-defifn('LANGBASE',			'en');
+defifn('DEFAULT_LOCALE',	'en_US');
+// defifn('LANGBASE',			'en');
 // defifn('LANGBASE',			array_shift(explode('_', LANG, 2)));
-defifn('LOCALE',			LANG.'.utf8');
+// defifn('SYSTEM_LOCALE',		DEFAULT_LOCALE.'.utf8');// Use a function
 
 defifn('CACHEPATH',			STOREPATH.'cache/');
 defifn('TEMPPATH',			STOREPATH.'temp/');
@@ -60,6 +60,7 @@ define('ROUTE_DEV_COMPOSER',	'dev_composer');
 define('ROUTE_DEV_ENTITIES',	'dev_entities');
 define('ROUTE_DEV_LOGS',		'dev_loglist');
 define('ROUTE_DEV_LOG_VIEW',	'dev_log_view');
+define('ROUTE_DEV_APPTRANSLATE',	'dev_app_translate');
 
 // Route
 defifn('DEFAULTROUTE',			ROUTE_HOME);
@@ -71,6 +72,7 @@ defifn('DEFAULTPATH',		'');
 defifn('AUTHORNAME',		'Florent HAZARD');
 defifn('SITENAME',			'Orpheus');// See also translation app_name
 defifn('ADMINEMAIL',		'contact@orpheus-framework.com');
+defifn('DEVEMAIL',			'contact@orpheus-framework.com');
 
 define('CRAC_CONTEXT_APPLICATION',	1);
 define('CRAC_CONTEXT_AGENCY',		2);
@@ -97,4 +99,8 @@ define('FILE_SOURCETYPE_FACEBOOK',			'fb');
 function listFileSourceTypes() {
 	return array(FILE_SOURCETYPE_UPLOAD, FILE_SOURCETYPE_UPLOAD_CONVERTED, FILE_SOURCETYPE_PHPQRCODE, FILE_SOURCETYPE_WKPDF, FILE_SOURCETYPE_LOCALDEMO, FILE_SOURCETYPE_FACEBOOK);
 }
+
+defifn('DOMAIN_TRANSLATIONS', 'translations');
+
+defifn('TRANSLATIONS_PATH',	STOREPATH.'translations/');
 

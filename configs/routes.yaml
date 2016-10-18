@@ -124,7 +124,7 @@ http:
         
     dev_composer:
         path: "/developer/composer.html"
-        controller: "ComposerController"
+        controller: "DevComposerController"
         
     dev_entities:
         path: "/developer/entities.html"
@@ -141,6 +141,12 @@ http:
     dev_log_view:
         path: "/developer/view_log.html"
         controller: "DevLogViewController"
+        restrictTo:
+          role: developer
+        
+    dev_app_translate:
+        path: "/developer/translate_application.html"
+        controller: "DevAppTranslateController"
         restrictTo:
           role: developer
     

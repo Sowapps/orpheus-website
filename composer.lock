@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7b213b818ae70c78b7935b5e28b33b9a",
+    "hash": "1045f440166503257b1558bbf32f7fee",
     "content-hash": "175f6ea486e2234cf36d0c6bd42eadff",
     "packages": [
         {
@@ -54,12 +54,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-core.git",
-                "reference": "6d1627a7126149775208cea7e0f6b5bca5e6965f"
+                "reference": "b2c146b5433a646091d2ff63fa20179dc3c9a411"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-core/zipball/6d1627a7126149775208cea7e0f6b5bca5e6965f",
-                "reference": "6d1627a7126149775208cea7e0f6b5bca5e6965f",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-core/zipball/b2c146b5433a646091d2ff63fa20179dc3c9a411",
+                "reference": "b2c146b5433a646091d2ff63fa20179dc3c9a411",
                 "shasum": ""
             },
             "require": {
@@ -91,7 +91,7 @@
                 "core",
                 "orpheus"
             ],
-            "time": "2016-10-16 15:24:55"
+            "time": "2016-10-18 07:46:45"
         },
         {
             "name": "orpheus/orpheus-entitydescriptor",
@@ -246,12 +246,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-initernationalization.git",
-                "reference": "18e4f4c2916a5089509086f872f5885441eced99"
+                "reference": "52ce69159ce056f4a7c7ef1d2835044536f4555e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-initernationalization/zipball/18e4f4c2916a5089509086f872f5885441eced99",
-                "reference": "18e4f4c2916a5089509086f872f5885441eced99",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-initernationalization/zipball/52ce69159ce056f4a7c7ef1d2835044536f4555e",
+                "reference": "52ce69159ce056f4a7c7ef1d2835044536f4555e",
                 "shasum": ""
             },
             "type": "library",
@@ -278,7 +278,7 @@
                 "internationalization",
                 "orpheus"
             ],
-            "time": "2016-10-12 09:11:04"
+            "time": "2016-10-18 08:28:33"
         },
         {
             "name": "orpheus/orpheus-inputcontroller",

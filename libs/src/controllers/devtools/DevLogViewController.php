@@ -133,7 +133,7 @@ class DevLogViewController extends DevController {
 		$this->addRouteToBreadcrumb(ROUTE_DEV_LOGS);
 		$this->addThisToBreadcrumb($file);
 		
-		return $this->renderHTML('app/dev_logfile', array(
+		return $this->renderHTML('devtools/dev_logfile', array(
 			'file' => $filePath,
 			'filePathInfo' => $filePathInfo,
 			'format' => $format,

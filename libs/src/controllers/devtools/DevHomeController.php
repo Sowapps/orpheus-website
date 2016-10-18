@@ -2,7 +2,7 @@
 
 use Orpheus\InputController\HTTPController\HTTPRequest;
 
-class DevSystemController extends DevController {
+class DevHomeController extends DevController {
 	
 	/**
 	 * @param HTTPRequest $request The input HTTP request
@@ -10,8 +10,7 @@ class DevSystemController extends DevController {
 	 * @see HTTPController::run()
 	 */
 	public function run(HTTPRequest $request) {
-		$this->addThisToBreadcrumb();
-		return $this->renderHTML('app/dev_system');
+		return $this->renderHTML('devtools/dev_home');
 	}
 
 }

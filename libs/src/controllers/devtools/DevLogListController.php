@@ -31,13 +31,10 @@ class DevLogListController extends DevController {
 		}
 
 		$this->addThisToBreadcrumb();
-		return $this->renderHTML('app/dev_loglist', array(
+		return $this->renderHTML('devtools/dev_loglist', array(
 // 			'logFolder' => LOGSPATH,
 			'logs' => $logs
 		));
-// 		return $this->renderHTML('app/dev_logs', array(
-// 			'logFiles' => $logFiles
-// 		));
 	}
 	
 	public function listLogsOfFile($logFile) {

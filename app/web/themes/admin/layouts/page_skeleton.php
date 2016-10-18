@@ -15,6 +15,7 @@ use Orpheus\Rendering\HTMLRendering;
  * $ContentTitle
  */
 
+global $APP_LANG;
 //global $NO_MODULE_TITLE, $ModuleTitle;
 
 $routeName = $Controller->getRouteName();
@@ -26,9 +27,9 @@ $invertedStyle = $Controller->getOption('invertedStyle', 1);
 */
 ?>
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="<?php echo LANGBASE; ?>" class="ie8"> <![endif]-->
+<!--[if IE 8]> <html lang="<?php echo $APP_LANG; ?>" class="ie8"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="<?php echo LANGBASE; ?>">
+<html lang="<?php echo $APP_LANG; ?>">
 <!--<![endif]-->
 <head>
     <meta charset="utf-8">

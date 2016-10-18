@@ -48,16 +48,15 @@ addAutoload('AdminDemoController',				'src/controllers/admin/AdminDemoController
 addAutoload('AdminUserListController',			'src/controllers/admin/AdminUserListController');
 addAutoload('AdminConfigController',			'src/controllers/admin/AdminConfigController');
 
-addAutoload('DevController',					'src/controllers/admin/DevController');
-addAutoload('DevHomeController',				'src/controllers/admin/DevHomeController');
-addAutoload('DevSystemController',				'src/controllers/admin/DevSystemController');
-addAutoload('DevEntitiesController',			'src/controllers/admin/DevEntitiesController');
-addAutoload('DevLogListController',				'src/controllers/admin/DevLogListController');
-addAutoload('DevLogViewController',				'src/controllers/admin/DevLogViewController');
-
-
 // addAutoload('DevToolsController',				'src/controllers/devtools/DevToolsController');
-addAutoload('ComposerController',				'src/controllers/devtools/ComposerController');
+addAutoload('DevController',					'src/controllers/devtools/DevController');
+addAutoload('DevHomeController',				'src/controllers/devtools/DevHomeController');
+addAutoload('DevSystemController',				'src/controllers/devtools/DevSystemController');
+addAutoload('DevEntitiesController',			'src/controllers/devtools/DevEntitiesController');
+addAutoload('DevLogListController',				'src/controllers/devtools/DevLogListController');
+addAutoload('DevLogViewController',				'src/controllers/devtools/DevLogViewController');
+addAutoload('DevComposerController',			'src/controllers/devtools/DevComposerController');
+addAutoload('DevAppTranslateController',		'src/controllers/devtools/DevAppTranslateController');
 
 addAutoload('SetupController',					'src/controllers/setup/SetupController');
 addAutoload('StartSetupController',				'src/controllers/setup/StartSetupController');
