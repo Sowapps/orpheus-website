@@ -16,15 +16,11 @@ use Orpheus\Rendering\HTMLRendering;
  */
 
 global $APP_LANG;
-//global $NO_MODULE_TITLE, $ModuleTitle;
 
 $routeName = $Controller->getRouteName();
 $user = User::getLoggedUser();
 
 $invertedStyle = $Controller->getOption('invertedStyle', 1);
-/*
-	<title><?php echo ( !empty($MODTITLE) ? $MODTITLE.' :: ' : '' ).'ADM '.SITENAME ?></title>
-*/
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="<?php echo $APP_LANG; ?>" class="ie8"> <![endif]-->

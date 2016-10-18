@@ -3,8 +3,11 @@ use Orpheus\Rendering\HTMLRendering;
 
 /* @var HTMLRendering $this */
 /* @var HTTPController $Controller */
+
+global $APP_LANG;
+
 ?><!DOCTYPE html>
-<html lang="<?php echo LANGBASE; ?>">
+<html lang="<?php echo $APP_LANG; ?>">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,11 +46,6 @@ foreach(HTMLRendering::$cssURLs as $url) {
 	<!-- External JS libraries -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
-<?php
-/*
-<body class="<?php echo $Module; ?>">
-*/
-?>
 <body>
 
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -74,7 +72,11 @@ if( !empty($TOPBAR_CONTENTS) ) { echo $TOPBAR_CONTENTS; }
 
 <div class="container">
 
-<?php echo $Content; ?>
+<?php
+echo $Content;
+// If report was not be reported
+$this->display('reports-bootstrap3');
+?>
 
 </div>
 	<!-- JS libraries -->

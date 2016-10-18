@@ -176,4 +176,3 @@ http:
     setup_end:
         path: "/setup/finish.html"
         controller: "EndSetupController"
-    
