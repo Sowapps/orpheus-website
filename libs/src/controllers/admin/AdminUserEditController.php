@@ -11,10 +11,9 @@ class AdminUserEditController extends AdminController {
 	 * @see HTTPController::run()
 	 */
 	public function run(HTTPRequest $request) {
-
+		
 		/* @var $USER User */
 		global $USER, $formData;
-// 		global $USER_CLASS;
 		$userDomain	= User::getDomain();
 
 		$user	= User::load($request->getPathValue('userID'));
