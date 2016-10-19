@@ -35,8 +35,6 @@ defifn('FILESTOREPATH',		STOREPATH.'files/');
 // defifn('DYNCONFIGPATH',		STOREPATH.'config.json');
 
 defifn('STATIC_URL',		SITEROOT.'static/');
-
-// defifn('JSURL',				SITEROOT.'js/');
 defifn('IMAGESURL',			STATIC_URL.'images/');
 
 // Routes' contants
@@ -65,14 +63,19 @@ define('ROUTE_DEV_APPTRANSLATE',	'dev_app_translate');
 // Route
 defifn('DEFAULTROUTE',			ROUTE_HOME);
 defifn('DEFAULTMEMBERROUTE',	ROUTE_ADM_DEMO);
-// defifn('DEFAULTMOD',		'home');
-defifn('DEFAULTHOST',		'yourdomain.com');
-defifn('DEFAULTPATH',		'');
+defifn('DEFAULTHOST',			'orpheus-framework.com');
+defifn('DEFAULTPATH',			'');
 
 defifn('AUTHORNAME',		'Florent HAZARD');
 defifn('SITENAME',			'Orpheus');// See also translation app_name
 defifn('ADMINEMAIL',		'contact@orpheus-framework.com');
 defifn('DEVEMAIL',			'contact@orpheus-framework.com');
+
+// Users
+//define('USER_SALT',			'');
+defifn('DEFAULT_TIMEZONE',	'Europe/Paris');
+defifn('DATE_SQL_DATETIME',	'Y-m-d H:i:s');
+defifn('DATE_SQL_DATE',		'Y-m-d');
 
 define('CRAC_CONTEXT_APPLICATION',	1);
 define('CRAC_CONTEXT_AGENCY',		2);
