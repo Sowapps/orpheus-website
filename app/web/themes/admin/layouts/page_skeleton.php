@@ -99,7 +99,6 @@ foreach($this->listCSSURLs() as $url) {
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<?php
 			$this->showMenu($Controller->getOption('mainmenu', 'adminmenu'), 'menu-sidebar');
-// 			$this->showMenu($Controller->getOption('mainmenu', !empty($mainMenu) ? $mainMenu : 'adminmenu'), 'menu-sidebar');
 			?>
 			
 			<ul class="nav navbar-nav navbar-right navbar-user">

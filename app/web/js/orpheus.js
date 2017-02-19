@@ -395,7 +395,9 @@ if( $ ) {
 						element.attr("href", value);
 					} else
 					if( element.is(":input") ) {
-						element.val(value);
+						// Fix issue in some dynamic forms
+						// input was filled but the change event not called
+						element.val(value).change();
 					} else {
 						element.text(value);
 					}
@@ -753,8 +755,8 @@ var escapeHTML;
 		});
 	};
 	
-	$.fn.pressEnter	= function(cb) {
-		$(this).keydown(function(e) {
+	$.fn.pressEnter = function(cb) {
+		return $(this).keydown(function(e) {
 			if( e.which==KeyEvent.DOM_VK_RETURN ) {
 				e.preventDefault();
 				this.callback	= cb;

@@ -57,21 +57,21 @@ if( !ini_get('date.timezone') ) {
  */
 /**
  * The Orpheus sources
- * The folder to find Orpheus sources
+ * @const ORPHEUSPATH The folder to find Orpheus sources
  * Default is the current file one
  */
 defifn('ORPHEUSPATH',		dirpath(dirname(ACCESSPATH)));
 
 /**
  * The Application sources
- * The folder to find your Application sources
+ * @const ORPHEUSPATH The folder to find your Application sources
  * Default is Orpheus path
  */
 defifn('APPLICATIONPATH',	ORPHEUSPATH);
 
 /**
  * The Instance sources
- * The folder containing the instances configuration (may not contain any source)
+ * @const ORPHEUSPATH The folder containing the instances configuration (may not contain any source)
  * Default is Application path
  */
 defifn('INSTANCEPATH',		APPLICATIONPATH);

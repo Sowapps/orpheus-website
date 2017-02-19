@@ -19,7 +19,7 @@ use Orpheus\Rendering\HTMLRendering;
 	<meta name="revisit-after" content="16 days"/>
 	<link rel="icon" type="image/png" href="<?php echo STATIC_URL.'images/icon.png'; ?>" />
 <?php
-foreach(HTMLRendering::$metaprop as $property => $content) {
+foreach($this->listMetaProperties() as $property => $content) {
 	echo '
 	<meta property="'.$property.'" content="'.$content.'"/>';
 }
@@ -31,11 +31,17 @@ foreach(HTMLRendering::$metaprop as $property => $content) {
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2-bootstrap.min.css" type="text/css" media="screen" />
+<?php
+foreach($this->listCSSURLs(HTMLRendering::LINK_TYPE_PLUGIN) as $url) {
+	echo '
+	<link rel="stylesheet" href="'.$url.'" type="text/css" media="screen" />';
+}
+?>
 	
 	<link rel="stylesheet" href="<?php echo SITEROOT; ?>static/style/base.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo HTMLRendering::getCSSURL(); ?>style.css" type="text/css" media="screen" />
 <?php
-foreach(HTMLRendering::$cssURLs as $url) {
+foreach($this->listCSSURLs() as $url) {
 	echo '
 	<link rel="stylesheet" type="text/css" href="'.$url.'" media="screen" />';
 }
@@ -89,7 +95,7 @@ if( !empty($TOPBAR_CONTENTS) ) { echo $TOPBAR_CONTENTS; }
 	<script type="text/javascript" src="/js/orpheus.js"></script>
 	<script type="text/javascript" src="/js/script.js"></script>
 <?php
-foreach(HTMLRendering::$jsURLs as $url) {
+foreach($this->listJSURLs(HTMLRendering::LINK_TYPE_PLUGIN) as $url) {
 	echo '
 	<script type="text/javascript" src="'.$url.'"></script>';
 }

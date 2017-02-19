@@ -1,9 +1,9 @@
 <?php
 /**
  * All web site defaults.
-*
-* TODO: Write documentation :-P
-*/
+ * 
+ * TODO: Write documentation :-P
+ */
 
 
 // defifn('CHECK_MODULE_ACCESS',	!DEV_VERSION);
