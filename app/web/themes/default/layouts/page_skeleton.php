@@ -1,8 +1,11 @@
 <?php
 use Orpheus\Rendering\HTMLRendering;
 
+/* @var string $CONTROLLER_OUTPUT */
 /* @var HTMLRendering $this */
 /* @var HTTPController $Controller */
+/* @var HTTPRequest $Request */
+/* @var HTTPRoute $Route */
 
 global $APP_LANG;
 
@@ -41,7 +44,7 @@ foreach($this->listCSSURLs(HTMLRendering::LINK_TYPE_PLUGIN) as $url) {
 }
 ?>
 	
-	<link rel="stylesheet" href="<?php echo SITEROOT; ?>static/style/base.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo STATIC_URL; ?>style/base.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo HTMLRendering::getCSSURL(); ?>style.css" type="text/css" media="screen" />
 <?php
 foreach($this->listCSSURLs() as $url) {
@@ -91,7 +94,6 @@ $this->display('reports-bootstrap3');
 	<!-- JS libraries -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<!-- 	<script type="text/javascript" src="//shared.sowapps.com/select2/select2-3.5.2/select2.min.js"></script> -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2_locale_fr.min.js"></script>
 	
