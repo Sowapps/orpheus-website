@@ -33,11 +33,9 @@ define('ROUTE_DEV_LOGS',		'dev_loglist');
 define('ROUTE_DEV_LOG_VIEW',	'dev_log_view');
 define('ROUTE_DEV_APPTRANSLATE',	'dev_app_translate');
 
-
-// Route's defaults
+// Route
 defifn('DEFAULTROUTE',			ROUTE_HOME);
 defifn('DEFAULTMEMBERROUTE',	ROUTE_ADM_DEMO);
-// defifn('DEFAULTMOD',		'home');
-defifn('DEFAULTHOST',		'yourdomain.com');
-defifn('DEFAULTPATH',		'');
+defifn('DEFAULTHOST',			'orpheus-framework.com');
+defifn('DEFAULTPATH',			'');
 
