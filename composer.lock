@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7b213b818ae70c78b7935b5e28b33b9a",
     "content-hash": "175f6ea486e2234cf36d0c6bd42eadff",
     "packages": [
         {
@@ -13,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-cache.git",
-                "reference": "8f221505de0d33ff7aa12067127e2e213c92b09e"
+                "reference": "9b6ab0d36f8be217c4eaf6b30f24ddb301b4ab5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-cache/zipball/8f221505de0d33ff7aa12067127e2e213c92b09e",
-                "reference": "8f221505de0d33ff7aa12067127e2e213c92b09e",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-cache/zipball/9b6ab0d36f8be217c4eaf6b30f24ddb301b4ab5d",
+                "reference": "9b6ab0d36f8be217c4eaf6b30f24ddb301b4ab5d",
                 "shasum": ""
             },
             "type": "library",
@@ -46,7 +45,7 @@
                 "filesystem",
                 "orpheus"
             ],
-            "time": "2016-09-28 12:37:56"
+            "time": "2016-11-17 09:22:41"
         },
         {
             "name": "orpheus/orpheus-core",
@@ -54,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-core.git",
-                "reference": "e1823b5618f26da04d980a29d45eb34643616857"
+                "reference": "0d52723a160eebe65d1c87b9c1dc3c2b915eb314"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-core/zipball/e1823b5618f26da04d980a29d45eb34643616857",
-                "reference": "e1823b5618f26da04d980a29d45eb34643616857",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-core/zipball/0d52723a160eebe65d1c87b9c1dc3c2b915eb314",
+                "reference": "0d52723a160eebe65d1c87b9c1dc3c2b915eb314",
                 "shasum": ""
             },
             "require": {
@@ -91,7 +90,7 @@
                 "core",
                 "orpheus"
             ],
-            "time": "2016-10-19 05:30:26"
+            "time": "2017-01-21 12:23:21"
         },
         {
             "name": "orpheus/orpheus-entitydescriptor",
@@ -99,12 +98,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-entitydescriptor.git",
-                "reference": "c7eff7b4c039a628fdc2e5c427cd3936e9be8866"
+                "reference": "4b0cbc8d783899666141de26b7649bd169835eb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-entitydescriptor/zipball/c7eff7b4c039a628fdc2e5c427cd3936e9be8866",
-                "reference": "c7eff7b4c039a628fdc2e5c427cd3936e9be8866",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-entitydescriptor/zipball/4b0cbc8d783899666141de26b7649bd169835eb4",
+                "reference": "4b0cbc8d783899666141de26b7649bd169835eb4",
                 "shasum": ""
             },
             "require": {
@@ -147,7 +146,7 @@
                 "orpheus",
                 "persistent"
             ],
-            "time": "2016-10-08 19:25:50"
+            "time": "2017-01-21 12:24:30"
         },
         {
             "name": "orpheus/orpheus-form",
@@ -286,12 +285,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-inputcontroller.git",
-                "reference": "f935f39053eecdaf6038c81c4058a210e680864d"
+                "reference": "cd0c881e54a4b7e02c1e68f3a913f4886a033cf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-inputcontroller/zipball/f935f39053eecdaf6038c81c4058a210e680864d",
-                "reference": "f935f39053eecdaf6038c81c4058a210e680864d",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-inputcontroller/zipball/cd0c881e54a4b7e02c1e68f3a913f4886a033cf3",
+                "reference": "cd0c881e54a4b7e02c1e68f3a913f4886a033cf3",
                 "shasum": ""
             },
             "require": {
@@ -332,7 +331,7 @@
                 "orpheus",
                 "view"
             ],
-            "time": "2016-10-19 07:45:38"
+            "time": "2016-11-16 14:08:50"
         },
         {
             "name": "orpheus/orpheus-publisher",
@@ -340,12 +339,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-publisher.git",
-                "reference": "91c47ed1a37d55956a74d104bb6711e9e80cf4fe"
+                "reference": "f2e086db4b4c9486b2fceedcec9e75575c12486b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-publisher/zipball/91c47ed1a37d55956a74d104bb6711e9e80cf4fe",
-                "reference": "91c47ed1a37d55956a74d104bb6711e9e80cf4fe",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-publisher/zipball/f2e086db4b4c9486b2fceedcec9e75575c12486b",
+                "reference": "f2e086db4b4c9486b2fceedcec9e75575c12486b",
                 "shasum": ""
             },
             "require": {
@@ -386,7 +385,7 @@
                 "persistent",
                 "publisher"
             ],
-            "time": "2016-10-06 15:01:29"
+            "time": "2016-11-18 17:29:46"
         },
         {
             "name": "orpheus/orpheus-rendering",
@@ -394,12 +393,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-rendering.git",
-                "reference": "98f5c4a3f233ba2ef4ffb3d0550adf5ea082b600"
+                "reference": "98646583de43ff7442cc6e1d6b25358f9eef0ce0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-rendering/zipball/98f5c4a3f233ba2ef4ffb3d0550adf5ea082b600",
-                "reference": "98f5c4a3f233ba2ef4ffb3d0550adf5ea082b600",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-rendering/zipball/98646583de43ff7442cc6e1d6b25358f9eef0ce0",
+                "reference": "98646583de43ff7442cc6e1d6b25358f9eef0ce0",
                 "shasum": ""
             },
             "require": {
@@ -432,7 +431,7 @@
                 "Rendering",
                 "orpheus"
             ],
-            "time": "2016-10-26 07:17:39"
+            "time": "2017-01-10 13:32:06"
         },
         {
             "name": "orpheus/orpheus-sqladapter",
@@ -440,12 +439,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-sqladapter.git",
-                "reference": "283cd31822e4e40d44161b6f2e6020b7abdace29"
+                "reference": "3728a04f00c494d725414f9423e6f61243a692a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-sqladapter/zipball/283cd31822e4e40d44161b6f2e6020b7abdace29",
-                "reference": "283cd31822e4e40d44161b6f2e6020b7abdace29",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-sqladapter/zipball/3728a04f00c494d725414f9423e6f61243a692a2",
+                "reference": "3728a04f00c494d725414f9423e6f61243a692a2",
                 "shasum": ""
             },
             "require": {
@@ -480,7 +479,7 @@
                 "query",
                 "sql"
             ],
-            "time": "2016-10-14 09:13:11"
+            "time": "2017-01-21 12:23:36"
         },
         {
             "name": "orpheus/orpheus-webtools",

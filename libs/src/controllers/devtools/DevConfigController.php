@@ -3,7 +3,7 @@
 use Orpheus\InputController\HTTPController\HTTPRequest;
 use Orpheus\Config\AppConfig;
 
-class AdminConfigController extends AdminController {
+class DevConfigController extends DevController {
 	
 	/**
 	 * @param HTTPRequest $request The input HTTP request
@@ -22,13 +22,13 @@ class AdminConfigController extends AdminController {
 				$AppConfig = AppConfig::instance();
 				$AppConfig->set($data['key'], $data['value']);
 				$AppConfig->save();
-		
+				
 			} catch(UserException $e) {
 				reportError($e);
 			}
 		}
 		
-		return $this->renderHTML('app/admin_config', array(
+		return $this->renderHTML('devtools/dev_config', array(
 		));
 	}
 
