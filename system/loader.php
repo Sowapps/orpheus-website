@@ -17,8 +17,8 @@ define('PROD_LEVEL',		0);//Production
 
 /** Defines an undefined constant.
 
- * @param $name		The name of the constant.
- * @param $value	The value of the constant.
+ * @param string $name The name of the constant.
+ * @param int|string $value The value of the constant.
  * @return True if the constant was defined successfully, else False.
  * 
  *  Defines a constant if this one is not defined yet.
@@ -34,7 +34,7 @@ function defifn($name, $value) {
 /** Gets the directory path
 
  * @param $path The path get parent directory
- * @return The secured path
+ * @return string The secured path
  * @sa dirname()
  * 
  * Gets the parent directory path of $path
@@ -48,7 +48,7 @@ function dirpath($path) {
 
  * @param string $commonPath The common path
  * @param boolean $silent Do not throw exception if path does not exist
- * @return The first valid path or null if there is no valid one.
+ * @return string The first valid path or null if there is no valid one.
  * @sa addSrcPath()
  * 
  * This function uses global variable $SRCPATHS to get the known paths.
@@ -77,8 +77,9 @@ function existsPathOf($commonPath, &$path=null) {
 	return ($path=pathOf($commonPath, true))!==NULL;
 }
 
-/** Adds the path to the known paths.
-
+/**
+ * Add the path to the known paths
+ * 
  * @param string $path The source path to add.
  * @return boolean True if the path was added.
  * @see pathOf()
@@ -105,9 +106,9 @@ function listSrcPath() {
 /**
  * Include a directory
  * 
- * @param $dir The directory to include.
- * @param $importants The files in that are importants to load first.
- * @return The number of files included.
+ * @param string $dir The directory to include.
+ * @param array $importants The files in that are importants to load first.
+ * @return int The number of files included.
  * 
  * Include all files with a name beginning by '_' in the directory $dir.
  * It browses recursively through sub-directories.
@@ -136,9 +137,9 @@ function includeDir($dir, $importants=array()) {
 /**
  * Include a directory by source path
  * 
- * @param $dir The directory to include.
- * @param $importants The files in that are importants to load first.
- * @return The number of files included.
+ * @param string $dir The directory to include.
+ * @param array $importants The files in that are importants to load first.
+ * @return int The number of files included.
  * @see includeDir()
  * 
  * Include all files with a name beginning by '_' in the directory $dir.
@@ -151,14 +152,14 @@ function includePath($path, $importants=array()) {
 /**
  * Escape a text
  * 
- * @param $str The string to escape
- * @param $flags The flags of htmlentities()
- * @return The escaped string
+ * @param string $str The string to escape
+ * @param int $flags The flags of htmlentities()
+ * @return string The escaped string
 
  * Escape the text $str from special characters.
  */
 function escapeText($str, $flags=ENT_NOQUOTES) {
-	return htmlentities(str_replace("\'", "'", $str), $flags, 'UTF-8', false); 	
+	return htmlentities(str_replace("\'", "'", $str), $flags, 'UTF-8', false);
 }
 
 // Experimental
@@ -712,7 +713,7 @@ function getFileLines($file, $from, $to, &$count=0, $asArray=false) {
  * If the constant TERMINAL is defined, parameter $html is forced to False.
 */
 function text($message = '', $html = true) {
-	if( defined("TERMINAL") ) {
+	if( IS_CONSOLE ) {
 		$html = false;
 	}
 	if( !is_scalar($message) ) {
@@ -722,6 +723,9 @@ function text($message = '', $html = true) {
 		}
 	}
 	echo $message.($html ? '<br />' : '')."\n";
+	if( IS_CONSOLE ) {
+		flush();
+	}
 }
 
 function debug($s, $d=-1) {

@@ -57,11 +57,13 @@ foreach(HTMLRendering::$cssURLs as $url) {
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?php echo SITEROOT; ?>"><?php echo SITENAME ?></a>
+			<a class="navbar-brand" href="<?php echo SITEROOT; ?>">
+				<img alt="" src="<?php echo IMAGESURL.'logo-32.png'; ?>">
+				<span><?php echo SITENAME ?></span>
+			</a>
 		</div>
 		<div class="collapse navbar-collapse">
 <?php
-// User::isLogged() ? $this->showMenu('topmenu_member') : $this->showMenu('topmenu');
 $this->showMenu('topmenu');
 if( !empty($TOPBAR_CONTENTS) ) { echo $TOPBAR_CONTENTS; }
 ?>

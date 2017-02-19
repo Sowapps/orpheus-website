@@ -71,11 +71,11 @@ So, with Orpheus, you totally control how a user is getting in and what to retur
 <div class="row">
 	<div class="col-sm-4">
 		<h4>1. Get a new Controller</h4>
-		<p>Start by creating a Controller in your src folder, there is a HomeController class to help you.</p>	
+		<p>Start by creating a Controller in your src folder (libs/src), there is a HomeController class to help you.</p>	
 	</div>
 	<div class="col-sm-4">
 		<h4>2. Draw a new template</h4>
-		<p>Add your layout in the layout/app folder of your theme, all used template a relative to the layout folder.</p>	
+		<p>Add your layout in the layout/app folder of your theme, all used template are relative to the layout folder.</p>	
 	</div>
 	<div class="col-sm-4">
 		<h4>3. Link a new route</h4>

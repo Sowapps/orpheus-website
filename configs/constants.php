@@ -25,9 +25,6 @@ defifn('LAYOUT_MENU',		'menu-bootstrap3');
 // LIB Initernationalization
 defifn('LANGDIR',			'languages/');
 defifn('DEFAULT_LOCALE',	'en_US');
-// defifn('LANGBASE',			'en');
-// defifn('LANGBASE',			array_shift(explode('_', LANG, 2)));
-// defifn('SYSTEM_LOCALE',		DEFAULT_LOCALE.'.utf8');// Use a function
 
 defifn('CACHEPATH',			STOREPATH.'cache/');
 defifn('TEMPPATH',			STOREPATH.'temp/');
@@ -35,6 +32,8 @@ defifn('FILESTOREPATH',		STOREPATH.'files/');
 // defifn('DYNCONFIGPATH',		STOREPATH.'config.json');
 
 defifn('STATIC_URL',		SITEROOT.'static/');
+
+// defifn('JSURL',				SITEROOT.'js/');
 defifn('IMAGESURL',			STATIC_URL.'images/');
 
 // Routes' contants
