@@ -9,10 +9,10 @@ use Orpheus\Rendering\HTMLRendering;
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php echo (!empty($MODTITLE) ? $MODTITLE.' :: ' : '' ).SITENAME ?></title>
+	<title><?php echo !empty($PageTitle) ? $PageTitle : t('app_name'); ?></title>
 	<meta name="Description" content=""/>
 	<meta name="Author" content="<?php echo AUTHORNAME; ?>"/>
-	<meta name="application-name" content="<?php echo SITENAME;?>" />
+	<meta name="application-name" content="<?php _t('app_name'); ?>" />
 	<meta name="msapplication-starturl" content="<?php echo DEFAULTLINK; ?>" />
 	<meta name="Keywords" content="carnet"/>
 	<meta name="Robots" content="Index, Follow"/>
@@ -66,7 +66,7 @@ foreach($this->listCSSURLs() as $url) {
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?php echo SITEROOT; ?>"><?php echo SITENAME ?></a>
+			<a class="navbar-brand" href="<?php echo SITEROOT; ?>"><?php _t('app_name'); ?></a>
 		</div>
 		<div class="collapse navbar-collapse">
 <?php

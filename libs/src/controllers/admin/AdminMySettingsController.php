@@ -13,15 +13,13 @@ class AdminMySettingsController extends AdminController {
 
 		/* @var $USER User */
 		global $USER, $formData;
-		
-		$userDomain	= User::getDomain();
 
 		$user	= User::getLoggedUser();
 		
 		$this->addThisToBreadcrumb();
 
-		if( isPOST('submitUpdate') ) {
-			try {
+		try {
+			if( $request->hasData('submitUpdate') ) {
 				$userInput	= POST('user');
 				$userFields	= array('fullname', 'email', 'timezone');
 				if( !empty($userInput['password']) ) {
@@ -30,13 +28,13 @@ class AdminMySettingsController extends AdminController {
 				}
 				$result = $user->update($userInput, $userFields);
 				if( $result ) {
-					reportSuccess('succesSelfEdit', $userDomain);
+					reportSuccess(User::text('succesSelfEdit'));
 				}
-			} catch(UserException $e) {
-				reportError($e, $userDomain);
 			}
-			unset($userInput);
+		} catch(UserException $e) {
+			reportError($e);
 		}
+		unset($userInput);
 		
 		$formData	= array('user'=>$user->all);
 
