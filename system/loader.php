@@ -33,15 +33,15 @@ function defifn($name, $value) {
 
 /** Gets the directory path
 
- * @param $path The path get parent directory
+ * @param string $path The path get parent directory
  * @return string The secured path
  * @sa dirname()
  * 
  * Gets the parent directory path of $path
  */
 function dirpath($path) {
-	$dirname = dirname($path);
-	return $dirname === '/' ? '/' : $dirname.'/';
+	$dirName = dirname($path);
+	return $dirName === '/' ? '/' : $dirName.'/';
 }
 
 /** Gets the path of a file/directory.
@@ -516,40 +516,23 @@ $(function() {
 	$(".arg_value").click(function() {
 		$(this).toggleClass("nolimit");
 	});
-// 	$(".sourcecode_content code").animate({
 	$(".sourcecode").scrollTop(<?php
 	        // Line height * (exception line - (1 + Lines before)
 	        echo 16*($excLine-6);
 	        ?>);
-    /*
-	$(".sourcecode").animate({
-        scrollTop: <?php
-        // Line height * (exception line - (1 + Lines before)
-        echo 16*($excLine-6);
-        ?>
-    }, 1200);
-    */
 });
 </script>
 </body>
 </html>
 	<?php
 	return ob_get_clean();
-// 	$content	= ob_get_contents();
-// 	ob_end_clean();
-// 	debug('End of error report');
-// 	return $content;
 }
 
 function convertExceptionAsText(Exception $Exception, $code, $action) {
 	// Clean all buffers
-// 	$buffer	= '';
 	while( ob_get_level() ) {
 		ob_end_clean();
-// 		$buffer = ob_get_clean().$buffer;
 	}
-// 	debug('ob_get_level() => '.ob_get_level());
-// 		debug_print_backtrace();
 	ob_start();
 	?>
 *****************************************
@@ -583,22 +566,18 @@ Stacktrace:<?php
 	}
 	echo "\n";
 	return ob_get_clean();
-// 	$content	= ob_get_contents();
-// 	ob_end_clean();
-// 	debug('End of error report');
-// 	return $content;
 }
 
 function formatSourceAsHTML($file, $lineNumber, $linesBefore, $linesAfter) {
 	// Partial highlight not working, send all file
-// 	$from	= max($lineNumber-$linesBefore, 0);
-// 	$to		= $lineNumber+$linesAfter;
-// 	$count	= 0;
-// 	$string	= getFileLines($file, $from, $to, $count);
-// 	$lines	= '';
-// 	for( $line=$from; $line<$from+$count; $line++ ) {
-// 		$lines	.= '<li>'.$line.($lineNumber==$line ? '&nbsp;&nbsp;>' : '').'</li>';
-// 	}
+ 	$from	= max($lineNumber-$linesBefore, 0);
+ 	$to		= $lineNumber+$linesAfter;
+ 	$count	= 0;
+ 	$string	= getFileLines($file, $from, $to, $count);
+ 	$lines	= '';
+ 	for( $line=$from; $line<$from+$count; $line++ ) {
+ 		$lines	.= '<li>'.$line.($lineNumber==$line ? '&nbsp;&nbsp;>' : '').'</li>';
+ 	}
 	
 	$string	= highlight_source($string, true);
 	return <<<EOF
@@ -610,11 +589,9 @@ EOF;
 }
 
 function formatSourceAsText($file, $activeLineNumber, $linesBefore, $linesAfter) {
-// 	echo "formatSourceAsHTML($file, $lineNumber, $linesBefore, $linesAfter)\n";
 	$from	= max($activeLineNumber-$linesBefore, 0);
 	$to		= $activeLineNumber+$linesAfter;
 	$count	= 0;
-// 	echo "getFileLines($file, $from, $to, $count, true)\n";
 	$lines	= getFileLines($file, $from, $to, $count, true);
 	$lineLen= strlen($to);
 	$result	= '';
@@ -623,68 +600,16 @@ function formatSourceAsText($file, $activeLineNumber, $linesBefore, $linesAfter)
 '| '.str_pad($lineNumber, $lineLen, ' ', STR_PAD_RIGHT).($lineNumber==$activeLineNumber ? ' >' : '  ').' | '.$line;
 	}
 	return $result;
-// 	$lines	= '';
-// 	for( $line=$from; $line<$from+$count; $line++ ) {
-// 		$lines	.= '<li>'.$line.($lineNumber==$line ? '&nbsp;&nbsp;>' : '').'</li>';
-// 	}
-// 	$string	= highlight_source($string, true);
-// 	return <<<EOF
-// <div class="sourcecode">
-// 	<ul class="sourcecode_lines">{$lines}</ul>
-//  	{$string}
-// </div>
-// EOF;
 }
 
 function highlight_source($string, $return=false) {
-// 	$string	= preg_replace();
-// 	$result	= "<?php\n".$string;
-	/*
-	$length	= strlen($string);
-	$spaces	= 0;
-	$tabSpaces	= 4;
-	$result	= '';
-	for( $i=0; $i<$length; $i++ ) {
-		$char	= $string[$i];
-		$add	= $char;
-		if( $char === "\t" ) {
-			$add	= str_pad('', $tabSpaces-$spaces, ' ', STR_PAD_RIGHT);
-			$spaces	= 0;
-			
-		} else
-		if( $char === "\r" || $char === "\n" ) {
-// 		if( $spaces >= $tabSpaces || in_array($char, array("\t", "\r", "\n")) ) {
-			$spaces	= 0;
-		} else {
-			$spaces++;
-		}
-		if( $spaces >= $tabSpaces ) {
-			$spaces	= 0;
-		}
-		$result	.= $add;
-	}
-	// NOT USED - The ; forces the parser to create another span element
-	// The " " (space) forces the parser to create a multiline span element
-// 	$str	= preg_replace("#&lt;\?php<br \/>#", '', highlight_string("<?php\n".$result, $return), 1, $count);
-// 	debug('Replaced => '.$count);
-// 	echo escapeText($str);
-// 	return $str;
- */
 	return highlight_string("<?php\n".$string, true);
-// 	return preg_replace("#&lt;\?php<br \/>#", '', highlight_string("<?php\n".$result, true), 1, $count);
-// 	return preg_replace("#&lt;\?php<br \/>#", '', highlight_string("<?php\n".$result, $return), 1, $count);
 }
-
-// function getFileLineContext($file, $lineNumber, &$linesBefore, $linesAfter) {
-// 	return getFileLines($file, $lineNumber-$linesBefore, $lineNumber+$linesAfter);
-// }
 
 function getFileLines($file, $from, $to, &$count=0, $asArray=false) {
 	if( is_string($file) ) {
 		$file	= fopen($file, 'r');
 	}
-// 	$from	= max($from, 0);
-// 	$lines	= '';
 	$lines	= array();
 	$c		= 0;
 	$lineNb	= $from;
@@ -694,10 +619,7 @@ function getFileLines($file, $from, $to, &$count=0, $asArray=false) {
 			if( $c > $to ) {
 				break;
 			}
-// 			$lines	.= $line;
-			$lines[$lineNb++]	= $line;
-			$to;
-// 			$count++;
+			$lines[$lineNb++] = $line;
 		}
 	}
 	$count	= count($lines);
@@ -705,8 +627,8 @@ function getFileLines($file, $from, $to, &$count=0, $asArray=false) {
 }
 
 /** Displays a variable as HTML
- * @param $message The data to display. Default value is an empty string.
- * @param $html True to add html tags. Default value is True.
+ * @param mixed $message The data to display. Default value is an empty string.
+ * @param boolean $html True to add html tags. Default value is True.
  * @warning Use it only for debugs.
 
  * Displays a variable as HTML.
@@ -746,14 +668,13 @@ function htmlSecret($message) {
 		$message = '<pre>'.print_r($message, 1).'</pre>';
 	}
 	return '<button type="button" onclick="this.nextSibling.style.display = this.nextSibling.style.display === \'none\' ? \'block\' : \'none\'; return 0;">Show</button><div style="display: none;">'.$message.'</div>';
-// 	return '<button type="button" onclick="$(this).next().toggle(); return 0;">'.t('Show').'</button><div style="display: none;">'.$message.'</div>';
 }
 
 /** Limits the length of a string
  * @param string $string The string to limit length.
  * @param int $max The maximum length of the string.
  * @param int $strend A string to append to the shortened string.
- * @return The shortened string.
+ * @return string The shortened string.
 
  * Limits the length of a string and append $strend.
  * This function do it cleanly, it tries to cut before a word.
