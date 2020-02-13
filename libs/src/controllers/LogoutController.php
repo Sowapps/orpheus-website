@@ -2,7 +2,6 @@
 
 use Orpheus\InputController\HTTPController\HTTPController;
 use Orpheus\InputController\HTTPController\HTTPRequest;
-use Orpheus\InputController\HTTPController\HTMLHTTPResponse;
 use Orpheus\InputController\HTTPController\RedirectHTTPResponse;
 
 class LogoutController extends HTTPController {
@@ -14,11 +13,11 @@ class LogoutController extends HTTPController {
 	 */
 	public function run(HTTPRequest $request) {
 		
-		$user	= User::getLoggedUser();
+		$user = User::getLoggedUser();
 		if( isset($user) ) {
 			$user->logout();
 		}
-		return new RedirectHTTPResponse(DEFAULTROUTE);
+		return new RedirectHTTPResponse(DEFAULT_ROUTE);
 	}
 
 	

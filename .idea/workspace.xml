@@ -1,138 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85a31f87-ed6f-4e74-be13-bf917ed58e20" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/src/controllers/admin/AdminMySettingsController.php" afterPath="$PROJECT_DIR$/libs/src/controllers/admin/AdminMySettingsController.php" />
+    <list default="true" id="85a31f87-ed6f-4e74-be13-bf917ed58e20" name="Default" comment="Update to new 2020 standard&#10;Length min / max are more configurable">
+      <change afterPath="$PROJECT_DIR$/../../../git/orpheus-webtools/src/Publisher/Paginator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/console/run.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/console/run.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/web/themes/admin/layouts/page_skeleton.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/web/themes/admin/layouts/page_skeleton.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/defaults.php" beforeDir="false" afterPath="$PROJECT_DIR$/configs/defaults.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/src/controllers/DownloadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/src/controllers/DownloadController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/src/controllers/LogoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/src/controllers/LogoutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/src/controllers/RedirectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/src/controllers/RedirectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/src/controllers/admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/src/controllers/admin/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/loader.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/loader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-core/src/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-core/src/Config/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-core/src/Core/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-core/src/Core/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-core/src/core.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-core/src/core.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-core/src/exceptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-core/src/exceptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-core/src/hooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-core/src/hooks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-core/src/validators.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-core/src/validators.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-entitydescriptor/src/EntityDescriptor/EntityDescriptor.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-entitydescriptor/src/EntityDescriptor/EntityDescriptor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-entitydescriptor/src/EntityDescriptor/PermanentEntity.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-entitydescriptor/src/EntityDescriptor/PermanentEntity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-entitydescriptor/src/EntityDescriptor/User/AbstractUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-entitydescriptor/src/EntityDescriptor/User/AbstractUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-initernationalization/src/_loader.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-initernationalization/src/_loader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/Controller/RedirectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/Controller/RedirectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/Controller/ResourceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/Controller/ResourceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/Controller/StaticPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/Controller/StaticPageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/CLIController/CLIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/CLIController/CLIController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/CLIController/CLIRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/CLIController/CLIRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/ControllerRoute.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/ControllerRoute.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/HTMLHTTPResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/HTMLHTTPResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/HTTPController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/HTTPController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/HTTPRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/HTTPRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/HTTPResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/HTTPResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/HTTPRoute.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/HTTPRoute.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/JSONHTTPResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/JSONHTTPResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/LocalFileHTTPResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/HTTPController/LocalFileHTTPResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/InputRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController/InputRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/_loader.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/_loader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-publisher/src/Publisher/Exception/InvalidFieldException.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-publisher/src/Publisher/Exception/InvalidFieldException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-publisher/src/Publisher/PermanentObject/PermanentObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-publisher/src/Publisher/PermanentObject/PermanentObject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-publisher/src/Publisher/Transaction/TransactionOperation.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-publisher/src/Publisher/Transaction/TransactionOperation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-publisher/src/Publisher/Transaction/UpdateTransactionOperation.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-publisher/src/Publisher/Transaction/UpdateTransactionOperation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-publisher/src/_loader.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-publisher/src/_loader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-rendering/src/Rendering/HTMLRendering.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-rendering/src/Rendering/HTMLRendering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-rendering/src/Rendering/Menu/MenuItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-rendering/src/Rendering/Menu/MenuItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-rendering/src/Rendering/Rendering.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-rendering/src/Rendering/Rendering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-sqladapter/src/SQLAdapter/Exception/SQLException.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-sqladapter/src/SQLAdapter/Exception/SQLException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-sqladapter/src/SQLAdapter/SQLAdapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-sqladapter/src/SQLAdapter/SQLAdapter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-sqladapter/src/SQLAdapter/SQLAdapterMSSQL.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-sqladapter/src/SQLAdapter/SQLAdapterMSSQL.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-sqladapter/src/SQLAdapter/SQLAdapterMySQL.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-sqladapter/src/SQLAdapter/SQLAdapterMySQL.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-sqladapter/src/SQLAdapter/SQLAdapterPgSQL.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-sqladapter/src/SQLRequest/SQLSelectRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-sqladapter/src/SQLRequest/SQLSelectRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-sqladapter/src/_pdo.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-sqladapter/src/_pdo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-webtools/src/Email/Email.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-webtools/src/Email/Email.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
+    <list id="dc46ef47-1347-4894-a214-8d108b9e7879" name="Installer" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-setup/orpheus/src/InstallTask.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-setup/orpheus/src/InstallTask.php" afterDir="false" />
+    </list>
+    <list id="88ad5587-a738-4684-98ef-7960c5cc8740" name="Local Project" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+    </list>
+    <list id="525eb179-3998-45b0-9ef8-9813b271476c" name="LocalFix" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Orpheus Framework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Orpheus Framework.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../git/orpheus-ssh2/.buildpath" beforeDir="false" afterPath="$PROJECT_DIR$/../../../git/orpheus-ssh2/.buildpath" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="sources" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../git/orpheus-entitydescriptor" />
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="git@github.com:Sowapps/orpheus-cache.git" />
+        <option value="git@github.com:Sowapps/orpheus-core.git" />
+        <option value="git@github.com:Sowapps/orpheus-form.git" />
+        <option value="git@github.com:Sowapps/orpheus-hook.git" />
+        <option value="git@github.com:Sowapps/orpheus-initernationalization.git" />
+        <option value="git@github.com:Sowapps/orpheus-inputcontroller.git" />
+        <option value="git@github.com:Sowapps/orpheus-publisher.git" />
+        <option value="git@github.com:Sowapps/orpheus-rendering.git" />
+        <option value="git@github.com:Sowapps/orpheus-setup.git" />
+        <option value="git@github.com:Sowapps/orpheus-sqladapter.git" />
+        <option value="git@github.com:Sowapps/orpheus-website.git" />
+        <option value="git@github.com:Sowapps/orpheus-webtools.git" />
+        <option value="git@github.com:Sowapps/orpheus-yaml.git" />
+        <option value="https://github.com/Sowapps/orpheus-ssh2.git" />
+      </set>
+    </option>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/orpheus/orpheus-initernationalization" />
+      <path value="$PROJECT_DIR$/vendor/orpheus/orpheus-publisher" />
+      <path value="$PROJECT_DIR$/vendor/orpheus/orpheus-sqladapter" />
+      <path value="$PROJECT_DIR$/vendor/orpheus/orpheus-inputcontroller" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/orpheus/orpheus-yaml" />
+      <path value="$PROJECT_DIR$/vendor/orpheus/orpheus-entitydescriptor" />
+      <path value="$PROJECT_DIR$/vendor/orpheus/orpheus-rendering" />
+      <path value="$PROJECT_DIR$/vendor/orpheus/orpheus-core" />
+      <path value="$PROJECT_DIR$/vendor/orpheus/orpheus-webtools" />
+      <path value="$PROJECT_DIR$/vendor/orpheus/orpheus-cache" />
+      <path value="$PROJECT_DIR$/vendor/orpheus/orpheus-form" />
+      <path value="$PROJECT_DIR$/vendor/orpheus/orpheus-hook" />
+    </include_path>
   </component>
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectId" id="1T8w2kdG42nCK78Kkd0y45dRYUm" />
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PHP</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
   </component>
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Orpheus Framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="Config&#9;FILE&#9;file://H:/Workspaces/git/orpheus-core/src/Config/Config.php&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;InputRequest&#9;null&#9;null&#10;SqlSe&#9;FILE&#9;file://H:/Workspaces/git/orpheus-sqladapter/src/SQLRequest/SQLSelectRequest.php&#10;Controller&#9;null&#9;null&#10;Permanent&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_interpreter_path" value="G:/Program Files/nodejs/node" />
-    <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="G:\Program Files\nodejs\node.exe" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../git/orpheus-inputcontroller/src/InputController" />
+    <property name="nodejs_interpreter_path" value="G:/Program Files/nodejs/node" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Workspaces\git\orpheus-inputcontroller\src\InputController" />
+      <recent name="H:\Workspaces\git\orpheus-core\src" />
+      <recent name="H:\Workspaces\Workspace-Web\Orpheus\sources\system" />
+      <recent name="H:\Workspaces\git\orpheus-publisher\src\Publisher\PermanentObject" />
+      <recent name="H:\Workspaces\git\orpheus-webtools\src\Publisher" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
-      <PhpTestRunnerSettings />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+    <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
+      <gulpfile />
+      <tasks />
+      <arguments />
       <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
-      <method />
+      <method v="2" />
     </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\Florent\AppData\Roaming\Subversion</configuration>
@@ -140,48 +202,423 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="85a31f87-ed6f-4e74-be13-bf917ed58e20" name="Default" comment="" />
+      <changelist id="dc46ef47-1347-4894-a214-8d108b9e7879" name="Installer" comment="" />
+      <changelist id="525eb179-3998-45b0-9ef8-9813b271476c" name="LocalFix" comment="" />
+      <changelist id="88ad5587-a738-4684-98ef-7960c5cc8740" name="Local Project" comment="" />
       <created>1509868402628</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1509868402628</updated>
       <workItem from="1509868403874" duration="626000" />
+      <workItem from="1513147945040" duration="1151000" />
+      <workItem from="1513531087044" duration="2365000" />
+      <workItem from="1514560161458" duration="1249000" />
+      <workItem from="1514643785776" duration="11162000" />
+      <workItem from="1515359165520" duration="1293000" />
+      <workItem from="1517040574406" duration="10997000" />
+      <workItem from="1518349898495" duration="3184000" />
+      <workItem from="1519848251773" duration="1261000" />
+      <workItem from="1529474660230" duration="2701000" />
+      <workItem from="1529532231792" duration="442000" />
+      <workItem from="1529532843486" duration="348000" />
+      <workItem from="1529533206439" duration="1313000" />
+      <workItem from="1532632664691" duration="33000" />
+      <workItem from="1535524512226" duration="18000" />
+      <workItem from="1572854841117" duration="1886000" />
+      <workItem from="1573550892434" duration="688000" />
+      <workItem from="1574850648346" duration="1000" />
+      <workItem from="1579770825703" duration="2494000" />
+      <workItem from="1579774358643" duration="12522000" />
+      <workItem from="1579941403024" duration="28722000" />
+      <workItem from="1580315885958" duration="8094000" />
+      <workItem from="1580492807798" duration="21766000" />
+      <workItem from="1581081585930" duration="1279000" />
+      <workItem from="1581092819564" duration="10109000" />
+      <workItem from="1581370278391" duration="15123000" />
     </task>
+    <task id="LOCAL-00001" summary="Implement current rendering getter">
+      <created>1513531261820</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1513531261820</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Get rendering for current request from everywhere">
+      <created>1513532003248</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1513532003248</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Get rendering for current request from everywhere">
+      <created>1513532670963</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1513532670963</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Minor changes">
+      <created>1514643921291</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1514643921291</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Allow alias in queries">
+      <created>1514644323816</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1514644323816</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Allow alias in queries">
+      <created>1514717583260</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1514717583260</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fix documentation, naming &amp; formatting&#10;Suppress some deprecated function (take care about compatibility !)">
+      <created>1514720151001</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1514720151001</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fix mysql identifier escaping for multiple sub identifier">
+      <created>1514808861750</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1514808861750</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add distinct select for queries">
+      <created>1514809511869</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1514809511869</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix doc">
+      <created>1514809705230</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1514809705230</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Minor update Fix">
+      <created>1514815720631</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1514815720631</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Implement object select instead of get (will be deprecated)">
+      <created>1514823981930</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1514823981930</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fix issues with parameter typing&#10;Fix filling values before initializing controller&#10;Fix some documentation">
+      <created>1515359740637</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1515359740637</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Fix some documentation">
+      <created>1515359756785</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1515359756785</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Fix issues with parameter typing&#10;Fix filling values before initializing controller&#10;Fix some documentation">
+      <created>1515359862502</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1515359862502</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fix exceptions import">
+      <created>1517177478805</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1517177478805</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add generators to route loading (testing feature)">
+      <created>1517177518122</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1517177518122</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Rename route generators to providers">
+      <created>1517207357510</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1517207357510</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Clean sources">
+      <created>1517207498504</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1517207498504</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Minor fix for json">
+      <created>1517382538518</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1517382538518</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Fix provider config in routing">
+      <created>1517466092539</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1517466092539</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fix SQL Select request iterator implementation">
+      <created>1517521229455</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1517521229455</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Deprecate $USER variable">
+      <created>1518351138687</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1518351138687</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Fix malformed json exception">
+      <created>1518351668392</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1518351668392</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Minor cleaning">
+      <created>1519848682609</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1519848682609</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Minor fix about file finding">
+      <created>1529531056405</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1529531056405</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Deprecated checkSource for hasSource in config">
+      <created>1529531541001</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1529531541001</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Fix for silent loading of routes_dev">
+      <created>1529531815485</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1529531815485</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Documenting&#10;Cleaning sources">
+      <created>1529532209688</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1529532209688</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Documenting&#10;Cleaning sources">
+      <created>1529533335463</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1529533335463</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Improve join for MySQL&#10;Use new join for MySQL Select&#10;Update code formatting and documentation&#10;Clean commented code&#10;Remove old eclipse files">
+      <created>1572856705311</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1572856705311</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Update to PHP 7 &amp; new code style">
+      <created>1579879709669</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1579879709669</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Update to new 2020 standard&#10;Add global / instance handling for APC&#10;Implement file cache listing">
+      <created>1581588680773</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1581588680773</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="626000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
-    <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Fix documentation, naming &amp; formatting&#10;Suppress some deprecated function (take care about compatibility !)" />
+    <MESSAGE value="Fix mysql identifier escaping for multiple sub identifier" />
+    <MESSAGE value="Add distinct select for queries" />
+    <MESSAGE value="Fix doc" />
+    <MESSAGE value="Minor update Fix" />
+    <MESSAGE value="Implement object select instead of get (will be deprecated)" />
+    <MESSAGE value="Fix some documentation" />
+    <MESSAGE value="Fix issues with parameter typing&#10;Fix filling values before initializing controller&#10;Fix some documentation" />
+    <MESSAGE value="Fix exceptions import" />
+    <MESSAGE value="Add generators to route loading (testing feature)" />
+    <MESSAGE value="Rename route generators to providers" />
+    <MESSAGE value="Clean sources" />
+    <MESSAGE value="Minor fix for json" />
+    <MESSAGE value="Fix provider config in routing" />
+    <MESSAGE value="Fix SQL Select request iterator implementation" />
+    <MESSAGE value="Deprecate $USER variable" />
+    <MESSAGE value="Fix malformed json exception" />
+    <MESSAGE value="Minor cleaning" />
+    <MESSAGE value="Minor fix about file finding" />
+    <MESSAGE value="Deprecated checkSource for hasSource in config" />
+    <MESSAGE value="Fix for silent loading of routes_dev" />
+    <MESSAGE value="Documenting&#10;Cleaning sources" />
+    <MESSAGE value="Improve join for MySQL&#10;Use new join for MySQL Select&#10;Update code formatting and documentation&#10;Clean commented code&#10;Remove old eclipse files" />
+    <MESSAGE value="Update to PHP 7 &amp; new code style" />
+    <MESSAGE value="Update to new 2020 standard&#10;Add global / instance handling for APC&#10;Implement file cache listing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update to new 2020 standard&#10;Add global / instance handling for APC&#10;Implement file cache listing" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2673" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1581512616944">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2673" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581512616944" />
+    <state x="2266" y="21" width="1462" height="1010" key="CommitChangelistDialog2" timestamp="1581589109863">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2266" y="21" width="1462" height="1010" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581589109863" />
+    <state x="2656" y="433" key="ComposerInitDialogKey" timestamp="1579786290943">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2656" y="433" key="ComposerInitDialogKey/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579786290943" />
+    <state x="55" y="-8" width="1736" height="856" maximized="true" key="DiffContextDialog" timestamp="1581588461018">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="55" y="-8" width="1736" height="856" maximized="true" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581588461018" />
+    <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1579786516577">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579786516577" />
+    <state x="2670" y="242" key="RollbackChangesDialog" timestamp="1579770909558">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2670" y="242" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579770909558" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1581093010966">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581093010966" />
+    <state x="2381" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580140631380" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1581588682459">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581588682459" />
+    <state x="1920" y="0" width="1515" height="1026" key="dock-window-1" timestamp="1581370545399">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1920" y="0" width="1515" height="1026" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581370545399" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581156298926" />
+    <state x="953" y="5" width="930" height="1024" key="dock-window-2" timestamp="1581156298926">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="953" y="5" width="930" height="1024" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581156298926" />
+    <state x="2451" y="115" width="1270" height="790" key="find.popup" timestamp="1581588876261">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="530" y="115" width="1270" height="790" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580220375178" />
+    <state x="2451" y="115" width="1270" height="790" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581588876261" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1581587461930">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581352671526" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581587461930" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../../../git/orpheus-publisher/src/Publisher/PermanentObject/PermanentObject.php</url>
+          <line>296</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="Copyright.UI">
+        <settings>
+          <last-edited>Sowapps</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

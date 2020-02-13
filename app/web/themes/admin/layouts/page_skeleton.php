@@ -1,4 +1,5 @@
 <?php
+
 use Orpheus\Rendering\HTMLRendering;
 
 /* @var string $CONTROLLER_OUTPUT */
@@ -81,20 +82,20 @@ foreach($this->listCSSURLs() as $url) {
 <body class="<?php echo $invertedStyle ? 'body-inverse' : 'body-default'; ?>">
 
 <div id="wrapper">
-
+	
 	<!-- Sidebar -->
 	<nav class="navbar <?php echo $invertedStyle ? 'navbar-inverse' : 'navbar-default'; ?> navbar-fixed-top" role="navigation">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?php _u(DEFAULTROUTE); ?>"><?php _t($Controller->getOption('main_title', 'adminpanel_title')); ?></a>
+			<a class="navbar-brand" href="<?php _u(DEFAULT_ROUTE); ?>"><?php _t($Controller->getOption('main_title', 'adminpanel_title')); ?></a>
 		</div>
-	
+		
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<?php
@@ -102,7 +103,7 @@ foreach($this->listCSSURLs() as $url) {
 			?>
 			
 			<ul class="nav navbar-nav navbar-right navbar-user">
-			<?php
+				<?php
 			if( $user ) {
 				?>
 				<li class="dropdown user-dropdown">

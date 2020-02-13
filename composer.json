@@ -20,7 +20,8 @@
 	"orpheus/orpheus-entitydescriptor": "dev-master",
 	"orpheus/orpheus-form": "dev-master",
 	"orpheus/orpheus-webtools": "dev-master",
-	"ext-pdo": "*"
+	"ext-pdo": "*",
+	"ext-json": "*"
   },
   "authors": [
 	{

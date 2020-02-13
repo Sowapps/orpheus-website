@@ -2,7 +2,6 @@
 
 use Orpheus\InputController\HTTPController\HTTPController;
 use Orpheus\InputController\HTTPController\HTTPRequest;
-use Orpheus\InputController\HTTPController\HTMLHTTPResponse;
 use Orpheus\InputController\HTTPController\RedirectHTTPResponse;
 
 class RedirectController extends HTTPController {
@@ -14,7 +13,7 @@ class RedirectController extends HTTPController {
 	 */
 	public function run(HTTPRequest $request) {
 		
-		return new RedirectHTTPResponse(u(User::isLogged() ? DEFAULTMEMBERROUTE : DEFAULTROUTE));
+		return new RedirectHTTPResponse(u(User::isLogged() ? DEFAULTMEMBERROUTE : DEFAULT_ROUTE));
 	}
 
 	
