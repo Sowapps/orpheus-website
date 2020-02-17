@@ -111,7 +111,7 @@ defifn('STOREPATH', pathOf('store/'));
 defifn('CACHEPATH', STOREPATH . 'cache/');
 
 // Routing
-defifn('HTTPS', !empty($_SERVER['HTTPS']) || (defined('DEFAULT_IS_SECURE') && DEFAULT_IS_SECURE));
+defifn('HTTPS', !empty($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUEST_SCHEME'] === 'https' : (defined('DEFAULT_IS_SECURE') && DEFAULT_IS_SECURE));
 defifn('SCHEME', HTTPS ? 'https' : 'http');
 defifn('HOST', !empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : DEFAULTHOST);
 defifn('PATH', !defined('TERMINAL') ? dirpath($_SERVER['SCRIPT_NAME']) : DEFAULTPATH);
