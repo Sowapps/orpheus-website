@@ -26,25 +26,28 @@ defifn('LAYOUT_MENU',		'menu-bootstrap3');
 defifn('LANGDIR',			'languages/');
 defifn('DEFAULT_LOCALE',	'en_US');
 
-defifn('CACHEPATH',			STOREPATH.'cache/');
-defifn('TEMPPATH',			STOREPATH.'temp/');
-defifn('FILESTOREPATH',		STOREPATH.'files/');
+defifn('CACHEPATH', STOREPATH . 'cache/');
+defifn('TEMPPATH', STOREPATH . 'temp/');
+defifn('FILESTOREPATH', STOREPATH . 'files/');
 // defifn('DYNCONFIGPATH',		STOREPATH.'config.json');
 
-defifn('STATIC_URL',		SITEROOT.'static/');
+defifn('STATIC_URL', SITEROOT . 'static/');
 
 // defifn('JSURL',				SITEROOT.'js/');
-defifn('IMAGESURL',			STATIC_URL.'images/');
+defifn('IMAGESURL', STATIC_URL . 'images/');
 
-defifn('AUTHORNAME',		'Florent HAZARD');
-defifn('SITENAME',			'Orpheus');// See also translation app_name
-defifn('ADMINEMAIL',		'contact@orpheus-framework.com');
-defifn('DEVEMAIL',			'contact@orpheus-framework.com');
+
+// Contact
+
+defifn('AUTHORNAME', 'Florent HAZARD');
+defifn('SITENAME', 'Orpheus');// See also translation app_name
+defifn('ADMINEMAIL', 'contact@orpheus-framework.com');
+defifn('DEVEMAIL', 'contact@orpheus-framework.com');
 
 // Users
 //define('USER_SALT',			'');
-defifn('DEFAULT_TIMEZONE',	'Europe/Paris');
-defifn('DATE_SQL_DATETIME',	'Y-m-d H:i:s');
+defifn('DEFAULT_TIMEZONE', 'Europe/Paris');
+defifn('DATE_SQL_DATETIME', 'Y-m-d H:i:s');
 defifn('DATE_SQL_DATE',		'Y-m-d');
 
 define('CRAC_CONTEXT_APPLICATION',	1);

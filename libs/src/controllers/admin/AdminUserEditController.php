@@ -1,22 +1,22 @@
 <?php
 
-use Orpheus\InputController\HTTPController\HTTPRequest;
 use Orpheus\Exception\ForbiddenException;
+use Orpheus\InputController\HTTPController\HTTPRequest;
+use Orpheus\InputController\HTTPController\HTTPResponse;
 
 class AdminUserEditController extends AdminController {
 	
 	/**
 	 * @param HTTPRequest $request The input HTTP request
 	 * @return HTTPResponse The output HTTP response
-	 * @see HTTPController::run()
 	 */
-	public function run(HTTPRequest $request) {
+	public function run($request) {
 		
 		/* @var $USER User */
 		global $USER, $formData;
-		$userDomain	= User::getDomain();
-
-		$user	= User::load($request->getPathValue('userID'));
+		$userDomain = User::getDomain();
+		
+		$user = User::load($request->getPathValue('userID'));
 		
 		if( !$user ) {
 			User::throwNotFound();

@@ -1,6 +1,6 @@
 {
-  "name": "orpheus/orpheus-framework",
-  "description": "Orpheus PHP Framework",
+  "name": "orpheus/orpheus-website",
+  "description": "Orpheus Website",
   "type": "project",
   "license": "MIT",
   "keywords": [
