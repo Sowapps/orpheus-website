@@ -1,80 +1,76 @@
 <?php
+
+use Orpheus\InputController\HTTPController\HTTPController;
+use Orpheus\InputController\HTTPController\HTTPRequest;
+use Orpheus\InputController\HTTPController\HTTPRoute;
 use Orpheus\Rendering\HTMLRendering;
 
-HTMLRendering::useLayout('page_skeleton');
+/**
+ * @var HTMLRendering $rendering
+ * @var HTTPController $Controller
+ * @var HTTPRequest $Request
+ * @var HTTPRoute $Route
+ */
+
+$rendering->useLayout('page_skeleton');
 ?>
 <div class="jumbotron">
-	<h1>Hello PHP developer !</h1>
-	<p>
-Get the power with the new Orpheus, the PHP framework from your dreams, coming with all features you need !
-This framework is made for you, you want to develop your website quickly with something easy-to-use, optimized,
-secured and standardized by easiest way to use it and the maximum customizing capabilities.
-	</p>
-	<p class="cb tac mt30">
-		<a href="<?php _u('gettingstarted'); ?>" class="btn btn-primary btn-lg"><i class="fa fa-star-o"></i> Getting Started</a>
-		<?php /*
-		<a href="<?php _u(ROUTE_DOWNLOAD_LATEST); ?>" class="btn btn-primary btn-large"><i class="fa fa-download"></i> Download latest</a>
-		<a href="<?php _u(ROUTE_DOWNLOAD_RELEASES); ?>" target="_blank" class="btn btn-link fs16">All releases</a>
-		<a href="<?php echo u('download'); ?>" class="btn btn-primary btn-large"><i class="fa fa-download"></i> Download latest</a>
-		<a href="<?php echo u('download').'?releases'; ?>" class="link fs16 ml10">All releases</a>
-		*/ ?>
-	</p>
+	<div class="container">
+		<h1>Hello PHP Developer !</h1>
+		<p>
+			Welcome to your own Orpheus application,<br>
+			You may want to edit this Controller & View, please see the controller <u>HomeController</u> &amp; the template <u>app/home.php</u>.<br>
+			If you want more information, please visit our website.
+		</p>
+		<p>
+			<a class="btn btn-primary btn-lg" href="http://orpheus-framework.com/" role="button" target="_blank">
+				Get documented <i class="fas fa-angle-double-right fa-sm"></i>
+			</a>
+		</p>
+	</div>
 </div>
-<?php
-$this->display('reports-bootstrap3');
-?>
-
-<div class="row">
-	<div class="col-xs-8">
-
-		<div class="row">
-			<div class="col-xs-4">
-<h3>Persistant Entity System</h3>
-<p>The framework allow you to do not manipulate SQL queries anymore. It includes a SQL Adapter system with a full object entity handling for PHP.</p>
-			</div>
-			<div class="col-xs-4">
-<h3>A Light &amp; Powerful Rendering system</h3>
-<p>You can define the renderer on-the-fly from PHP, as the theme you want. Basically, it includes a Raw Renderer, a HTML Renderer and a Twig Rendering Adapter.</p>
-			</div>
-			<div class="col-xs-4">
-<h3>i18n - Internationalization</h3>
-<p>All features allow you to translate contents using our easy-to-use internationalization library. The translation functions also allow you to pass replacement values from PHP.</p>
-			</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<h2>The ElePHPant</h2>
+			<p>
+				Orpheus is developed using PHP and your app is designed using a PHP-only MVC model. But enjoy our twig library if you want so.
+				With all our love of code, we bring lot of tools to help you to develop a great application.
+				But the greatest help is from the manual, so abuse about it.
+			</p>
+			<p>
+				<a class="btn btn-secondary" href="https://www.php.net/" role="button" target="_blank">
+					PHP Manual <i class="fas fa-angle-double-right fa-sm"></i>
+				</a>
+			</p>
 		</div>
-
-		<div class="row">
-			<div class="col-xs-4">
-<h3>Debug Tools Provided</h3>
-<p>This PHP framework provides you all tools to debug your application, it catches all error that occurred running your scripts and log it for you.</p>
-			</div>
-			<div class="col-xs-4">
-<h3>Edit the content online <span class="badge">In progress</span></h3>
-<p>The framework will provide a CMS library soon, you will be able to edit your application online &amp; inline, no need to edit PHP sources.</p>
-			</div>
-			<div class="col-xs-4">
-<h3>Speak about it <span class="badge">In progress</span></h3>
-<p>We are developing a PHP forum library for our framework, you will be able to create and integrate a forum in your App !</p>
-			</div>
+		<div class="col-md-4">
+			<h2>Bootstrap your app</h2>
+			<p>
+				You just started you app and it's already beautiful &amp; responsive.
+				Bootstrap is an awesome CSS framework that help you to organize your UI and make it totally responsive.
+				Bootstrap is our favorite choice but we advise to use your preferred library ! If you want so, get more details with the documentation.
+			</p>
+			<p>
+				<a class="btn btn-secondary" href="https://getbootstrap.com/" role="button" target="_blank">
+					Bootstrap Doc <i class="fas fa-angle-double-right fa-sm"></i>
+				</a>
+			</p>
 		</div>
-<!--
-badge
-label label-warning
--->
+		<div class="col-md-4">
+			<h2>The Awesome Font</h2>
+			<p>
+				So now, what about icons ? You need it in all apps, even more if it fits your needs, so we added it to you, if you want so.
+				We love Font Awesome and we ensure that is making your app more iconic !
+				Feel free to read the documentation and browse the gallery.
+			</p>
+			<p>
+				<a class="btn btn-secondary" href="https://fontawesome.com/icons?d=gallery&m=free" role="button" target="_blank">
+					Font Awesome Gallery <i class="fas fa-angle-double-right fa-sm"></i>
+				</a>
+			</p>
+		</div>
 	</div>
-	<div class="col-xs-4">
-
-<section id="demotest">
-	<form method="POST">
-	<fieldset>
-		<legend>Try to create you own DemoTest object</legend>
-		<div class="form-group">
-			<label for="inputValue">Create it from a new value</label>
-			<input class="form-control" type="text" name="data[name]" placeholder="Type new value, longer than 3 characters" id="inputValue">
-		</div>
-		<span class="help-block">Submit a new value to see this working test in action.</span>
-		<button id="submitDemoTest" type="submit" class="btn btn-primary">Insert it !</button>
-	</fieldset>
-	</form>
-</section>
-	</div>
+	
+	<hr>
 </div>

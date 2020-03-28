@@ -1,23 +1,25 @@
 <?php
+
 use Orpheus\Rendering\HTMLRendering;
 
-HTMLRendering::addJSURL('https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js');
-HTMLRendering::addCSSURL('https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css');
-HTMLRendering::addJSURL('https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js');
-HTMLRendering::addThemeJSFile('admin_demo.js');
+HTMLRendering::addJsUrl('https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js');
+HTMLRendering::addCssUrl('https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css');
+HTMLRendering::addJsUrl('https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js');
+HTMLRendering::addThemeJsFile('admin_demo.js');
 HTMLRendering::useLayout('page_skeleton');
 ?>
 <div class="row">
 	<div class="col-lg-12">
-<!-- 		<h1>Dashboard <small>Statistics Overview</small></h1> -->
-<!-- 		<ol class="breadcrumb"> -->
-<!-- 			<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li> -->
-<!-- 		</ol> -->
+		<!-- 		<h1>Dashboard <small>Statistics Overview</small></h1> -->
+		<!-- 		<ol class="breadcrumb"> -->
+		<!-- 			<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li> -->
+		<!-- 		</ol> -->
 		<div class="alert alert-success alert-dismissable">
 			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-Welcome to Orpheus Admin Panel Demo, this SB Admin Theme is designed by <a class="alert-link" href="http://startbootstrap.com">Start Bootstrap</a> and integrated by Florent HAZARD !
-Feel free to use this plugin and its templates for your admin needs! We are using a few different plugins to handle the dynamic tables and charts, so make sure you check out the necessary documentation links provided.<br />
-All accesses to the admin's pages are restricted by permissions, this is why you could not access to all pages with your member role.
+			Welcome to Orpheus Admin Panel Demo, this SB Admin Theme is designed by <a class="alert-link" href="http://startbootstrap.com">Start Bootstrap</a> and integrated by Florent HAZARD !
+			Feel free to use this plugin and its templates for your admin needs! We are using a few different plugins to handle the dynamic tables and charts, so make sure you check out the necessary
+			documentation links provided.<br/>
+			All accesses to the admin's pages are restricted by permissions, this is why you could not access to all pages with your member role.
 		</div>
 	</div>
 </div><!-- /.row -->

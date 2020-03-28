@@ -30,30 +30,33 @@ $TOPBAR_CONTENTS	= '
 // debug('POST', POST());
 try {
 	if( isPOST('submitCreatePost') ) {
-		if( !User::is_login() ) { User::throwException('userRequired'); }
-		$post	= POST('newpost');
-// 		$post['user_id']	= $USER->id();
-// 		$post['user_name']	= $USER->fullname;
-// 		$post['published']	= 1;
-// 		$post['post_date']	= sqlDatetime();
-		$post['parent_id']	= 0;// Use addAnswer() to add an answer
-		$post['thread_type']	= ForumPost::THREADTYPE_STANDARD;
-// 		text('ForumPost domain is : '.ForumPost);
+		if( !User::is_login() ) {
+			User::throwException('userRequired');
+		}
+		$post = POST('newpost');
+		// 		$post['user_id']	= $USER->id();
+		// 		$post['user_name']	= $USER->fullname;
+		// 		$post['published']	= 1;
+		// 		$post['post_date']	= sqlDatetime();
+		$post['parent_id'] = 0;// Use addAnswer() to add an answer
+		$post['thread_type'] = ForumPost::THREADTYPE_STANDARD;
+		// 		text('ForumPost domain is : '.ForumPost);
 		ForumPost::make($post);
 		reportSuccess('successCreateThread');
-	} else
-	if( $ALLOW_EDITOR ) {
+	} elseif( $ALLOW_EDITOR ) {
 		if( isPOST('submitCreateForum') ) {
-// 			debug('Create forum');
-			$forumData	= POST('newforum');
-// 			debug('$forumData', $forumData);
-			if( empty($forumData['parent_id']) ) { $forumData['parent_id'] = 0; };
-			$forumData['position']	= Forum::getMaxPosition($forumData['parent_id'])+1;
-			$forumData['user_id']	= $USER->id();
-			$forumData['user_name']	= $USER->fullname;
-			$forumData['published']	= true;
-// 			debug('$forumData', $forumData);
-			Forum::create($forumData, array('parent_id', 'user_id', 'user_name', 'published', 'name', 'position'));
+			// 			debug('Create forum');
+			$forumData = POST('newforum');
+			// 			debug('$forumData', $forumData);
+			if( empty($forumData['parent_id']) ) {
+				$forumData['parent_id'] = 0;
+			};
+			$forumData['position'] = Forum::getMaxPosition($forumData['parent_id']) + 1;
+			$forumData['user_id'] = $USER->id();
+			$forumData['user_name'] = $USER->fullname;
+			$forumData['published'] = true;
+			// 			debug('$forumData', $forumData);
+			Forum::create($forumData, ['parent_id', 'user_id', 'user_name', 'published', 'name', 'position']);
 			reportSuccess('successCreate', Forum::getDomain());
 		}
 	}

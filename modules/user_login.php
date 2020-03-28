@@ -9,9 +9,9 @@ try {
 	if( isPOST('submitLogin') ) {
 		User::userLogin($_POST['login']);
 		reportSuccess('You\'re successfully logged in.');
-	} else if( isPOST('submitRegister') ) {
-// 		$formregister = POST('register');
-		$user	= User::createAndGet(POST('register'), array('name', 'fullname', 'email', 'email_public', 'password'));
+	} elseif( isPOST('submitRegister') ) {
+		// 		$formregister = POST('register');
+		$user = User::createAndGet(POST('register'), ['name', 'fullname', 'email', 'email_public', 'password']);
 		sendAdminRegistrationEmail($user);
 		unset($user);
 		reportSuccess('You\'re successfully registered.');

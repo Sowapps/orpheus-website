@@ -1,4 +1,5 @@
 <?php
+
 use Orpheus\Rendering\Rendering;
 
 /** The Twig rendering class
@@ -84,7 +85,7 @@ class TwigRendering extends Rendering {
 		Gets the path to the current theme.
 	*/
 	public static function getThemePath() {
-		return ACCESSPATH.THEMESDIR.static::$theme.'/';
+		return ACCESSPATH . THEMES_FOLDER . static::$theme . '/';
 	}
 	
 	/** Get the absolute theme path.

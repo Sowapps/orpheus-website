@@ -20,8 +20,8 @@ trait Cast {
 			return false;
 		}
 		if( empty($input) ) {
-			$input =  array();
-		} else if( is_object($input) ) {
+			$input = [];
+		} elseif( is_object($input) ) {
 			$input = (array) $input;
 		}
 		foreach( $input as $prop => $value ) {

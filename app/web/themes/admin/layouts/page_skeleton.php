@@ -65,9 +65,9 @@ $invertedStyle = $Controller->getOption('invertedStyle', 1);
 	}
 	?>
 	
-	<link rel="stylesheet" href="<?php echo HTMLRendering::getCSSURL(); ?>sb-admin.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="<?php echo HTMLRendering::getCssUrl(); ?>sb-admin.css" type="text/css" media="screen"/>
 	<link rel="stylesheet" href="<?php echo STATIC_URL . 'style/base.css'; ?>" type="text/css" media="screen"/>
-	<link rel="stylesheet" href="<?php echo HTMLRendering::getCSSURL(); ?>style.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="<?php echo HTMLRendering::getCssUrl(); ?>style.css" type="text/css" media="screen"/>
 	<?php
 	foreach( $this->listCSSURLs() as $url ) {
 		echo '
@@ -182,8 +182,8 @@ foreach( $this->listJSURLs(HTMLRendering::LINK_TYPE_PLUGIN) as $url ) {
 
 <script src="<?php echo JSURL; ?>orpheus.js"></script>
 <script src="<?php echo JSURL; ?>script.js"></script>
-<script src="<?php echo HTMLRendering::getJSURL(); ?>orpheus.js"></script>
-<script src="<?php echo HTMLRendering::getJSURL(); ?>script.js"></script>
+<script src="<?php echo HTMLRendering::getJsUrl(); ?>orpheus.js"></script>
+<script src="<?php echo HTMLRendering::getJsUrl(); ?>script.js"></script>
 
 <?php
 foreach( $this->listJSURLs() as $url ) {

@@ -30,14 +30,17 @@ try {
 // debug('POST', POST());
 try {
 	if( isPOST('submitAnswer') ) {
-		if( !User::is_login() ) { User::throwException('userRequired'); }
-		$sPost	= POST('postid') ? ForumPost::load(POST('postid')) : $Post;
+		if( !User::is_login() ) {
+			User::throwException('userRequired');
+		}
+		$sPost = POST('postid') ? ForumPost::load(POST('postid')) : $Post;
 		$sPost->addAnswer(POST('answer'));
 		reportSuccess('successAddAnswer');
-	} else
-	if( isPOST('submitDelete') ) {
-		$sPost	= ForumPost::load(POST('submitDelete'));
-		if( empty($USER) || !$USER->canForumPostDelete(CRAC_CONTEXT_RESOURCE, $post) ) { User::throwException('forbiddenOperation'); }
+	} elseif( isPOST('submitDelete') ) {
+		$sPost = ForumPost::load(POST('submitDelete'));
+		if( empty($USER) || !$USER->canForumPostDelete(CRAC_CONTEXT_RESOURCE, $post) ) {
+			User::throwException('forbiddenOperation');
+		}
 		$sPost->remove();
 	}
 } catch( UserException $e ) {

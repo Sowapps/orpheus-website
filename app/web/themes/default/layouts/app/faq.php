@@ -1,7 +1,8 @@
 <?php
+
 use Orpheus\Rendering\HTMLRendering;
 
-HTMLRendering::addJSFile('base64');
+HTMLRendering::addJsFile('base64');
 HTMLRendering::useLayout('page_skeleton');
 ?>
 <h1>Frequently Asked Questions</h1>

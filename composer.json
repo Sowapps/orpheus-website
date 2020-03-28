@@ -23,6 +23,11 @@
 	"ext-pdo": "*",
 	"ext-json": "*"
   },
+  "autoload": {
+	"psr-4": {
+	  "": "src/"
+	}
+  },
   "authors": [
 	{
 	  "name": "Florent HAZARD",

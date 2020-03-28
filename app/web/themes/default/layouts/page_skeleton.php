@@ -50,7 +50,7 @@ global $APP_LANG;
 	?>
 	
 	<link rel="stylesheet" href="<?php echo STATIC_URL; ?>style/base.css" type="text/css" media="screen"/>
-	<link rel="stylesheet" href="<?php echo HTMLRendering::getCSSURL(); ?>style.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="<?php echo HTMLRendering::getCssUrl(); ?>style.css" type="text/css" media="screen"/>
 	<?php
 	foreach( $this->listCSSURLs() as $url ) {
 		echo '

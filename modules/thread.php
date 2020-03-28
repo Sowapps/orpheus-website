@@ -10,21 +10,21 @@ try {
 		if( !User::isLogged() ) {
 			User::throwException('forbiddenOperation');
 		}
-		$input	= POST('tm');
-		$input['user_id']	= $USER->id();
-		$input['user_name']	= $USER->fullname;
-		$tm	= ThreadMessage::createAndGet($input, array('content', 'user_id', 'user_name'));
+		$input = POST('tm');
+		$input['user_id'] = $USER->id();
+		$input['user_name'] = $USER->fullname;
+		$tm = ThreadMessage::createAndGet($input, ['content', 'user_id', 'user_name']);
 		sendNewThreadMessageEmail($tm);
 		reportSuccess('successCreate', ThreadMessage::getDomain());
-	} else
-		if( hasPOSTKey('submitDelete', $tmID) ) {
-			if( !$USER_CAN_THREADMESSAGE_MANAGE ) {
-				User::throwException('forbiddenOperation');
-			}
-			$tm	= ThreadMessage::load($tmID);
-			$tm->remove(); unset($tm);
-			reportSuccess('successDelete', ThreadMessage::getDomain());
+	} elseif( hasPOSTKey('submitDelete', $tmID) ) {
+		if( !$USER_CAN_THREADMESSAGE_MANAGE ) {
+			User::throwException('forbiddenOperation');
 		}
+		$tm = ThreadMessage::load($tmID);
+		$tm->remove();
+		unset($tm);
+		reportSuccess('successDelete', ThreadMessage::getDomain());
+	}
 } catch(UserException $e) {
 	reportError($e);
 }
