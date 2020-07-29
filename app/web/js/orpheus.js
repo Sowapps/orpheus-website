@@ -31,34 +31,26 @@ function ConfirmDialog(title, message, submitName, submitValue) {
 	this.submitName = submitName || "submitValidate";
 	this.submitValue = submitValue || 1;
 	var widget = this;
-
+	
 	this.previous = null;
 	this.imageLink = null;
 	
 	this.open = function() {
 		widget.previous && widget.previous.hide();
-//		if( widget.previous ) {
-//			widget.previous.hide();
-//		}
 		this.dialog.find(".confirm_title").text(this.title);
 		this.dialog.find(".confirm_message").text(this.message);
-//		console.log("widget.imageLink", widget.imageLink);
 		if( this.imageLink ) {
 			this.dialog.find(".image_wrapper").show().find("img").attr("src", this.imageLink);
 		} else {
 			this.dialog.find(".image_wrapper").hide();
 		}
-		var validateSubmit = this.dialog.find(".confirm_validate")
+		this.dialog.find(".confirm_validate")
 			.attr("name", this.submitName).val(this.submitValue);
-//		this.dialog.find(".confirm_cancel").unbind("click").click(function() {
-//			this.close();
-//		});
 		
 		this.dialog.modal('show');
 	}
 	
 	this.dialog.on("hidden.bs.modal", function() {
-//		console.log("Hidden confirm modal", widget.previous);
 		widget.previous && widget.previous.show();
 	});
 	
@@ -66,16 +58,17 @@ function ConfirmDialog(title, message, submitName, submitValue) {
 		return this.dialog.find("form");
 	}
 	
-	this.validate = function() {
+	this.validate = function () {
 		this.dialog.modal('hide');
 	}
 	
-	this.close = function() {
+	this.close = function () {
 		this.dialog.modal('hide');
 	}
 	
-};
-$(function() {
+}
+
+$(function () {
 	ConfirmDialog.dialogTemplate = '\
 	<div id="OrpheusConfirmDialog" class="modal fade">\
 	<div class="modal-dialog">\
@@ -115,17 +108,10 @@ $(function() {
 		_.data("confirmdialog", confirmDialog);
 		_.click(function() {
 			confirmDialog.open();
+			return false;
 		});
 	});
-//	Dialog.confirm(function() {
-//	}, "Do you confirm what you are doing ?", "This require your attention and you should take care about what we are asking for.");
 });
-
-function debug(t) {
-	for( var i in arguments ) {
-		console.log(arguments[i]);
-	}
-}
 
 function clone(obj) {
 	var target = {};
@@ -198,7 +184,7 @@ function notJquery(v) {
 }
 
 function daysInMonth(year, month) {
-    return new Date(year, month, 0).getDate();
+	return new Date(year, month, 0).getDate();
 }
 
 function str2date(val) {
@@ -230,14 +216,14 @@ function checkFlag(value, reference) {
 function number_format(number, decimals, dec_point, thousands_sep) {
 	number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
 	var n = !isFinite(+number) ? 0 : +number,
-	prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
-	sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
-	dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+		prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+		sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+		dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
 //	s = '',
-	toFixedFix = function (n, prec) {
-		var k = Math.pow(10, prec);
-		return '' + Math.floor(n * k) / k;
-	};
+		toFixedFix = function (n, prec) {
+			var k = Math.pow(10, prec);
+			return '' + Math.floor(n * k) / k;
+		};
 	// Fix for IE parseFloat(0.55).toFixed(0) = 0;
 	s = toFixedFix(n, prec).split('.');
 //	s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
@@ -294,8 +280,8 @@ function PageScrollTo(sel, paddingTop) {
 	var offset = $(sel).offset();
 	if( offset && offset.top ) {
 		var to = offset.top - paddingTop;
-	 	$("html").scrollTop(to);// Firefox 
-	 	$("body").animate({scrollTop: to}, 0);// Chrome, Safari 
+		$("html").scrollTop(to);// Firefox
+		$("body").animate({scrollTop: to}, 0);// Chrome, Safari
 	}
 }
 
@@ -416,7 +402,7 @@ if( $ ) {
 		});
 		return data;
 	};
-
+	
 	/**
 	 * Reset a form
 	 */
@@ -433,7 +419,7 @@ if( $ ) {
 			form.find(":input[type='hidden']").removeAttr("value");
 		});
 	};
-	
+
 //	$(".submittext").click(function() {
 //	console.log("Declare click listener to "+$(":button[data-submittext]").length);
 	$(":button[data-submittext]").each(function() {
@@ -467,12 +453,9 @@ if( $ ) {
 	
 	$("input[data-preview]").change(function() {
 		var input = $(this);
-//	 	console.log('change', this.files[0]);
 		var oFReader = new FileReader();
 		oFReader.readAsDataURL(this.files[0]);
 		oFReader.onload	= function(oFREvent) {
-//	 		console.log('oFReader.onload', oFREvent.target.result);
-			//document.getElementById("uploadPreview")
 			$(input.data('preview')).attr('src', oFREvent.target.result);
 		};
 	});
@@ -505,141 +488,141 @@ function centerInViewport(el) {
 	el = $(el);
 	debug(el);
 	var viewportWidth = jQuery(window).width(),
-	viewportHeight = jQuery(window).height(),
-	elWidth = el.width(),
-	elHeight = el.height(),
-	elOffset = el.offset();
+		viewportHeight = jQuery(window).height(),
+		elWidth = el.width(),
+		elHeight = el.height(),
+		elOffset = el.offset();
 	jQuery(window)
-	.scrollTop(elOffset.top + (elHeight/2) - (viewportHeight/2))
-	.scrollLeft(elOffset.left + (elWidth/2) - (viewportWidth/2));
+		.scrollTop(elOffset.top + (elHeight / 2) - (viewportHeight / 2))
+		.scrollLeft(elOffset.left + (elWidth / 2) - (viewportWidth / 2));
 }
 
 function moveOnMouse(el, e) {
 	el = $(el);
 	var elHeight = el.height(),
-	elOffset = el.offset();
-	var scrollTop = jQuery(window).scrollTop()-((e.pageY - (elHeight/2)) - elOffset.top);
+		elOffset = el.offset();
+	var scrollTop = jQuery(window).scrollTop() - ((e.pageY - (elHeight / 2)) - elOffset.top);
 	$(window).scrollTop(scrollTop);
 }
 
 if( typeof KeyEvent == "undefined" ) {
-    var KeyEvent = {
-        DOM_VK_CANCEL: 3,
-        DOM_VK_HELP: 6,
-        DOM_VK_BACK_SPACE: 8,
-        DOM_VK_TAB: 9,
-        DOM_VK_CLEAR: 12,
-        DOM_VK_RETURN: 13,
-        DOM_VK_ENTER: 14,
-        DOM_VK_SHIFT: 16,
-        DOM_VK_CONTROL: 17,
-        DOM_VK_ALT: 18,
-        DOM_VK_PAUSE: 19,
-        DOM_VK_CAPS_LOCK: 20,
-        DOM_VK_ESCAPE: 27,
-        DOM_VK_SPACE: 32,
-        DOM_VK_PAGE_UP: 33,
-        DOM_VK_PAGE_DOWN: 34,
-        DOM_VK_END: 35,
-        DOM_VK_HOME: 36,
-        DOM_VK_LEFT: 37,
-        DOM_VK_UP: 38,
-        DOM_VK_RIGHT: 39,
-        DOM_VK_DOWN: 40,
-        DOM_VK_PRINTSCREEN: 44,
-        DOM_VK_INSERT: 45,
-        DOM_VK_DELETE: 46,
-        DOM_VK_0: 48,
-        DOM_VK_1: 49,
-        DOM_VK_2: 50,
-        DOM_VK_3: 51,
-        DOM_VK_4: 52,
-        DOM_VK_5: 53,
-        DOM_VK_6: 54,
-        DOM_VK_7: 55,
-        DOM_VK_8: 56,
-        DOM_VK_9: 57,
-        DOM_VK_SEMICOLON: 59,
-        DOM_VK_EQUALS: 61,
-        DOM_VK_A: 65,
-        DOM_VK_B: 66,
-        DOM_VK_C: 67,
-        DOM_VK_D: 68,
-        DOM_VK_E: 69,
-        DOM_VK_F: 70,
-        DOM_VK_G: 71,
-        DOM_VK_H: 72,
-        DOM_VK_I: 73,
-        DOM_VK_J: 74,
-        DOM_VK_K: 75,
-        DOM_VK_L: 76,
-        DOM_VK_M: 77,
-        DOM_VK_N: 78,
-        DOM_VK_O: 79,
-        DOM_VK_P: 80,
-        DOM_VK_Q: 81,
-        DOM_VK_R: 82,
-        DOM_VK_S: 83,
-        DOM_VK_T: 84,
-        DOM_VK_U: 85,
-        DOM_VK_V: 86,
-        DOM_VK_W: 87,
-        DOM_VK_X: 88,
-        DOM_VK_Y: 89,
-        DOM_VK_Z: 90,
-        DOM_VK_CONTEXT_MENU: 93,
-        DOM_VK_NUMPAD0: 96,
-        DOM_VK_NUMPAD1: 97,
-        DOM_VK_NUMPAD2: 98,
-        DOM_VK_NUMPAD3: 99,
-        DOM_VK_NUMPAD4: 100,
-        DOM_VK_NUMPAD5: 101,
-        DOM_VK_NUMPAD6: 102,
-        DOM_VK_NUMPAD7: 103,
-        DOM_VK_NUMPAD8: 104,
-        DOM_VK_NUMPAD9: 105,
-        DOM_VK_MULTIPLY: 106,
-        DOM_VK_ADD: 107,
-        DOM_VK_SEPARATOR: 108,
-        DOM_VK_SUBTRACT: 109,
-        DOM_VK_DECIMAL: 110,
-        DOM_VK_DIVIDE: 111,
-        DOM_VK_F1: 112,
-        DOM_VK_F2: 113,
-        DOM_VK_F3: 114,
-        DOM_VK_F4: 115,
-        DOM_VK_F5: 116,
-        DOM_VK_F6: 117,
-        DOM_VK_F7: 118,
-        DOM_VK_F8: 119,
-        DOM_VK_F9: 120,
-        DOM_VK_F10: 121,
-        DOM_VK_F11: 122,
-        DOM_VK_F12: 123,
-        DOM_VK_F13: 124,
-        DOM_VK_F14: 125,
-        DOM_VK_F15: 126,
-        DOM_VK_F16: 127,
-        DOM_VK_F17: 128,
-        DOM_VK_F18: 129,
-        DOM_VK_F19: 130,
-        DOM_VK_F20: 131,
-        DOM_VK_F21: 132,
-        DOM_VK_F22: 133,
-        DOM_VK_F23: 134,
-        DOM_VK_F24: 135,
-        DOM_VK_NUM_LOCK: 144,
-        DOM_VK_SCROLL_LOCK: 145,
-        DOM_VK_COMMA: 188,
-        DOM_VK_PERIOD: 190,
-        DOM_VK_SLASH: 191,
-        DOM_VK_BACK_QUOTE: 192,
-        DOM_VK_OPEN_BRACKET: 219,
-        DOM_VK_BACK_SLASH: 220,
-        DOM_VK_CLOSE_BRACKET: 221,
-        DOM_VK_QUOTE: 222,
-        DOM_VK_META: 224
-    };
+	var KeyEvent = {
+		DOM_VK_CANCEL: 3,
+		DOM_VK_HELP: 6,
+		DOM_VK_BACK_SPACE: 8,
+		DOM_VK_TAB: 9,
+		DOM_VK_CLEAR: 12,
+		DOM_VK_RETURN: 13,
+		DOM_VK_ENTER: 14,
+		DOM_VK_SHIFT: 16,
+		DOM_VK_CONTROL: 17,
+		DOM_VK_ALT: 18,
+		DOM_VK_PAUSE: 19,
+		DOM_VK_CAPS_LOCK: 20,
+		DOM_VK_ESCAPE: 27,
+		DOM_VK_SPACE: 32,
+		DOM_VK_PAGE_UP: 33,
+		DOM_VK_PAGE_DOWN: 34,
+		DOM_VK_END: 35,
+		DOM_VK_HOME: 36,
+		DOM_VK_LEFT: 37,
+		DOM_VK_UP: 38,
+		DOM_VK_RIGHT: 39,
+		DOM_VK_DOWN: 40,
+		DOM_VK_PRINTSCREEN: 44,
+		DOM_VK_INSERT: 45,
+		DOM_VK_DELETE: 46,
+		DOM_VK_0: 48,
+		DOM_VK_1: 49,
+		DOM_VK_2: 50,
+		DOM_VK_3: 51,
+		DOM_VK_4: 52,
+		DOM_VK_5: 53,
+		DOM_VK_6: 54,
+		DOM_VK_7: 55,
+		DOM_VK_8: 56,
+		DOM_VK_9: 57,
+		DOM_VK_SEMICOLON: 59,
+		DOM_VK_EQUALS: 61,
+		DOM_VK_A: 65,
+		DOM_VK_B: 66,
+		DOM_VK_C: 67,
+		DOM_VK_D: 68,
+		DOM_VK_E: 69,
+		DOM_VK_F: 70,
+		DOM_VK_G: 71,
+		DOM_VK_H: 72,
+		DOM_VK_I: 73,
+		DOM_VK_J: 74,
+		DOM_VK_K: 75,
+		DOM_VK_L: 76,
+		DOM_VK_M: 77,
+		DOM_VK_N: 78,
+		DOM_VK_O: 79,
+		DOM_VK_P: 80,
+		DOM_VK_Q: 81,
+		DOM_VK_R: 82,
+		DOM_VK_S: 83,
+		DOM_VK_T: 84,
+		DOM_VK_U: 85,
+		DOM_VK_V: 86,
+		DOM_VK_W: 87,
+		DOM_VK_X: 88,
+		DOM_VK_Y: 89,
+		DOM_VK_Z: 90,
+		DOM_VK_CONTEXT_MENU: 93,
+		DOM_VK_NUMPAD0: 96,
+		DOM_VK_NUMPAD1: 97,
+		DOM_VK_NUMPAD2: 98,
+		DOM_VK_NUMPAD3: 99,
+		DOM_VK_NUMPAD4: 100,
+		DOM_VK_NUMPAD5: 101,
+		DOM_VK_NUMPAD6: 102,
+		DOM_VK_NUMPAD7: 103,
+		DOM_VK_NUMPAD8: 104,
+		DOM_VK_NUMPAD9: 105,
+		DOM_VK_MULTIPLY: 106,
+		DOM_VK_ADD: 107,
+		DOM_VK_SEPARATOR: 108,
+		DOM_VK_SUBTRACT: 109,
+		DOM_VK_DECIMAL: 110,
+		DOM_VK_DIVIDE: 111,
+		DOM_VK_F1: 112,
+		DOM_VK_F2: 113,
+		DOM_VK_F3: 114,
+		DOM_VK_F4: 115,
+		DOM_VK_F5: 116,
+		DOM_VK_F6: 117,
+		DOM_VK_F7: 118,
+		DOM_VK_F8: 119,
+		DOM_VK_F9: 120,
+		DOM_VK_F10: 121,
+		DOM_VK_F11: 122,
+		DOM_VK_F12: 123,
+		DOM_VK_F13: 124,
+		DOM_VK_F14: 125,
+		DOM_VK_F15: 126,
+		DOM_VK_F16: 127,
+		DOM_VK_F17: 128,
+		DOM_VK_F18: 129,
+		DOM_VK_F19: 130,
+		DOM_VK_F20: 131,
+		DOM_VK_F21: 132,
+		DOM_VK_F22: 133,
+		DOM_VK_F23: 134,
+		DOM_VK_F24: 135,
+		DOM_VK_NUM_LOCK: 144,
+		DOM_VK_SCROLL_LOCK: 145,
+		DOM_VK_COMMA: 188,
+		DOM_VK_PERIOD: 190,
+		DOM_VK_SLASH: 191,
+		DOM_VK_BACK_QUOTE: 192,
+		DOM_VK_OPEN_BRACKET: 219,
+		DOM_VK_BACK_SLASH: 220,
+		DOM_VK_CLOSE_BRACKET: 221,
+		DOM_VK_QUOTE: 222,
+		DOM_VK_META: 224
+	};
 }
 var Modifier = {
 	CONTROL : 1,
@@ -657,8 +640,8 @@ var escapeHTML;
 		return $('<p></p>').text(str).html();
 	}
 	
-	$.expr[':'].parents = function(a,i,m){
-	    return $(a).parents(m[3]).length < 1;
+	$.expr[':'].parents = function(a,i,m) {
+		return $(a).parents(m[3]).length < 1;
 	};
 	
 	$.fn.disableInputs = function() {
@@ -676,14 +659,14 @@ var escapeHTML;
 	$.fn.setFieldsWritable = function() {
 		return $(this).find(':input').prop("readonly", false);
 	};
-
+	
 	$.fn.disableFields = function() {
 		return $(this).find(':input').prop("disabled", true);
 	};
 	$.fn.enableFields = function() {
 		return $(this).find(':input').prop("disabled", false);
 	};
-
+	
 	/*
 	 * This function run completable if cond is true and pass it complete to set the complete callback, but if cond is false, it just calls the complete callback immediatly
 	 */
@@ -697,23 +680,6 @@ var escapeHTML;
 	};
 	$.cond = $.fn.cond;
 	
-	/*
-	$.each([["show", "shown", function() { return $(this).is(":visible"); }], ["hide", "hidden", function() { return $(this).is(":hidden"); }]], function (i, ev) {
-		var fun	= $.fn[ev[0]];
-		$.fn[ev[0]]	= function () {
-			var r	= this.trigger(ev[0]);
-			if( r === false ) { return r; }
-			r		= fun.apply(this, arguments);
-			this.trigger(ev[1]);
-			var children	= this.find("*");
-			if( ev.length>2 ) {
-				children.filter(ev[2]);
-			}
-			children.trigger(ev[1]);
-			return r;
-		};
-	});
-	*/
 	$.fn.showIf = function(cond) {
 		cond ? $(this).show() : $(this).hide();
 	};
@@ -723,7 +689,6 @@ var escapeHTML;
 		if( $(this).is(":visible") ) {
 			this.callback	= callback;
 			this.callback();
-//			$(this).trigger("shown");
 		}
 	};
 	// Scroll to element
@@ -732,51 +697,47 @@ var escapeHTML;
 			option = "center";
 		}
 		var el = $(this).first();
-		if( !el.length ) { return; }
+		if( !el.length ) {
+			return;
+		}
 		var viewportWidth = $(window).width(), viewportHeight = $(window).height(),
 			elWidth = $(el).width(), elHeight = $(el).height(), elOffset = $(el).offset();
-		if( option == "top" ) {
-//			debug("Scroll top to: "+(elOffset.top + elHeight/2 - 100));
-			$(window).scrollTop(elOffset.top + elHeight/2 - 100);
+		if( option === "top" ) {
+			$(window).scrollTop(elOffset.top + elHeight / 2 - 100);
 		} else {
 			// Default is center
-			$(window).scrollTop(elOffset.top + elHeight/2 - viewportHeight/2);
+			$(window).scrollTop(elOffset.top + elHeight / 2 - viewportHeight / 2);
 		}
-		$(window).scrollLeft(elOffset.left + elWidth/2 - viewportWidth/2);
+		$(window).scrollLeft(elOffset.left + elWidth / 2 - viewportWidth / 2);
 	};
 	
 	// Apply on load and on change
-	$.fn.watch	= function(cb, sel) {
-//		console.log("Starting watch with selector: "+sel);
+	$.fn.watch = function (cb, sel) {
 		sel ? $(this).on("change", sel, cb) : $(this).change(cb);
-		$(this).each(function() {
-			this.cb	= cb;
+		$(this).each(function () {
+			this.cb = cb;
 			this.cb();
 		});
 	};
 	
-	$.fn.pressEnter = function(cb) {
-		return $(this).keydown(function(e) {
-			if( e.which==KeyEvent.DOM_VK_RETURN ) {
+	$.fn.pressEnter = function (cb) {
+		return $(this).keydown(function (e) {
+			if( e.which === KeyEvent.DOM_VK_RETURN ) {
 				e.preventDefault();
-				this.callback	= cb;
+				this.callback = cb;
 				return this.callback(e);
 			}
 		});
 	};
 	
-	$.fn.pressKey = function(key, modifiers, cb) {
+	$.fn.pressKey = function (key, modifiers, cb) {
 		if( !cb ) {
 			cb = modifiers;
 			modifiers = 0;
 		}
-//		console.log("Create pressKey bind with modifiers "+modifiers);
 		return $(this).keydown(function(e) {
-//			console.log("press key => "+e.key+", "+e.which+" against "+key, e);
 			if( e.which === key ) {
-//				console.log("Matching key");
 				if( modifiers ) {
-//					console.log("bintest(modifiers, Modifier.CONTROL) ", bintest(modifiers, Modifier.CONTROL));
 					if( bintest(modifiers, Modifier.CONTROL) && !e.ctrlKey ) {
 						return;
 					}
@@ -798,10 +759,9 @@ var escapeHTML;
 	};
 	
 	$.fn.outerHTML = function() {
-//		console.log("outerHTML - this", this);
 		return $('<div />').append(this.eq(0).clone()).html();
 	};
-
+	
 	$(function() {
 		$("input.autocomplete.auto").shown(function() {
 			if( $(this).data("autocomplete-auto") ) { return; }
@@ -826,4 +786,3 @@ var escapeHTML;
 		});
 	});
 })(jQuery);
-//};

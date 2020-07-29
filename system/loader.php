@@ -283,7 +283,7 @@ function findFileInTree($filename, $from = null) {
 	return null;
 }
 
-function displayRawException(Exception $Exception) {
+function displayRawException(Throwable $Exception) {
 	?>
 	<h3><?php echo get_class($Exception); ?></h3>
 	<blockquote class="exception_message">

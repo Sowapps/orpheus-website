@@ -12,11 +12,11 @@ use Orpheus\Publisher\PasswordGenerator;
 use Orpheus\Publisher\PermanentObject\PermanentObject;
 
 /**
- * The File class to save file's informations in database
+ * The File class to save file's information in database
  *
  * This class is really useful to save file's information in database.
  * It abstracts uploads and downloads.
- * 
+ *
  * @property string $create_date
  * @property string $create_ip
  * @property integer $create_user_id
