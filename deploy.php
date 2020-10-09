@@ -56,7 +56,6 @@ $Output = null;
 try {
 	// User Action Error
 
-	// var_dump($_POST);echo '<br>';
 	if( isset($_POST['submitStartDeployment']) ) {
 		$Output = 'Start to deploy<br>';
 		putenv('COMPOSER_HOME="'.PROJECT_PATH.'"');
