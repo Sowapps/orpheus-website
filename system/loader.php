@@ -675,45 +675,28 @@ function text($message = '', $html = true) {
 }
 
 /**
- * @param $s
- * @param int $d
- * @deprecated No more used
+ * @param string $text
+ * @param mixed $data
+ * @deprecated Don't use it
  */
-function debug($s, $d = -1) {
-	if( $d !== -1 ) {
-		$s .= ': ' . htmlSecret($d);
+function debug($text, $data = -1) {
+	if( $data !== -1 ) {
+		$text .= ': ' . toHtml($data);
 	}
-	text($s);
-}
-
-/**
- * @param $message
- * @return string
- * @deprecated No more used
- */
-function htmlSecret($message) {
-	if( $message === null ) {
-		$message = '{NULL}';
-	} elseif( $message === false ) {
-		$message = '{FALSE}';
-	} elseif( $message === true ) {
-		$message = '{TRUE}';
-	} elseif( !is_scalar($message) ) {
-		$message = '<pre>' . print_r($message, 1) . '</pre>';
-	}
-	return '<button type="button" onclick="this.nextSibling.style.display = this.nextSibling.style.display === \'none\' ? \'block\' : \'none\'; return 0;">Show</button><div style="display: none;">' . $message . '</div>';
+	text($text);
 }
 
 /** Limits the length of a string
  *
- * @param string $string The string to limit length.
- * @param int $max The maximum length of the string.
- * @param int $strend A string to append to the shortened string.
- * @return string The shortened string.
  * Limits the length of a string and append $strend.
  * This function do it cleanly, it tries to cut before a word.
+ *
+ * @param string $string The string to limit length.
+ * @param int $max The maximum length of the string.
+ * @param string $end A string to append to the shortened string.
+ * @return string The shortened string.
  */
-function str_limit($string, $max, $strend = '...') {
+function str_limit(string $string, int $max, string $end = '...') {
 	$max = (int) $max;
 	if( $max <= 0 ) {
 		return '';
@@ -728,5 +711,5 @@ function str_limit($string, $max, $strend = '...') {
 			$subStr = substr($string, 0, $lSpaceInd);
 		}
 	}
-	return $subStr . $strend;
+	return $subStr . $end;
 }
