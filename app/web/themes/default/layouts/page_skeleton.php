@@ -72,7 +72,7 @@ global $APP_LANG;
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?php echo SITEROOT; ?>">
+			<a class="navbar-brand" href="<?php echo WEB_ROOT; ?>">
 				<img alt="" src="<?php echo IMAGESURL . 'logo-32.png'; ?>">
 				<span><?php echo t('app_name'); ?></span>
 			</a>

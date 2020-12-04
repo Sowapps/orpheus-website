@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "orpheus/orpheus-cache",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-cache.git",
-                "reference": "ffe57a1e3600b93f5b8e58bb901cdf32d789791e"
+                "reference": "041217b17d4942c7edf28bd482607b4d4c04c1d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-cache/zipball/ffe57a1e3600b93f5b8e58bb901cdf32d789791e",
-                "reference": "ffe57a1e3600b93f5b8e58bb901cdf32d789791e",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-cache/zipball/041217b17d4942c7edf28bd482607b4d4c04c1d9",
+                "reference": "041217b17d4942c7edf28bd482607b4d4c04c1d9",
                 "shasum": ""
             },
             "type": "library",
@@ -45,20 +45,20 @@
                 "filesystem",
                 "orpheus"
             ],
-            "time": "2020-02-13T10:11:20+00:00"
+            "time": "2020-10-09T14:41:15+00:00"
         },
         {
             "name": "orpheus/orpheus-core",
-            "version": "v1.4.2",
+            "version": "v1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-core.git",
-                "reference": "a0e80b61e9399a43e6a23825210796a324ab02d0"
+                "reference": "dbaedcc9660ae6c42f722398a20684b347f957a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-core/zipball/a0e80b61e9399a43e6a23825210796a324ab02d0",
-                "reference": "a0e80b61e9399a43e6a23825210796a324ab02d0",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-core/zipball/dbaedcc9660ae6c42f722398a20684b347f957a7",
+                "reference": "dbaedcc9660ae6c42f722398a20684b347f957a7",
                 "shasum": ""
             },
             "require": {
@@ -90,20 +90,20 @@
                 "core",
                 "orpheus"
             ],
-            "time": "2020-04-01T12:56:24+00:00"
+            "time": "2020-10-09T14:41:17+00:00"
         },
         {
             "name": "orpheus/orpheus-entitydescriptor",
-            "version": "v1.7.1",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-entitydescriptor.git",
-                "reference": "a0f427d13a91487eb5070deb7040f3cd282c1b58"
+                "reference": "823bf9827a32a335a80dc8e5ba63e233a4ac9c6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-entitydescriptor/zipball/a0f427d13a91487eb5070deb7040f3cd282c1b58",
-                "reference": "a0f427d13a91487eb5070deb7040f3cd282c1b58",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-entitydescriptor/zipball/823bf9827a32a335a80dc8e5ba63e233a4ac9c6b",
+                "reference": "823bf9827a32a335a80dc8e5ba63e233a4ac9c6b",
                 "shasum": ""
             },
             "require": {
@@ -146,20 +146,20 @@
                 "orpheus",
                 "persistent"
             ],
-            "time": "2020-07-29T08:13:47+00:00"
+            "time": "2020-10-09T13:40:52+00:00"
         },
         {
             "name": "orpheus/orpheus-form",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-form.git",
-                "reference": "a672321b111209eb852222ed22425fa843ca94e6"
+                "reference": "5c36602183d05fd10f9cda34589edaa6c5b1c244"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-form/zipball/a672321b111209eb852222ed22425fa843ca94e6",
-                "reference": "a672321b111209eb852222ed22425fa843ca94e6",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-form/zipball/5c36602183d05fd10f9cda34589edaa6c5b1c244",
+                "reference": "5c36602183d05fd10f9cda34589edaa6c5b1c244",
                 "shasum": ""
             },
             "require": {
@@ -193,20 +193,20 @@
                 "form",
                 "orpheus"
             ],
-            "time": "2020-02-17T13:07:54+00:00"
+            "time": "2020-10-09T14:41:20+00:00"
         },
         {
             "name": "orpheus/orpheus-hook",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-hook.git",
-                "reference": "c5c465e31f2e6c854ac62d75563a5e8fb55aa4ae"
+                "reference": "25319f029a41f19c1e2ef32ccaaee4f9a006dde2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-hook/zipball/c5c465e31f2e6c854ac62d75563a5e8fb55aa4ae",
-                "reference": "c5c465e31f2e6c854ac62d75563a5e8fb55aa4ae",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-hook/zipball/25319f029a41f19c1e2ef32ccaaee4f9a006dde2",
+                "reference": "25319f029a41f19c1e2ef32ccaaee4f9a006dde2",
                 "shasum": ""
             },
             "type": "library",
@@ -237,20 +237,20 @@
                 "event",
                 "orpheus"
             ],
-            "time": "2020-03-10T20:19:19+00:00"
+            "time": "2020-10-09T14:41:19+00:00"
         },
         {
             "name": "orpheus/orpheus-initernationalization",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-initernationalization.git",
-                "reference": "2f51f203242ae3399485d68e337750753523e857"
+                "reference": "155da1c6e7f51c884edaadebafdf70e384da83fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-initernationalization/zipball/2f51f203242ae3399485d68e337750753523e857",
-                "reference": "2f51f203242ae3399485d68e337750753523e857",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-initernationalization/zipball/155da1c6e7f51c884edaadebafdf70e384da83fc",
+                "reference": "155da1c6e7f51c884edaadebafdf70e384da83fc",
                 "shasum": ""
             },
             "type": "library",
@@ -277,20 +277,20 @@
                 "internationalization",
                 "orpheus"
             ],
-            "time": "2020-02-13T10:36:53+00:00"
+            "time": "2020-10-09T14:41:11+00:00"
         },
         {
             "name": "orpheus/orpheus-inputcontroller",
-            "version": "v1.6.0",
+            "version": "v1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-inputcontroller.git",
-                "reference": "c0e3a535d2f617562bd04371cd8ed3b31f206a6f"
+                "reference": "61f9e40617626f809fb80f3216422238e1109e09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-inputcontroller/zipball/c0e3a535d2f617562bd04371cd8ed3b31f206a6f",
-                "reference": "c0e3a535d2f617562bd04371cd8ed3b31f206a6f",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-inputcontroller/zipball/61f9e40617626f809fb80f3216422238e1109e09",
+                "reference": "61f9e40617626f809fb80f3216422238e1109e09",
                 "shasum": ""
             },
             "require": {
@@ -299,7 +299,8 @@
                 "orpheus/orpheus-hook": "1.*",
                 "orpheus/orpheus-rendering": "1.*",
                 "orpheus/orpheus-webtools": "1.*",
-                "orpheus/orpheus-yaml": "1.*"
+                "orpheus/orpheus-yaml": "1.*",
+                "php": "7.4.*"
             },
             "type": "library",
             "autoload": {
@@ -331,20 +332,20 @@
                 "orpheus",
                 "view"
             ],
-            "time": "2020-05-01T08:44:52+00:00"
+            "time": "2020-10-09T14:35:43+00:00"
         },
         {
             "name": "orpheus/orpheus-publisher",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-publisher.git",
-                "reference": "b055461996ea662f298e313bf9263937ff9a2bb6"
+                "reference": "a59bee26263dd86a55da0451c4d4bd144f7864fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-publisher/zipball/b055461996ea662f298e313bf9263937ff9a2bb6",
-                "reference": "b055461996ea662f298e313bf9263937ff9a2bb6",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-publisher/zipball/a59bee26263dd86a55da0451c4d4bd144f7864fe",
+                "reference": "a59bee26263dd86a55da0451c4d4bd144f7864fe",
                 "shasum": ""
             },
             "require": {
@@ -385,20 +386,20 @@
                 "persistent",
                 "publisher"
             ],
-            "time": "2020-04-20T08:34:34+00:00"
+            "time": "2020-10-09T14:41:13+00:00"
         },
         {
             "name": "orpheus/orpheus-rendering",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-rendering.git",
-                "reference": "98ffeaaf18da0743832ea376e43d8432e793c97b"
+                "reference": "833c2774869953a31eb519271f7cc4dc411e8968"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-rendering/zipball/98ffeaaf18da0743832ea376e43d8432e793c97b",
-                "reference": "98ffeaaf18da0743832ea376e43d8432e793c97b",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-rendering/zipball/833c2774869953a31eb519271f7cc4dc411e8968",
+                "reference": "833c2774869953a31eb519271f7cc4dc411e8968",
                 "shasum": ""
             },
             "require": {
@@ -431,7 +432,7 @@
                 "Rendering",
                 "orpheus"
             ],
-            "time": "2020-04-03T17:15:31+00:00"
+            "time": "2020-10-09T14:41:12+00:00"
         },
         {
             "name": "orpheus/orpheus-sqladapter",
@@ -484,16 +485,16 @@
         },
         {
             "name": "orpheus/orpheus-webtools",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-webtools.git",
-                "reference": "61ec7db30b1e348718cbbee040b2a6b1a20ebdbb"
+                "reference": "3e4b37112770a1d54117640feaaba9d51718b9ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-webtools/zipball/61ec7db30b1e348718cbbee040b2a6b1a20ebdbb",
-                "reference": "61ec7db30b1e348718cbbee040b2a6b1a20ebdbb",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-webtools/zipball/3e4b37112770a1d54117640feaaba9d51718b9ee",
+                "reference": "3e4b37112770a1d54117640feaaba9d51718b9ee",
                 "shasum": ""
             },
             "require": {
@@ -530,20 +531,20 @@
                 "tools",
                 "web"
             ],
-            "time": "2020-04-14T08:00:51+00:00"
+            "time": "2020-10-09T14:41:14+00:00"
         },
         {
             "name": "orpheus/orpheus-yaml",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sowapps/orpheus-yaml.git",
-                "reference": "7f5c2ed5379243aa9db588810ac782da53b96ddf"
+                "reference": "073c2baf9a85616b5ac0ff6dae34a441f15446ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sowapps/orpheus-yaml/zipball/7f5c2ed5379243aa9db588810ac782da53b96ddf",
-                "reference": "7f5c2ed5379243aa9db588810ac782da53b96ddf",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-yaml/zipball/073c2baf9a85616b5ac0ff6dae34a441f15446ee",
+                "reference": "073c2baf9a85616b5ac0ff6dae34a441f15446ee",
                 "shasum": ""
             },
             "require": {
@@ -572,7 +573,7 @@
                 "orpheus",
                 "yaml"
             ],
-            "time": "2020-02-17T13:07:54+00:00"
+            "time": "2020-10-09T14:41:21+00:00"
         }
     ],
     "packages-dev": [],
