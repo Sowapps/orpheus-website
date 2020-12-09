@@ -29,8 +29,8 @@ defifn('FILESTOREPATH', STOREPATH . 'files/');
 // defifn('DYNCONFIGPATH',		STOREPATH.'config.json');
 
 // Static medias
-define('THEMES_URL', SITEROOT . THEMES_FOLDER);
-define('STATIC_ASSETS_URL', SITEROOT . 'static/');
+define('THEMES_URL', WEB_ROOT . THEMES_FOLDER);
+define('STATIC_ASSETS_URL', WEB_ROOT . 'static/');
 define('JS_URL', STATIC_ASSETS_URL . 'js/');
 
 // Contact
