@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebResourcesPaths">
+    <contentEntries>
+      <entry url="file://$PROJECT_DIR$/../../../git/orpheus">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/../../../git/orpheus/app/web/static/images" />
+            <path value="file://$PROJECT_DIR$/../../../git/orpheus/app/web/static/style" />
+            <path value="file://$PROJECT_DIR$/../../../git/orpheus/app/web/static/vendor" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+      <entry url="file://$PROJECT_DIR$/../../../git/orpheus-website">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/../../../git/orpheus-website/app/web/static/images" />
+            <path value="file://$PROJECT_DIR$/../../../git/orpheus-website/app/web/static/style" />
+            <path value="file://$PROJECT_DIR$/../../../git/orpheus-website/app/web/static/vendor" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+    </contentEntries>
+  </component>
+</project>
