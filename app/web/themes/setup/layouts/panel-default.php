@@ -1,6 +1,10 @@
 <?php
-/* @var HTMLRendering $this */
-/* @var HTTPController $Controller */
+/**
+ * @var HTMLRendering $rendering
+ * @var string $Content
+ */
+
+use Orpheus\Rendering\HTMLRendering;
 
 if( !isset($title) ) {
 	$title = '';
@@ -13,13 +17,6 @@ if( !isset($footer) ) {
 if( !isset($bodyClass) ) {
 	$bodyClass = '';
 }
-
-// if( !isset($actions) ) {
-// 	$actions	= 0;
-// } else 
-// if( empty($title) ) {
-// 	$title	= '&nbsp;';
-// }
 
 ?>
 <div class="panel panel-default">

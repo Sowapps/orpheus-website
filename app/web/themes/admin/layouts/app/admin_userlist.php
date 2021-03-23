@@ -1,29 +1,28 @@
 <?php
-use Orpheus\Rendering\HTMLRendering;
 
-HTMLRendering::useLayout('page_skeleton');
+$rendering->useLayout('page_skeleton');
 ?>
-<form method="POST">
-
-<div class="row">
-	<div class="col-lg-12">
-		<?php HTMLRendering::useLayout('panel-default'); ?>
+	<form method="POST">
 		
-<?php
-if( $USER_CAN_USER_EDIT ) {
-	?>
-<div class="btn-group mb10" role="group" aria-label="Actions">
-	<button type="button" class="btn btn btn-inverse" data-toggle="modal" data-target="#AddUserDialog">
-		<i class="fa fa-plus"></i> <?php _t('new'); ?>
-	</button>
-</div>
-<?php
+		<div class="row">
+			<div class="col-lg-12">
+				<?php $rendering->useLayout('panel-default'); ?>
+				
+				<?php
+				if( $USER_CAN_USER_EDIT ) {
+					?>
+					<div class="btn-group mb10" role="group" aria-label="Actions">
+						<button type="button" class="btn btn btn-inverse" data-toggle="modal" data-target="#AddUserDialog">
+							<i class="fa fa-plus"></i> <?php _t('new'); ?>
+						</button>
+					</div>
+					<?php
 }
 ?>
-<table class="table table-bordered table-hover tablesorter">
-	<thead>
-		<tr>
-			<th><?php _t('idColumn'); ?> <i class="fa fa-sort" title="<?php _t('sortByID'); ?>"></i></th>
+				<table class="table table-bordered table-hover">
+					<thead>
+					<tr>
+						<th><?php _t('idColumn'); ?> <i class="fa fa-sort" title="<?php _t('sortByID'); ?>"></i></th>
 			<th><?php User::_text('name'); ?> <i class="fa fa-sort" title="<?php User::_text('sortByName'); ?>"></i></th>
 			<th><?php User::_text('email'); ?> <i class="fa fa-sort" title="<?php User::_text('sortByEmail'); ?>"></i></th>
 			<th><?php User::_text('role'); ?> <i class="fa fa-sort" title="<?php User::_text('sortByRole'); ?>"></i></th>
@@ -43,26 +42,26 @@ if( $USER_CAN_USER_EDIT ) {
 			<td>'.
 			( $USER_CAN_USER_EDIT ? '
 				<div class="btn-group" role="group" aria-label="Actions">
-					<a href="'.$user->getAdminLink().'" class="btn btn-success btn-sm editbtn"><i class="fa fa-edit"></i></a>
-				</div>' : '').
-			'</td>
+					<a href="' . $user->getAdminLink() . '" class="btn btn-success btn-sm editbtn"><i class="fa fa-edit"></i></a>
+				</div>' : '') .
+				'</td>
 		</tr>';
 		}
 		?>
 	</tbody>
-</table>
-		
-		<?php HTMLRendering::endCurrentLayout(); ?>
-	</div>
-</div>
-</form>
+				</table>
+				
+				<?php $rendering->endCurrentLayout(); ?>
+			</div>
+		</div>
+	</form>
 
 <?php
 if( $USER_CAN_USER_EDIT ) {
 	?>
-<div id="AddUserDialog" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
+	<div id="AddUserDialog" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
 		<form method="POST">
 		
 			<div class="modal-header">

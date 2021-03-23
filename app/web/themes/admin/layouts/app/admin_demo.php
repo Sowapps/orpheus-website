@@ -6,7 +6,7 @@ HTMLRendering::addJsUrl('https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/ra
 HTMLRendering::addCssUrl('https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css');
 HTMLRendering::addJsUrl('https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js');
 HTMLRendering::addThemeJsFile('admin_demo.js');
-HTMLRendering::useLayout('page_skeleton');
+$rendering->useLayout('page_skeleton');
 ?>
 <div class="row">
 	<div class="col-lg-12">
@@ -307,17 +307,17 @@ HTMLRendering::useLayout('page_skeleton');
 			</div>
 			<div class="panel-body">
 				<div class="table-responsive">
-					<table class="table table-bordered table-hover table-striped tablesorter">
+					<table class="table table-bordered table-hover table-striped">
 						<thead>
-							<tr>
-								<th>Order # <i class="fa fa-sort"></i></th>
-								<th>Order Date <i class="fa fa-sort"></i></th>
-								<th>Order Time <i class="fa fa-sort"></i></th>
-								<th>Amount (USD) <i class="fa fa-sort"></i></th>
-							</tr>
+						<tr>
+							<th>Order # <i class="fa fa-sort"></i></th>
+							<th>Order Date <i class="fa fa-sort"></i></th>
+							<th>Order Time <i class="fa fa-sort"></i></th>
+							<th>Amount (USD) <i class="fa fa-sort"></i></th>
+						</tr>
 						</thead>
 						<tbody>
-							<tr>
+						<tr>
 								<td>3326</td>
 								<td>10/21/2013</td>
 								<td>3:29 PM</td>

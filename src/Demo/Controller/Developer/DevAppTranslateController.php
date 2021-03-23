@@ -38,7 +38,7 @@ class DevAppTranslateController extends DevController {
 		
 		$translatingFilePath = null;
 		
-		$FORM_TOKEN = new FormToken();
+		$formToken = new FormToken();
 		
 		$editedDomains = [];
 		try {
@@ -51,7 +51,7 @@ class DevAppTranslateController extends DevController {
 			}
 			if( $this->translatingLocale ) {
 				if( $request->hasData('submitSave') ) {
-					$FORM_TOKEN->validateForm($request);
+					$formToken->validateForm($request);
 					checkDir(TRANSLATIONS_PATH);
 					file_put_contents($translatingFilePath, json_encode($request->getData('translate')));
 					reportSuccess('successSaveAppTranslations', DOMAIN_TRANSLATIONS);
@@ -85,7 +85,7 @@ class DevAppTranslateController extends DevController {
 					
 				} else {
 					if( $request->hasData('submitDownload') ) {
-						$FORM_TOKEN->validateForm($request);
+						$formToken->validateForm($request);
 						if( !$translatingFile ) {
 							throw new UserException('noDataToTranslationArchive', DOMAIN_TRANSLATIONS);
 						}
@@ -130,7 +130,7 @@ class DevAppTranslateController extends DevController {
 		// 		$publicDomains = array('global'=>1, 'restaurant'=>1, 'http_errors'=>1, 'setmenu'=>1, 'timeslot'=>1);
 		
 		return $this->renderHTML('developer/dev_apptranslate', [
-			'FORM_TOKEN'          => $FORM_TOKEN,
+			'formToken'           => $formToken,
 			// 			'publicDomains' => $publicDomains,
 			'editedDomains'       => $editedDomains,
 			'fallbackLocale'      => $this->fallbackLocale,

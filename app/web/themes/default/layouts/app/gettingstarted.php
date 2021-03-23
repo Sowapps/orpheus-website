@@ -1,8 +1,8 @@
 <?php
-use Orpheus\Rendering\HTMLRendering;
+
 use Orpheus\Config\AppConfig;
 
-HTMLRendering::useLayout('page_skeleton');
+$rendering->useLayout('page_skeleton');
 ?>
 <h1>How to install Orpheus Framework ?</h1>
 

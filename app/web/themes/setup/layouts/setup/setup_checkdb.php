@@ -1,19 +1,18 @@
 <?php
+/**
+ * @var HTMLRendering $rendering
+ * @var HTTPRequest $request
+ * @var HTTPRoute $route
+ * @var HTTPController $controller
+ *
+ * @var object $DB_SETTINGS
+ * @var boolean $allowContinue
+ */
 
 use Orpheus\InputController\HTTPController\HTTPController;
 use Orpheus\InputController\HTTPController\HTTPRequest;
 use Orpheus\InputController\HTTPController\HTTPRoute;
 use Orpheus\Rendering\HTMLRendering;
-
-/**
- * @var string $CONTROLLER_OUTPUT
- * @var HTMLRendering $rendering
- * @var HTTPController $Controller
- * @var HTTPRequest $Request
- * @var HTTPRoute $Route
- *
- * @var object $DB_SETTINGS
- */
 
 $rendering->useLayout('page_skeleton');
 
@@ -21,20 +20,47 @@ $rendering->useLayout('page_skeleton');
 <form method="POST">
 	<div class="row">
 		
-		<div class="col-lg-10 offset-lg-1">
+		<div class="col-lg-8 col-lg-offset-2">
 			
 			<h1><?php _t('checkdb_title', DOMAIN_SETUP, t('app_name')); ?></h1>
 			<p class="lead"><?php echo text2HTML(t('checkdb_description', DOMAIN_SETUP, ['APP_NAME' => t('app_name')])); ?></p>
 			
-			<?php renderReadonlyInputHtml(t('db_host', DOMAIN_SETUP), $DB_SETTINGS->host); ?>
-			<?php renderReadonlyInputHtml(t('db_driver', DOMAIN_SETUP), $DB_SETTINGS->driver); ?>
-			<?php renderReadonlyInputHtml(t('db_database', DOMAIN_SETUP), $DB_SETTINGS->dbname); ?>
-			<?php renderReadonlyInputHtml(t('db_user', DOMAIN_SETUP), $DB_SETTINGS->user); ?>
-			<?php renderReadonlyInputHtml(t('db_password', DOMAIN_SETUP), '*********'); ?>
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-3 control-label"><?php _t('db_host', DOMAIN_SETUP); ?></label>
+					<div class="col-sm-9">
+						<p class="form-control-static"><?php echo $DB_SETTINGS->host; ?></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label"><?php _t('db_driver', DOMAIN_SETUP); ?></label>
+					<div class="col-sm-9">
+						<p class="form-control-static"><?php echo $DB_SETTINGS->driver; ?></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label"><?php _t('db_database', DOMAIN_SETUP); ?></label>
+					<div class="col-sm-9">
+						<p class="form-control-static"><?php echo $DB_SETTINGS->dbname; ?></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label"><?php _t('db_user', DOMAIN_SETUP); ?></label>
+					<div class="col-sm-9">
+						<p class="form-control-static"><?php echo $DB_SETTINGS->user; ?></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label"><?php _t('db_password', DOMAIN_SETUP); ?></label>
+					<div class="col-sm-9">
+						<p class="form-control-static">**********</p>
+					</div>
+				</div>
+			</div>
 			<?php
 			unset($DB_SETTINGS);
 			
-			$this->display('reports');
+			$this->display('reports-bootstrap3');
 			
 			if( $allowContinue ) {
 				?>

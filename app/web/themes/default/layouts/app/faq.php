@@ -3,7 +3,7 @@
 use Orpheus\Rendering\HTMLRendering;
 
 HTMLRendering::addJsFile('base64');
-HTMLRendering::useLayout('page_skeleton');
+$rendering->useLayout('page_skeleton');
 ?>
 <h1>Frequently Asked Questions</h1>
 

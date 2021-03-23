@@ -14,8 +14,6 @@ $(function() {
 		});
 	})();
 	
-	$('table.tablesorter').tablesorter();
-	
 	$('.modal').on('shown.bs.modal', function(e) {
 //		document.activeElement.blur();
 //		console.log(e);
