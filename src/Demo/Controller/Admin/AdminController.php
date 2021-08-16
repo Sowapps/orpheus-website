@@ -6,10 +6,10 @@
 namespace Demo\Controller\Admin;
 
 use Exception;
-use Orpheus\InputController\HTTPController\HTTPController;
+use Orpheus\InputController\HttpController\HttpController;
 use Orpheus\Rendering\HTMLRendering;
 
-abstract class AdminController extends HTTPController {
+abstract class AdminController extends HttpController {
 	
 	protected $breadcrumb = [];
 	
@@ -46,7 +46,7 @@ abstract class AdminController extends HTTPController {
 		$this->addBreadcrumb($label ? $label : t($route), $link);
 	}
 	
-	public function getValues() {
+	public function getValues(): array {
 		return [];
 	}
 	

@@ -1,0 +1,62 @@
+{
+	"name": "orpheus/orpheus-website",
+	"description": "Orpheus Website",
+	"type": "project",
+	"license": "MIT",
+	"keywords": [
+		"framework",
+		"php"
+	],
+	"repositories": [
+		{
+			"type": "path",
+			"url": "../*",
+			"options": {
+				"symlink": false,
+				"versions": {
+					"orpheus/orpheus-core": "1.99.0",
+					"orpheus/orpheus-hook": "1.99.0",
+					"orpheus/orpheus-cache": "1.99.0",
+					"orpheus/orpheus-yaml": "1.99.0",
+					"orpheus/orpheus-initernationalization": "1.99.0",
+					"orpheus/orpheus-rendering": "1.99.0",
+					"orpheus/orpheus-inputcontroller": "1.99.1",
+					"orpheus/orpheus-sqladapter": "1.99.0",
+					"orpheus/orpheus-publisher": "1.99.1",
+					"orpheus/orpheus-entitydescriptor": "1.99.2",
+					"orpheus/orpheus-form": "1.99.0",
+					"orpheus/orpheus-webtools": "1.99.0"
+				}
+			}
+		}
+	],
+	"require": {
+		"orpheus/orpheus-core": "1.*",
+		"orpheus/orpheus-cache": "*",
+		"orpheus/orpheus-yaml": "*",
+		"orpheus/orpheus-initernationalization": "*",
+		"orpheus/orpheus-rendering": "*",
+		"orpheus/orpheus-inputcontroller": "*",
+		"orpheus/orpheus-sqladapter": "*",
+		"orpheus/orpheus-publisher": "*",
+		"orpheus/orpheus-entitydescriptor": "*",
+		"orpheus/orpheus-form": "*",
+		"orpheus/orpheus-webtools": "*",
+		"ext-pdo": "*",
+		"ext-json": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Florent HAZARD",
+			"email": "contact@sowapps.com",
+			"homepage": "http://sowapps.com",
+			"role": "Developer"
+		}
+	],
+	"minimum-stability": "dev"
+}

@@ -33,7 +33,7 @@ $rendering->useLayout('page_skeleton');
 		<div class="col-md-4">
 			<h2>The ElePHPant</h2>
 			<p>
-				Orpheus is developed using PHP and your app is designed using a PHP-only MVC model. But enjoy our twig library if you want so.
+				Orpheus is developed using PHP and your app is designed using a PHP-only MVC model.
 				With all our love of code, we bring lot of tools to help you to develop a great application.
 				But the greatest help is from the manual, so abuse about it.
 			</p>

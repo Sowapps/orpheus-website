@@ -4,30 +4,22 @@ namespace Demo\Controller\Developer;
 
 use Orpheus\Exception\UserException;
 use Orpheus\Form\FormToken;
-use Orpheus\InputController\HTTPController\HTTPRequest;
-use Orpheus\InputController\HTTPController\HTTPResponse;
+use Orpheus\InputController\HttpController\HttpRequest;
+use Orpheus\InputController\HttpController\HttpResponse;
 use ZipArchive;
 
 class DevAppTranslateController extends DevController {
 	
 	protected $fallbackLocale;
+	
 	protected $translatingLocale;
 	
 	/**
-	 * @param HTTPRequest $request The input HTTP request
-	 * @return HTTPResponse The output HTTP response
+	 * @param HttpRequest $request The input HTTP request
+	 * @return HttpResponse The output HTTP response
 	 */
-	public function run($request) {
-		
-		
-		// $fallbackLanguage = Language::getFallback();
+	public function run($request): HttpResponse {
 		$this->fallbackLocale = DEFAULT_LOCALE;
-		
-		/**
-		 * @var string $translatingLocale
-		 * The current language being translated
-		 */
-		// 		$translatingLocale = null;
 		
 		/**
 		 * @var string $translatingFile
@@ -43,9 +35,7 @@ class DevAppTranslateController extends DevController {
 		$editedDomains = [];
 		try {
 			if( $request->hasParameter('locale') ) {
-				// 				$translatingLocale = Language::load(GET('language_id'), false);
 				$this->translatingLocale = $request->getParameter('locale');
-				// 				$this->translatingLocale = $translatingLocale->lang;
 				$translatingFilePath = TRANSLATIONS_PATH . $this->translatingLocale . '.json';
 				$translatingZIPPath = TRANSLATIONS_PATH . $this->translatingLocale . '.zip';
 			}
@@ -127,11 +117,8 @@ class DevAppTranslateController extends DevController {
 			reportError($e);
 		}
 		
-		// 		$publicDomains = array('global'=>1, 'restaurant'=>1, 'http_errors'=>1, 'setmenu'=>1, 'timeslot'=>1);
-		
-		return $this->renderHTML('developer/dev_apptranslate', [
+		return $this->renderHtml('developer/dev_apptranslate', [
 			'formToken'           => $formToken,
-			// 			'publicDomains' => $publicDomains,
 			'editedDomains'       => $editedDomains,
 			'fallbackLocale'      => $this->fallbackLocale,
 			'translatingLocale'   => $this->translatingLocale,
@@ -141,7 +128,6 @@ class DevAppTranslateController extends DevController {
 	}
 	
 	public function listDomains() {
-		// 		global $fallbackLocale;
 		$domainsFiles = [];
 		foreach( listSrcPath() as $path ) {
 			if( is_dir($path . LANGDIR . $this->fallbackLocale) ) {
