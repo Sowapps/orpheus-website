@@ -6,18 +6,18 @@
 namespace Demo\Controller;
 
 use Orpheus\Exception\UserException;
-use Orpheus\InputController\HTTPController\HTTPController;
-use Orpheus\InputController\HTTPController\HTTPRequest;
-use Orpheus\InputController\HTTPController\HTTPResponse;
+use Orpheus\InputController\HttpController\HttpController;
+use Orpheus\InputController\HttpController\HttpRequest;
+use Orpheus\InputController\HttpController\HttpResponse;
 use User;
 
-class RegisterController extends HTTPController {
+class RegisterController extends HttpController {
 	
 	/**
-	 * @param HTTPRequest $request The input HTTP request
-	 * @return HTTPResponse The output HTTP response
+	 * @param HttpRequest $request The input HTTP request
+	 * @return HttpResponse The output HTTP response
 	 */
-	public function run($request) {
+	public function run($request): HttpResponse {
 		/* @var $user User */
 		try {
 			if( $request->hasParameter('ac') && is_id($userID = $request->getParameter('u')) ) {
@@ -41,7 +41,7 @@ class RegisterController extends HTTPController {
 			reportError($e);
 		}
 		
-		return $this->renderHTML('app/user_login');
+		return $this->renderHtml('app/user_login');
 	}
 	
 	

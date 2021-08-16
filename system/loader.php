@@ -343,10 +343,16 @@ function displayExceptionStackTrace(Throwable $Exception) {
 function getClassName($var) {
 	$class = is_object($var) ? get_class($var) : $var;
 	$hierarchy = explode('\\', $class);
+	
 	return array_pop($hierarchy);
 }
 
-function convertExceptionAsHTMLPage(Throwable $exception, $code, $action = null) {
+/**
+ * @param Throwable $exception
+ * @param $code
+ * @return false|string
+ */
+function convertExceptionAsHTMLPage(Throwable $exception, $code) {
 	// TODO: Add resubmit button
 	// TODO: Display already sent headers and contents
 	// TODO: Externalize this and allow developers to ovverride it
@@ -375,7 +381,7 @@ function convertExceptionAsHTMLPage(Throwable $exception, $code, $action = null)
 		<header class="align-items-center d-flex mt-2 py-2">
 			<h3 class="mr-auto text-muted">Orpheus</h3>
 			<nav class="my-2 my-md-0">
-				<a class="p-2 text-dark" href="<?php echo DEFAULTLINK; ?>">Home</a>
+				<a class="p-2 text-dark" href="<?php echo WEB_ROOT; ?>">Home</a>
 			</nav>
 		</header>
 		
@@ -388,20 +394,6 @@ function convertExceptionAsHTMLPage(Throwable $exception, $code, $action = null)
 						<?php echo $code . ' ' . http_response_codetext($code); ?>
 						<small> - <?php echo getClassName($exception); ?></small>
 					</h3>
-					
-					<?php
-					if( !$action && method_exists($exception, 'getAction') ) {
-						$action = $exception->getAction();
-					}
-					if( $action ) {
-						?>
-						<div class="action border-bottom border-danger py-1 my-2">
-							<h6>Action</h6>
-							<div><?php echo $action; ?></div>
-						</div>
-						<?php
-					}
-					?>
 					
 					<blockquote class="blockquote exception_message">
 						<?php echo $exception->getMessage(); ?>
@@ -676,27 +668,16 @@ function text($message = '', $html = true) {
 	}
 }
 
-/**
- * @param string $text
- * @param mixed $data
- * @deprecated Don't use it
- */
-function debug($text, $data = -1) {
-	if( $data !== -1 ) {
-		$text .= ': ' . toHtml($data);
-	}
-	text($s);
-}
-
 /** Limits the length of a string
- * This function do it cleanly, it tries to cut before a word.
  *
- * @param string $string The string to limit length
- * @param int $max The maximum length of the string
- * @param string $end A string to append to the shortened string
- * @return string The shortened string
+ * @param string $string The string to limit length.
+ * @param int $max The maximum length of the string.
+ * @param int $strend A string to append to the shortened string.
+ * @return string The shortened string.
+ * Limits the length of a string and append $strend.
+ * This function do it cleanly, it tries to cut before a word.
  */
-function str_limit($string, $max, $end = '...') {
+function str_limit($string, $max, $strend = '...'): string {
 	$max = (int) $max;
 	if( $max <= 0 ) {
 		return '';
@@ -711,5 +692,6 @@ function str_limit($string, $max, $end = '...') {
 			$subStr = substr($string, 0, $lSpaceInd);
 		}
 	}
-	return $subStr . $end;
+	
+	return $subStr . $strend;
 }

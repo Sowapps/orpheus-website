@@ -8,21 +8,22 @@ namespace Demo\Controller;
 use Demo\User;
 use Orpheus\Exception\UserException;
 use Orpheus\Form\FormToken;
-use Orpheus\InputController\HTTPController\HTTPController;
-use Orpheus\InputController\HTTPController\HTTPRequest;
-use Orpheus\InputController\HTTPController\HTTPResponse;
+use Orpheus\InputController\HttpController\HttpController;
+use Orpheus\InputController\HttpController\HttpRequest;
+use Orpheus\InputController\HttpController\HttpResponse;
 
-class LoginController extends HTTPController {
+class LoginController extends HttpController {
+	
 	/**
-	 * @param HTTPRequest $request The input HTTP request
-	 * @return HTTPResponse The output HTTP response
+	 * @param HttpRequest $request The input HTTP request
+	 * @return HttpResponse The output HTTP response
 	 */
-	public function run($request) {
+	public function run($request): HttpResponse {
 		
 		/* @var User $user */
-		$FORM_TOKEN = new FormToken();
+		$formToken = new FormToken();
 		try {
-			$request->hasData() && $FORM_TOKEN->validateForm($request);
+			$request->hasData() && $formToken->validateForm($request);
 			if( $request->hasParameter('ac') && is_id($userID = $request->getParameter('u')) ) {
 				$user = User::load($userID);
 				if( !$user || $user->activation_code != $request->getParameter('ac') ) {
@@ -51,9 +52,9 @@ class LoginController extends HTTPController {
 			endReportStream();
 		}
 		
-		return $this->renderHTML('app/user_login', array(
-			'FORM_TOKEN' => $FORM_TOKEN
-		));
+		return $this->renderHtml('app/user_login', [
+			'formToken' => $formToken,
+		]);
 	}
 	
 	

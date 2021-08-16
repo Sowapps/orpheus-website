@@ -1,19 +1,24 @@
 <?php
+/**
+ * @var HTMLRendering $rendering
+ * @var HTTPRequest $Request
+ * @var HTTPRoute $Route
+ * @var HTTPController $Controller
+ */
 
+use Orpheus\InputController\HTTPController\HTTPController;
+use Orpheus\InputController\HTTPController\HTTPRequest;
+use Orpheus\InputController\HTTPController\HTTPRoute;
 use Orpheus\Rendering\HTMLRendering;
 
-HTMLRendering::addJsUrl('https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js');
-HTMLRendering::addCssUrl('https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css');
-HTMLRendering::addJsUrl('https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js');
-HTMLRendering::addThemeJsFile('admin_demo.js');
-HTMLRendering::useLayout('page_skeleton');
+$rendering->addJsUrl('https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js');
+$rendering->addCssUrl('https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css');
+$rendering->addJsUrl('https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js');
+$rendering->addThemeJsFile('admin_demo.js');
+$rendering->useLayout('page_skeleton');
 ?>
 <div class="row">
 	<div class="col-lg-12">
-		<!-- 		<h1>Dashboard <small>Statistics Overview</small></h1> -->
-		<!-- 		<ol class="breadcrumb"> -->
-		<!-- 			<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li> -->
-		<!-- 		</ol> -->
 		<div class="alert alert-success alert-dismissable">
 			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 			Welcome to Orpheus Admin Panel Demo, this SB Admin Theme is designed by <a class="alert-link" href="http://startbootstrap.com">Start Bootstrap</a> and integrated by Florent HAZARD !
@@ -22,7 +27,7 @@ HTMLRendering::useLayout('page_skeleton');
 			All accesses to the admin's pages are restricted by permissions, this is why you could not access to all pages with your member role.
 		</div>
 	</div>
-</div><!-- /.row -->
+</div>
 
 <div class="row">
 	<div class="col-lg-3 col-md-6">
@@ -114,118 +119,6 @@ HTMLRendering::useLayout('page_skeleton');
 		</div>
 	</div>
 </div>
-<?php /*
-<div class="row">
-	<div class="col-lg-3">
-		<div class="panel panel-info">
-			<div class="panel-heading">
-				<div class="row">
-					<div class="col-xs-6">
-						<i class="fa fa-comments fa-5x"></i>
-					</div>
-					<div class="col-xs-6 text-right">
-						<p class="announcement-heading">456</p>
-						<p class="announcement-text">New Mentions!</p>
-					</div>
-				</div>
-			</div>
-			<a href="#">
-				<div class="panel-footer announcement-bottom">
-					<div class="row">
-						<div class="col-xs-6">
-							View Mentions
-						</div>
-						<div class="col-xs-6 text-right">
-							<i class="fa fa-arrow-circle-right"></i>
-						</div>
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
-	<div class="col-lg-3">
-		<div class="panel panel-warning">
-			<div class="panel-heading">
-				<div class="row">
-					<div class="col-xs-6">
-						<i class="fa fa-check fa-5x"></i>
-					</div>
-					<div class="col-xs-6 text-right">
-						<p class="announcement-heading">12</p>
-						<p class="announcement-text">To-Do Items</p>
-					</div>
-				</div>
-			</div>
-			<a href="#">
-				<div class="panel-footer announcement-bottom">
-					<div class="row">
-						<div class="col-xs-6">
-							Complete Tasks
-						</div>
-						<div class="col-xs-6 text-right">
-							<i class="fa fa-arrow-circle-right"></i>
-						</div>
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
-	<div class="col-lg-3">
-		<div class="panel panel-danger">
-			<div class="panel-heading">
-				<div class="row">
-					<div class="col-xs-6">
-						<i class="fa fa-tasks fa-5x"></i>
-					</div>
-					<div class="col-xs-6 text-right">
-						<p class="announcement-heading">18</p>
-						<p class="announcement-text">Crawl Errors</p>
-					</div>
-				</div>
-			</div>
-			<a href="#">
-				<div class="panel-footer announcement-bottom">
-					<div class="row">
-						<div class="col-xs-6">
-							Fix Issues
-						</div>
-						<div class="col-xs-6 text-right">
-							<i class="fa fa-arrow-circle-right"></i>
-						</div>
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
-	<div class="col-lg-3">
-		<div class="panel panel-success">
-			<div class="panel-heading">
-				<div class="row">
-					<div class="col-xs-6">
-						<i class="fa fa-comments fa-5x"></i>
-					</div>
-					<div class="col-xs-6 text-right">
-						<p class="announcement-heading">56</p>
-						<p class="announcement-text">New Orders!</p>
-					</div>
-				</div>
-			</div>
-			<a href="#">
-				<div class="panel-footer announcement-bottom">
-					<div class="row">
-						<div class="col-xs-6">
-							Complete Orders
-						</div>
-						<div class="col-xs-6 text-right">
-							<i class="fa fa-arrow-circle-right"></i>
-						</div>
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
-</div><!-- /.row -->
-*/ ?>
 
 <div class="row">
 	<div class="col-lg-12">
@@ -238,7 +131,7 @@ HTMLRendering::useLayout('page_skeleton');
 			</div>
 		</div>
 	</div>
-</div><!-- /.row -->
+</div>
 
 <div class="row">
 	<div class="col-lg-4">
@@ -307,64 +200,64 @@ HTMLRendering::useLayout('page_skeleton');
 			</div>
 			<div class="panel-body">
 				<div class="table-responsive">
-					<table class="table table-bordered table-hover table-striped tablesorter">
+					<table class="table table-bordered table-hover table-striped">
 						<thead>
-							<tr>
-								<th>Order # <i class="fa fa-sort"></i></th>
-								<th>Order Date <i class="fa fa-sort"></i></th>
-								<th>Order Time <i class="fa fa-sort"></i></th>
-								<th>Amount (USD) <i class="fa fa-sort"></i></th>
-							</tr>
+						<tr>
+							<th>Order # <i class="fa fa-sort"></i></th>
+							<th>Order Date <i class="fa fa-sort"></i></th>
+							<th>Order Time <i class="fa fa-sort"></i></th>
+							<th>Amount (USD) <i class="fa fa-sort"></i></th>
+						</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>3326</td>
-								<td>10/21/2013</td>
-								<td>3:29 PM</td>
-								<td>$321.33</td>
-							</tr>
-							<tr>
-								<td>3325</td>
-								<td>10/21/2013</td>
-								<td>3:20 PM</td>
-								<td>$234.34</td>
-							</tr>
-							<tr>
-								<td>3324</td>
-								<td>10/21/2013</td>
-								<td>3:03 PM</td>
-								<td>$724.17</td>
-							</tr>
-							<tr>
-								<td>3323</td>
-								<td>10/21/2013</td>
-								<td>3:00 PM</td>
-								<td>$23.71</td>
-							</tr>
-							<tr>
-								<td>3322</td>
-								<td>10/21/2013</td>
-								<td>2:49 PM</td>
-								<td>$8345.23</td>
-							</tr>
-							<tr>
-								<td>3321</td>
-								<td>10/21/2013</td>
-								<td>2:23 PM</td>
-								<td>$245.12</td>
-							</tr>
-							<tr>
-								<td>3320</td>
-								<td>10/21/2013</td>
-								<td>2:15 PM</td>
-								<td>$5663.54</td>
-							</tr>
-							<tr>
-								<td>3319</td>
-								<td>10/21/2013</td>
-								<td>2:13 PM</td>
-								<td>$943.45</td>
-							</tr>
+						<tr>
+							<td>3326</td>
+							<td>10/21/2013</td>
+							<td>3:29 PM</td>
+							<td>$321.33</td>
+						</tr>
+						<tr>
+							<td>3325</td>
+							<td>10/21/2013</td>
+							<td>3:20 PM</td>
+							<td>$234.34</td>
+						</tr>
+						<tr>
+							<td>3324</td>
+							<td>10/21/2013</td>
+							<td>3:03 PM</td>
+							<td>$724.17</td>
+						</tr>
+						<tr>
+							<td>3323</td>
+							<td>10/21/2013</td>
+							<td>3:00 PM</td>
+							<td>$23.71</td>
+						</tr>
+						<tr>
+							<td>3322</td>
+							<td>10/21/2013</td>
+							<td>2:49 PM</td>
+							<td>$8345.23</td>
+						</tr>
+						<tr>
+							<td>3321</td>
+							<td>10/21/2013</td>
+							<td>2:23 PM</td>
+							<td>$245.12</td>
+						</tr>
+						<tr>
+							<td>3320</td>
+							<td>10/21/2013</td>
+							<td>2:15 PM</td>
+							<td>$5663.54</td>
+						</tr>
+						<tr>
+							<td>3319</td>
+							<td>10/21/2013</td>
+							<td>2:13 PM</td>
+							<td>$943.45</td>
+						</tr>
 						</tbody>
 					</table>
 				</div>
@@ -374,4 +267,4 @@ HTMLRendering::useLayout('page_skeleton');
 			</div>
 		</div>
 	</div>
-</div><!-- /.row -->
+</div>

@@ -5,11 +5,11 @@ use Orpheus\InputController\HTTPController\HTTPController;use Orpheus\InputContr
 /**
  * @var string $CONTROLLER_OUTPUT
  * @var HTMLRendering $rendering
- * @var HTTPController $Controller
- * @var HTTPRequest $Request
- * @var HTTPRoute $Route
+ * @var HTTPController $controller
+ * @var HTTPRequest $request
+ * @var HTTPRoute $route
  * @var User $user
- * @var string $Content
+ * @var string $content
  */
 
 global $APP_LANG;
@@ -49,7 +49,7 @@ global $APP_LANG;
 	}
 	?>
 	
-	<link rel="stylesheet" href="<?php echo STATIC_URL; ?>style/base.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="<?php echo STATIC_ASSETS_URL; ?>style/base.css" type="text/css" media="screen"/>
 	<link rel="stylesheet" href="<?php echo HTMLRendering::getCssUrl(); ?>style.css" type="text/css" media="screen"/>
 	<?php
 	foreach( $this->listCSSURLs() as $url ) {
@@ -73,7 +73,7 @@ global $APP_LANG;
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="<?php echo WEB_ROOT; ?>">
-				<img alt="" src="<?php echo IMAGESURL . 'logo-32.png'; ?>">
+				<img alt="" src="<?php echo IMAGES_URL . '/logo-32.png'; ?>">
 				<span><?php echo t('app_name'); ?></span>
 			</a>
 		</div>
@@ -92,7 +92,7 @@ global $APP_LANG;
 <div class="container">
 	
 	<?php
-	echo $Content;
+	echo $content;
 	// If report was not be reported
 	$this->display('reports-bootstrap3');
 	?>

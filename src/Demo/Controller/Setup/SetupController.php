@@ -4,23 +4,20 @@ namespace Demo\Controller\Setup;
 
 use Exception;
 use Orpheus\Cache\FSCache;
-use Orpheus\InputController\HTTPController\HTTPController;
-use Orpheus\InputController\HTTPController\RedirectHTTPResponse;
+use Orpheus\InputController\HttpController\HttpController;
+use Orpheus\InputController\HttpController\RedirectHttpResponse;
 use Orpheus\Rendering\HTMLRendering;
 
-abstract class SetupController extends HTTPController {
+abstract class SetupController extends HttpController {
+	
+	/** @var string */
+	protected static $routeName;
 	
 	/** @var array */
 	private static $setupData;
 	
 	/** @var FSCache */
 	private static $setupCache;
-	
-	/** @var string */
-	protected static $routeName;
-	
-	/** @var string */
-	private $step;
 	
 	private static $stepOrder = [
 		'StartSetupController',
@@ -31,39 +28,8 @@ abstract class SetupController extends HTTPController {
 		'EndSetupController',
 	];
 	
-	/**
-	 * @return string
-	 * @throws Exception
-	 */
-	public static function getDefaultRoute() {
-		if( !static::$routeName ) {
-			throw new Exception('SetupController::getRoute() should be overridden in ' . get_called_class());
-		}
-		return static::$routeName;
-	}
-	
-	public static function getStepPosition($stepName) {
-		return array_search($stepName, self::$stepOrder);
-	}
-	
-	public static function getPreviousStep($stepName) {
-		$stepPos = static::getStepPosition($stepName);
-		return $stepPos ? self::$stepOrder[$stepPos - 1] : null;
-	}
-	
-	protected static function getAvailableStepTo($target) {
-		// Return the last available step to reach this one, or this one if this is available
-		$prevStep = static::getPreviousStep($target);
-		if( !$prevStep ) {
-			// This one is the first or unknown, so we redirect to the first step
-			return self::$stepOrder[0];
-		} elseif( static::isThisStepValidated($prevStep) ) {
-			// The target step is available
-			return $target;
-		} else {
-			return static::getAvailableStepTo($prevStep);
-		}
-	}
+	/** @var string */
+	private $step;
 	
 	public function preRun($request) {
 		parent::preRun($request);
@@ -91,20 +57,8 @@ abstract class SetupController extends HTTPController {
 		return null;
 	}
 	
-	private static function getStepClass($step) {
-		return __NAMESPACE__ . '\\' . $step;
-	}
-	
-	protected static function getCurrentStepName() {
-		return str_replace(__NAMESPACE__ . '\\', '', static::class);
-	}
-	
 	protected function isStepValidated() {
 		return isset($this->step->lastvalidate_time);
-	}
-	
-	protected static function isThisStepValidated($stepName) {
-		return isset(self::$setupData->steps[$stepName]) && self::$setupData->steps[$stepName]->lastvalidate_time;
 	}
 	
 	protected function validateStep() {
@@ -112,8 +66,56 @@ abstract class SetupController extends HTTPController {
 		static::saveSetupData();
 	}
 	
+	/**
+	 * @return string
+	 * @throws Exception
+	 */
+	public static function getDefaultRoute(): string {
+		if( !static::$routeName ) {
+			throw new Exception('SetupController::getRoute() should be overridden in ' . get_called_class());
+		}
+		
+		return static::$routeName;
+	}
+	
+	public static function getStepPosition($stepName) {
+		return array_search($stepName, self::$stepOrder);
+	}
+	
+	public static function getPreviousStep($stepName) {
+		$stepPos = static::getStepPosition($stepName);
+		
+		return $stepPos ? self::$stepOrder[$stepPos - 1] : null;
+	}
+	
+	protected static function getAvailableStepTo($target) {
+		// Return the last available step to reach this one, or this one if this is available
+		$prevStep = static::getPreviousStep($target);
+		if( !$prevStep ) {
+			// This one is the first or unknown, so we redirect to the first step
+			return self::$stepOrder[0];
+		} elseif( static::isThisStepValidated($prevStep) ) {
+			// The target step is available
+			return $target;
+		} else {
+			return static::getAvailableStepTo($prevStep);
+		}
+	}
+	
+	protected static function getCurrentStepName(): string {
+		return str_replace(__NAMESPACE__ . '\\', '', static::class);
+	}
+	
+	protected static function isThisStepValidated($stepName) {
+		return isset(self::$setupData->steps[$stepName]) && self::$setupData->steps[$stepName]->lastvalidate_time;
+	}
+	
 	protected static function saveSetupData() {
 		self::$setupCache->set(self::$setupData);
+	}
+	
+	private static function getStepClass($step): string {
+		return __NAMESPACE__ . '\\' . $step;
 	}
 	
 }

@@ -4,19 +4,16 @@ namespace Demo\Controller\Developer;
 
 use Orpheus\Config\AppConfig;
 use Orpheus\Exception\UserException;
-use Orpheus\InputController\HTTPController\HTTPRequest;
-use Orpheus\InputController\HTTPController\HTTPResponse;
-use User;
+use Orpheus\InputController\HttpController\HttpRequest;
+use Orpheus\InputController\HttpController\HttpResponse;
 
 class DevConfigController extends DevController {
 	
 	/**
-	 * @param HTTPRequest $request The input HTTP request
-	 * @return HTTPResponse The output HTTP response
+	 * @param HttpRequest $request The input HTTP request
+	 * @return HttpResponse The output HTTP response
 	 */
-	public function run($request) {
-		
-		/* @var User $USER */
+	public function run($request): HttpResponse {
 		
 		$this->addThisToBreadcrumb();
 		
@@ -32,7 +29,7 @@ class DevConfigController extends DevController {
 			}
 		}
 		
-		return $this->renderHTML('developer/dev_config', [
+		return $this->renderHtml('developer/dev_config', [
 		]);
 	}
 	

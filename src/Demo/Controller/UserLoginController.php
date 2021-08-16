@@ -8,22 +8,22 @@ namespace Demo\Controller;
 use Demo\User;
 use Orpheus\Exception\UserException;
 use Orpheus\Form\FormToken;
-use Orpheus\InputController\HTTPController\HTMLHTTPResponse;
-use Orpheus\InputController\HTTPController\HTTPController;
-use Orpheus\InputController\HTTPController\HTTPRequest;
-use Orpheus\InputController\HTTPController\HTTPResponse;
+use Orpheus\InputController\HttpController\HtmlHttpResponse;
+use Orpheus\InputController\HttpController\HttpController;
+use Orpheus\InputController\HttpController\HttpRequest;
+use Orpheus\InputController\HttpController\HttpResponse;
 
-class UserLoginController extends HTTPController {
+class UserLoginController extends HttpController {
 	
 	/**
-	 * @param HTTPRequest $request The input HTTP request
-	 * @return HTTPResponse The output HTTP response
+	 * @param HttpRequest $request The input HTTP request
+	 * @return HttpResponse The output HTTP response
 	 */
-	public function run($request) {
-		$FORM_TOKEN = new FormToken();
+	public function run($request): HttpResponse {
+		$formToken = new FormToken();
 		
 		try {
-			$request->hasData() && $FORM_TOKEN->validateForm($request);
+			$request->hasData() && $formToken->validateForm($request);
 			
 			if( $request->hasData('submitLogin') ) {
 				User::userLogin($request->getData('login'));
@@ -42,7 +42,7 @@ class UserLoginController extends HTTPController {
 			endReportStream();
 		}
 		
-		return HTMLHTTPResponse::render('app/user_login', ['FORM_TOKEN' => $FORM_TOKEN]);
+		return HtmlHttpResponse::render('app/user_login', ['formToken' => $formToken]);
 	}
 	
 }

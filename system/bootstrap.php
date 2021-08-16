@@ -23,7 +23,7 @@ if( isset($SRCPATHS) ) {
 require_once 'loader.php';
 
 /**
- * The access path, this is independant from the type of access (http, console...)
+ * The access path, this is independent from the type of access (http, console...)
  * It defines from which folder you access to your application
  */
 defifn('ACCESSPATH', dirpath($_SERVER['SCRIPT_FILENAME']));
@@ -102,7 +102,7 @@ defifn('TIME', $_SERVER['REQUEST_TIME']);
 defifn('CONFDIR', 'configs/');
 defifn('MODDIR', 'modules/');
 defifn('LIBSDIR', 'libs/');
-defifn('THEMES_FOLDER', 'themes');
+defifn('THEMES_FOLDER', '/themes');
 
 defifn('SRC_PATH', 'src');
 defifn('LOGSPATH', pathOf('logs/'));
@@ -123,13 +123,13 @@ defifn('DEFAULTPATH', DEFAULT_PATH);// BC
 // Routing
 defifn('HTTPS', !empty($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUEST_SCHEME'] === 'https' : (defined('DEFAULT_IS_SECURE') && DEFAULT_IS_SECURE));
 defifn('SCHEME', HTTPS ? 'https' : 'http');
-defifn('HOST', !empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : DEFAULTHOST);
-defifn('PATH', !defined('TERMINAL') ? dirpath($_SERVER['SCRIPT_NAME']) : DEFAULTPATH);
+defifn('HOST', !empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : DEFAULT_HOST);
+defifn('PATH', !defined('TERMINAL') ? dirpath($_SERVER['SCRIPT_NAME']) : DEFAULT_PATH);
 
 defifn('WEB_ROOT', SCHEME . '://' . HOST . (PATH !== '/' ? PATH : ''));
 
 // BC for old constants
-if( !defined('DEFAULTLINK') ) {
+if( !defined('SITEROOT') ) {
 	/** @deprecated Use route generator */
 	define('SITEROOT', WEB_ROOT);
 }

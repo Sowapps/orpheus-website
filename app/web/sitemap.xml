@@ -11,11 +11,6 @@
       <priority>0.5</priority>
    </url>
    <url>
-      <loc>http://orpheus-framework.com/sample_twig.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-   </url>
-   <url>
       <loc>http://orpheus-framework.com/admin_demo.html</loc>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
