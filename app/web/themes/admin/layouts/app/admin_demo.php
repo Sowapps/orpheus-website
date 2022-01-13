@@ -1,14 +1,14 @@
 <?php
 /**
  * @var HTMLRendering $rendering
- * @var HTTPRequest $Request
- * @var HTTPRoute $Route
- * @var HTTPController $Controller
+ * @var HttpRequest $Request
+ * @var HttpRoute $Route
+ * @var HttpController $Controller
  */
 
-use Orpheus\InputController\HTTPController\HTTPController;
-use Orpheus\InputController\HTTPController\HTTPRequest;
-use Orpheus\InputController\HTTPController\HTTPRoute;
+use Orpheus\InputController\HttpController\HttpController;
+use Orpheus\InputController\HttpController\HttpRequest;
+use Orpheus\InputController\HttpController\HttpRoute;
 use Orpheus\Rendering\HTMLRendering;
 
 $rendering->addJsUrl('https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js');

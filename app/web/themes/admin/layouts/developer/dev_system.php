@@ -1,18 +1,18 @@
 <?php
 /**
  * @var HTMLRendering $rendering
- * @var HTTPController $controller
- * @var HTTPRequest $request
- * @var HTTPRoute $route
+ * @var HttpController $controller
+ * @var HttpRequest $request
+ * @var HttpRoute $route
  *
  * @var boolean $allowCreate
  * @var boolean $allowUpdate
  * @var SQLSelectRequest $query
  */
 
-use Orpheus\InputController\HTTPController\HTTPController;
-use Orpheus\InputController\HTTPController\HTTPRequest;
-use Orpheus\InputController\HTTPController\HTTPRoute;
+use Orpheus\InputController\HttpController\HttpController;
+use Orpheus\InputController\HttpController\HttpRequest;
+use Orpheus\InputController\HttpController\HttpRoute;
 use Orpheus\Rendering\HTMLRendering;
 use Orpheus\SQLRequest\SQLSelectRequest;
 

@@ -1,9 +1,9 @@
 <?php
 /**
  * @var HTMLRendering $rendering
- * @var HTTPRequest $request
- * @var HTTPRoute $route
- * @var HTTPController $controller
+ * @var HttpRequest $request
+ * @var HttpRoute $route
+ * @var HttpController $controller
  *
  * @var User $user
  * @var boolean $USER_CAN_USER_GRANT
@@ -11,9 +11,9 @@
  */
 
 use Demo\User;
-use Orpheus\InputController\HTTPController\HTTPController;
-use Orpheus\InputController\HTTPController\HTTPRequest;
-use Orpheus\InputController\HTTPController\HTTPRoute;
+use Orpheus\InputController\HttpController\HttpController;
+use Orpheus\InputController\HttpController\HttpRequest;
+use Orpheus\InputController\HttpController\HttpRoute;
 use Orpheus\Rendering\HTMLRendering;
 
 $rendering->useLayout('page_skeleton');
@@ -23,8 +23,8 @@ $rendering->useLayout('page_skeleton');
 	<div class="col-lg-6">
 		
 		<form method="POST" id="UserEditForm">
-			
-			<div style="display: none;">
+		
+		<div style="display: none;">
 				<input type="text" autocomplete="new-password"/>
 				<input type="password" autocomplete="new-password"/>
 			</div>

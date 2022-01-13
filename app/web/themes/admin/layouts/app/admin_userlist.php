@@ -1,27 +1,27 @@
 <?php
 /**
  * @var HTMLRendering $rendering
- * @var HTTPRequest $request
- * @var HTTPRoute $route
- * @var HTTPController $controller
+ * @var HttpRequest $request
+ * @var HttpRoute $route
+ * @var HttpController $controller
  *
  * @var User[] $users
  * @var boolean $USER_CAN_USER_EDIT
  */
 
 use Demo\User;
-use Orpheus\InputController\HTTPController\HTTPController;
-use Orpheus\InputController\HTTPController\HTTPRequest;
-use Orpheus\InputController\HTTPController\HTTPRoute;
+use Orpheus\InputController\HttpController\HttpController;
+use Orpheus\InputController\HttpController\HttpRequest;
+use Orpheus\InputController\HttpController\HttpRoute;
 use Orpheus\Rendering\HTMLRendering;
 
 $rendering->useLayout('page_skeleton');
 ?>
 	<form method="POST">
-		
-		<div class="row">
-			<div class="col-lg-12">
-				<?php $rendering->useLayout('panel-default'); ?>
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<?php $rendering->useLayout('panel-default'); ?>
 				
 				<?php
 				if( $USER_CAN_USER_EDIT ) {

@@ -23,7 +23,7 @@ class CheckDatabaseSetupController extends SetupController {
 	
 	/**
 	 * @param HttpRequest $request The input HTTP request
-	 * @return HTTPResponse The output HTTP response
+	 * @return HttpResponse The output HTTP response
 	 */
 	public function run($request): HttpResponse {
 		
