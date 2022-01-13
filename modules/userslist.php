@@ -5,7 +5,7 @@ use Orpheus\Config\Config;
 $users	= User::get(array(
 	'where'		=> User::loggedCanDo('user_seedev') ? '' : 'accesslevel<'.Config::get('perm_status/administrator'),
 	'orderby'	=> 'fullname ASC',
-// 	'output'	=> SQLAdapter::ARR_OBJECTS
+// 	'output'	=> SqlAdapter::ARR_OBJECTS
 ));
 
 displayReportsHTML();
