@@ -31,7 +31,7 @@ $libExtension = DEV_VERSION ? '' : '.min';
 	<meta name="Description" content=""/>
 	<meta name="Author" content="<?php echo AUTHORNAME; ?>"/>
 	<meta name="application-name" content="<?php _t('app_name'); ?>"/>
-	<meta name="msapplication-starturl" content="<?php echo DEFAULTLINK; ?>"/>
+	<meta name="msapplication-starturl" content="<?php echo WEB_ROOT; ?>"/>
 	<meta name="Robots" content="Index, Follow"/>
 	<meta name="revisit-after" content="16 days"/>
 	<?php
@@ -41,7 +41,8 @@ $libExtension = DEV_VERSION ? '' : '.min';
 	}
 	?>
 	
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap<?php echo $libExtension; ?>.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap<?php echo $libExtension; ?>.css"
+		  media="screen"/>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all<?php echo $libExtension; ?>.css" media="screen"/>
 	<?php
 	foreach( $rendering->listCssUrls(HTMLRendering::LINK_TYPE_PLUGIN) as $url ) {

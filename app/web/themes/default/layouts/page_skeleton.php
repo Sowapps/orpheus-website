@@ -24,7 +24,7 @@ global $APP_LANG;
 	<meta name="Description" content=""/>
 	<meta name="Author" content="<?php echo AUTHORNAME; ?>"/>
 	<meta name="application-name" content="<?php _t('app_name'); ?>"/>
-	<meta name="msapplication-starturl" content="<?php echo DEFAULTLINK; ?>"/>
+	<meta name="msapplication-starturl" content="<?php echo WEB_ROOT; ?>"/>
 	<meta name="Keywords" content="projet"/>
 	<meta name="Robots" content="Index, Follow"/>
 	<meta name="revisit-after" content="16 days"/>

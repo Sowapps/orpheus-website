@@ -49,13 +49,13 @@ function collapsiblePanelHTML($id, $title, $description, $panelClass, $open = 0)
 				<div class="form-group">
 					<label class="col-sm-3 control-label"><?php _t('pathToFolder', DOMAIN_SETUP, t('folder_application', DOMAIN_SETUP)); ?></label>
 					<div class="col-sm-9">
-						<p class="form-control-static"><?php echo INSTANCEPATH; ?></p>
+						<p class="form-control-static"><?php echo INSTANCE_PATH; ?></p>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label"><?php _t('pathToFolder', DOMAIN_SETUP, t('folder_webaccess', DOMAIN_SETUP)); ?></label>
 					<div class="col-sm-9">
-						<p class="form-control-static"><?php echo ACCESSPATH; ?></p>
+						<p class="form-control-static"><?php echo ACCESS_PATH; ?></p>
 					</div>
 				</div>
 			</div>
