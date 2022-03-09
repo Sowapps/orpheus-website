@@ -1,27 +1,27 @@
 <?php
 /* @var $USER User */
 
-$ALLOW_EDITOR	= User::loggedCanDo('forum_manage');
+$ALLOW_EDITOR = User::loggedCanDo('forum_manage');
 
-HTMLRendering::addJSFile('external/jquery.hotkeys.js');
+HtmlRendering::addJSFile('external/jquery.hotkeys.js');
 
-HTMLRendering::addJSURL('https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js');
-HTMLRendering::addCSSURL('https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css');
+HtmlRendering::addJSURL('https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js');
+HtmlRendering::addCSSURL('https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css');
 
-// HTMLRendering::addJSFile('debug.js');
-HTMLRendering::addJSFile('bootstrap-wysiwyg.min.js');
-HTMLRendering::addCSSFile('forum.css');
-HTMLRendering::addJSFile('forum-forums.js');
+// HtmlRendering::addJSFile('debug.js');
+HtmlRendering::addJSFile('bootstrap-wysiwyg.min.js');
+HtmlRendering::addCSSFile('forum.css');
+HtmlRendering::addJSFile('forum-forums.js');
 if( $ALLOW_EDITOR ) {
-	HTMLRendering::addJSFile('forum-editor.js');
+	HtmlRendering::addJSFile('forum-editor.js');
 }
 
-$MODTITLE	= "Forums";
-$TOPBAR_CONTENTS	= '
+$MODTITLE = "Forums";
+$TOPBAR_CONTENTS = '
 <form class="navbar-form navbar-right">
-	'.( $ALLOW_EDITOR ? '
-	<button type="button" class="editmode-btn btn btn-default">Edit Mode <span class="fa fa-edit"></span></button>' : '').'
-	'.( !User::is_login() ? '
+	' . ($ALLOW_EDITOR ? '
+	<button type="button" class="editmode-btn btn btn-default">Edit Mode <span class="fa fa-edit"></span></button>' : '') . '
+	' . (!User::is_login() ? '
 	<button type="button" class="login-btn btn btn-default" data-toggle="modal" data-target="#connectForm">Log in<span class="fa fa-power-off"></span></button>' : '').'
 	<input type="text" placeholder="What are you lookin\' for ?" autofocus="autofocus" class="form-control search-query">
 	<button type="submit" class="btn btn-default" name="submitSearch">Search</button>

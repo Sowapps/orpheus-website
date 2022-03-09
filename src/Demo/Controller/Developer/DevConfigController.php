@@ -6,6 +6,7 @@ use Orpheus\Config\AppConfig;
 use Orpheus\Exception\UserException;
 use Orpheus\InputController\HttpController\HttpRequest;
 use Orpheus\InputController\HttpController\HttpResponse;
+use User;
 
 class DevConfigController extends DevController {
 	

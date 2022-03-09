@@ -1,10 +1,10 @@
 <?php
 
-use Orpheus\InputController\HttpController\HttpController;use Orpheus\InputController\HttpController\HttpRequest;use Orpheus\InputController\HttpController\HttpRoute;use Orpheus\Rendering\HTMLRendering;
+use Orpheus\InputController\HttpController\HttpController;use Orpheus\InputController\HttpController\HttpRequest;use Orpheus\InputController\HttpController\HttpRoute;use Orpheus\Rendering\HtmlRendering;
 
 /**
  * @var string $CONTROLLER_OUTPUT
- * @var HTMLRendering $rendering
+ * @var HtmlRendering $rendering
  * @var HttpController $controller
  * @var HttpRequest $request
  * @var HttpRoute $route
@@ -43,14 +43,14 @@ global $APP_LANG;
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2-bootstrap.min.css" type="text/css" media="screen"/>
 	
 	<?php
-	foreach( $this->listCSSURLs(HTMLRendering::LINK_TYPE_PLUGIN) as $url ) {
+	foreach( $this->listCSSURLs(HtmlRendering::LINK_TYPE_PLUGIN) as $url ) {
 		echo '
 	<link rel="stylesheet" href="' . $url . '" type="text/css" media="screen" />';
 	}
 	?>
 	
 	<link rel="stylesheet" href="<?php echo STATIC_ASSETS_URL; ?>style/base.css" type="text/css" media="screen"/>
-	<link rel="stylesheet" href="<?php echo HTMLRendering::getCssUrl(); ?>style.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="<?php echo HtmlRendering::getCssUrl(); ?>style.css" type="text/css" media="screen"/>
 	<?php
 	foreach( $this->listCSSURLs() as $url ) {
 		echo '
@@ -105,7 +105,7 @@ global $APP_LANG;
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2_locale_fr.min.js"></script>
 
 <?php
-foreach( $this->listJSURLs(HTMLRendering::LINK_TYPE_PLUGIN) as $url ) {
+foreach( $this->listJSURLs(HtmlRendering::LINK_TYPE_PLUGIN) as $url ) {
 	echo '
 	<script type="text/javascript" src="' . $url . '"></script>';
 }

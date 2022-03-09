@@ -34,6 +34,7 @@ class DevAppTranslateController extends DevController {
 		
 		$editedDomains = [];
 		try {
+			$translatingZIPPath = null;
 			if( $request->hasParameter('locale') ) {
 				$this->translatingLocale = $request->getParameter('locale');
 				$translatingFilePath = TRANSLATIONS_PATH . $this->translatingLocale . '.json';
@@ -60,11 +61,9 @@ class DevAppTranslateController extends DevController {
 									if( empty($currentDomain[$key]) ) {
 										$created++;
 										$editedDomains[$domain] = 1;
-									} else {
-										if( $value !== $currentDomain[$key] ) {
-											$updated++;
-											$editedDomains[$domain] = 1;
-										}
+									} elseif( $value !== $currentDomain[$key] ) {
+										$updated++;
+										$editedDomains[$domain] = 1;
 									}
 								}
 							}
@@ -73,43 +72,41 @@ class DevAppTranslateController extends DevController {
 					reportInfo(t('translationAnalyzeReport', DOMAIN_TRANSLATIONS, $created, $updated));
 					unset($currentDomain, $value, $created, $updated);
 					
-				} else {
-					if( $request->hasData('submitDownload') ) {
-						$formToken->validateForm($request);
-						if( !$translatingFile ) {
-							throw new UserException('noDataToTranslationArchive', DOMAIN_TRANSLATIONS);
-						}
-						$arch = new ZipArchive();
-						if( !$arch->open($translatingZIPPath, ZipArchive::CREATE) ) {
-							throw new UserException('unableToOpenAppTranslationArchive', DOMAIN_TRANSLATIONS);
-						}
-						foreach( $translatingFile as $domain => $domainData ) {
-							$domainContent = '
+				} elseif( $request->hasData('submitDownload') ) {
+					$formToken->validateForm($request);
+					if( !$translatingFile || !$translatingZIPPath ) {
+						throw new UserException('noDataToTranslationArchive', DOMAIN_TRANSLATIONS);
+					}
+					$arch = new ZipArchive();
+					if( !$arch->open($translatingZIPPath, ZipArchive::CREATE) ) {
+						throw new UserException('unableToOpenAppTranslationArchive', DOMAIN_TRANSLATIONS);
+					}
+					foreach( $translatingFile as $domain => $domainData ) {
+						$domainContent = '
 ; Language ini file for domain ' . strtoupper($domain) . '
 ; The current locale is ' . $this->translatingLocale . '
 		
 ';
-							foreach( $domainData as $key => $text ) {
-								$domainContent .= "{$key} = \"{$text}\"\n";
-							}
-							$arch->addFromString($domain . '.ini', $domainContent);
+						foreach( $domainData as $key => $text ) {
+							$domainContent .= "{$key} = \"{$text}\"\n";
 						}
-						$arch->close();
-						unset($arch);
-						
-						session_write_close();
-						ob_clean();
-						
-						header('Content-Type: application/zip');
-						header('Content-Disposition: attachment; filename="' . $this->translatingLocale . '-' . date('YmdHis') . '.zip"');
-						header('Content-length: ' . filesize($translatingZIPPath));
-						header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime($translatingZIPPath)) . ' GMT');
-						header('Cache-Control: private, max-age=86400');
-						header('Pragma: public');
-						
-						readfile($translatingZIPPath);
-						die();
+						$arch->addFromString($domain . '.ini', $domainContent);
 					}
+					$arch->close();
+					unset($arch);
+					
+					session_write_close();
+					ob_clean();
+					
+					header('Content-Type: application/zip');
+					header('Content-Disposition: attachment; filename="' . $this->translatingLocale . '-' . date('YmdHis') . '.zip"');
+					header('Content-length: ' . filesize($translatingZIPPath));
+					header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime($translatingZIPPath)) . ' GMT');
+					header('Cache-Control: private, max-age=86400');
+					header('Pragma: public');
+					
+					readfile($translatingZIPPath);
+					die();
 				}
 			}
 			
@@ -130,8 +127,9 @@ class DevAppTranslateController extends DevController {
 	public function listDomains() {
 		$domainsFiles = [];
 		foreach( listSrcPath() as $path ) {
-			if( is_dir($path . LANGDIR . $this->fallbackLocale) ) {
-				foreach( cleanscandir($path . LANGDIR . $this->fallbackLocale) as $file ) {
+			$localePath = $path . LANG_FOLDER . '/' . $this->fallbackLocale;
+			if( is_dir($localePath) ) {
+				foreach( cleanscandir($localePath) as $file ) {
 					$pathInfo = (object) pathinfo($file);
 					if( isset($pathInfo->extension) && $pathInfo->extension === 'ini' ) {
 						$domainsFiles[$pathInfo->filename] = 1;
@@ -142,12 +140,13 @@ class DevAppTranslateController extends DevController {
 		return array_keys($domainsFiles);
 	}
 	
-	public function listAllLocales() {
+	public function listAllLocales(): array {
 		$locales = [];
 		foreach( listSrcPath() as $path ) {
-			if( is_dir($path . LANGDIR) ) {
-				foreach( cleanscandir($path . LANGDIR) as $folder ) {
-					if( !is_dir($path . LANGDIR . $folder) ) {
+			$sourcePath = $path . LANG_FOLDER;
+			if( is_dir($sourcePath) ) {
+				foreach( cleanscandir($sourcePath) as $folder ) {
+					if( !is_dir($sourcePath . '/' . $folder) ) {
 						continue;
 					}
 					$locales[$folder] = 1;

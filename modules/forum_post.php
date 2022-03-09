@@ -1,20 +1,20 @@
 <?php
 /* @var $USER User */
 
-HTMLRendering::addJSFile('external/jquery.hotkeys.js');
+HtmlRendering::addJSFile('external/jquery.hotkeys.js');
 
-HTMLRendering::addJSURL('https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js');
-HTMLRendering::addCSSURL('https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css');
+HtmlRendering::addJSURL('https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js');
+HtmlRendering::addCSSURL('https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css');
 
-HTMLRendering::addJSFile('debug.js');
-HTMLRendering::addJSFile('bootstrap-wysiwyg.min.js');
-HTMLRendering::addCSSFile('forum');
-HTMLRendering::addJSFile('forum-forums.js');
+HtmlRendering::addJSFile('debug.js');
+HtmlRendering::addJSFile('bootstrap-wysiwyg.min.js');
+HtmlRendering::addCSSFile('forum');
+HtmlRendering::addJSFile('forum-forums.js');
 
-$TOPBAR_CONTENTS	= '
+$TOPBAR_CONTENTS = '
 <form class="navbar-form navbar-right">
-	'.( !User::is_login() ? '
-	<button type="button" class="login-btn btn btn-default" data-toggle="modal" data-target="#connectForm">Log in<span class="fa fa-power-off"></span></button>' : '').'
+	' . (!User::is_login() ? '
+	<button type="button" class="login-btn btn btn-default" data-toggle="modal" data-target="#connectForm">Log in<span class="fa fa-power-off"></span></button>' : '') . '
 	<input type="text" placeholder="What are you lookin\' for ?" autofocus="autofocus" class="form-control search-query">
 	<button type="submit" class="btn btn-default" name="submitSearch">Search</button>
 </form>';

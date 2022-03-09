@@ -1,6 +1,6 @@
 <?php
 /**
- * @var HTMLRendering $rendering
+ * @var HtmlRendering $rendering
  * @var HttpController $controller
  * @var HttpRequest $request
  * @var HttpRoute $route
@@ -14,7 +14,7 @@ use Demo\User;
 use Orpheus\InputController\HttpController\HttpController;
 use Orpheus\InputController\HttpController\HttpRequest;
 use Orpheus\InputController\HttpController\HttpRoute;
-use Orpheus\Rendering\HTMLRendering;
+use Orpheus\Rendering\HtmlRendering;
 
 
 /* @var array $Breadcrumb */
@@ -62,7 +62,7 @@ $invertedStyle = $controller->getOption('invertedStyle', 1);
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css" type="text/css" media="screen"/>
 	<?php
 	
-	foreach( $this->listCSSURLs(HTMLRendering::LINK_TYPE_PLUGIN) as $url ) {
+	foreach( $this->listCSSURLs(HtmlRendering::LINK_TYPE_PLUGIN) as $url ) {
 		echo '
 	<link rel="stylesheet" href="' . $url . '" type="text/css" media="screen" />';
 	}
@@ -175,7 +175,7 @@ $invertedStyle = $controller->getOption('invertedStyle', 1);
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/fr.js"></script>
 
 <?php
-foreach( $this->listJSURLs(HTMLRendering::LINK_TYPE_PLUGIN) as $url ) {
+foreach( $this->listJSURLs(HtmlRendering::LINK_TYPE_PLUGIN) as $url ) {
 	echo '
 	<script type="text/javascript" src="' . $url . '"></script>';
 }
