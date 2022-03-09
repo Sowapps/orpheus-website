@@ -21,7 +21,8 @@
 		"orpheus/orpheus-form": "1.*",
 		"orpheus/orpheus-webtools": "1.*",
 		"ext-pdo": "*",
-		"ext-json": "*"
+		"ext-json": "*",
+		"ext-simplexml": "*"
 	},
 	"autoload": {
 		"psr-4": {
