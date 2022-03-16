@@ -109,7 +109,7 @@ defifn('FILE_STORE_PATH', STORE_PATH . '/files');
 
 // Defaults
 if( !defined('DEFAULT_PATH') ) {
-	define('DEFAULT_PATH', '');
+	define('DEFAULT_PATH', '/');
 }
 
 // Routing
