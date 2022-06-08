@@ -317,7 +317,7 @@ function displayStackTrace($backtrace) {
 			}
 			?>
 			<li class="trace">
-				Call <?php echo $trace['class'] . $trace['type'] . $trace['function'] . '(' . $args . ')' ?><br/>
+				Call <?php echo $trace['class'] . $trace['type'] . $trace['function'] . '(' . $args . ($args ? ' ' : '') . ')' ?><br/>
 				<address>In <?php echo isset($trace['file']) ? $trace['file'] . ' at line ' . $trace['line'] : 'an unknown file'; ?></address>
 			</li>
 			<?php
@@ -636,7 +636,7 @@ function formatSourceAsHTML($file, $lineNumber, $linesBefore, $linesAfter): stri
 EOF;
 }
 
-function formatSourceAsText($file, $activeLineNumber, $linesBefore, $linesAfter) {
+function formatSourceAsText($file, $activeLineNumber, $linesBefore, $linesAfter): string {
 	$from = max($activeLineNumber - $linesBefore, 0);
 	$to = $activeLineNumber + $linesAfter;
 	$count = 0;
