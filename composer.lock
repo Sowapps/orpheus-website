@@ -27,7 +27,7 @@
                 {
                     "name": "Florent HAZARD",
                     "email": "contact@sowapps.com",
-                    "homepage": "http://sowapps.com",
+					"homepage": "https://sowapps.com",
 	                "role": "Developer"
                 }
             ],
@@ -70,7 +70,7 @@
                 {
                     "name": "Florent HAZARD",
 	                "email": "contact@sowapps.com",
-	                "homepage": "http://sowapps.com",
+					"homepage": "https://sowapps.com",
 	                "role": "Developer"
                 }
             ],
@@ -119,7 +119,7 @@
                 {
                     "name": "Florent HAZARD (Sowapps)",
                     "email": "contact@sowapps.com",
-                    "homepage": "http://sowapps.com",
+					"homepage": "https://sowapps.com",
                     "role": "Developer"
                 }
             ],
@@ -165,7 +165,7 @@
                 {
                     "name": "Florent HAZARD",
 	                "email": "contact@sowapps.com",
-	                "homepage": "http://sowapps.com",
+					"homepage": "https://sowapps.com",
 	                "role": "Developer"
                 }
             ],
@@ -203,7 +203,7 @@
                 {
                     "name": "Florent HAZARD",
                     "email": "contact@sowapps.com",
-                    "homepage": "http://sowapps.com",
+					"homepage": "https://sowapps.com",
 	                "role": "Developer"
                 }
             ],
@@ -240,7 +240,7 @@
                 {
                     "name": "Florent HAZARD",
                     "email": "contact@sowapps.com",
-	                "homepage": "http://sowapps.com",
+					"homepage": "https://sowapps.com",
 	                "role": "Developer"
                 }
             ],
@@ -288,7 +288,7 @@
                 {
                     "name": "Florent HAZARD",
                     "email": "contact@sowapps.com",
-                    "homepage": "http://sowapps.com",
+					"homepage": "https://sowapps.com",
                     "role": "Developer"
                 }
             ],
@@ -339,7 +339,7 @@
                 {
                     "name": "Florent HAZARD",
                     "email": "contact@sowapps.com",
-                    "homepage": "http://sowapps.com",
+					"homepage": "https://sowapps.com",
                     "role": "Developer"
                 }
             ],
@@ -384,7 +384,7 @@
                 {
                     "name": "Florent HAZARD",
 	                "email": "contact@sowapps.com",
-	                "homepage": "http://sowapps.com",
+					"homepage": "https://sowapps.com",
 	                "role": "Developer"
                 }
             ],
@@ -427,7 +427,7 @@
                 {
                     "name": "Florent HAZARD",
                     "email": "contact@sowapps.com",
-                    "homepage": "http://sowapps.com",
+					"homepage": "https://sowapps.com",
 	                "role": "Developer"
                 }
             ],
@@ -469,7 +469,7 @@
                 {
                     "name": "Florent HAZARD",
                     "email": "contact@sowapps.com",
-                    "homepage": "http://sowapps.com",
+					"homepage": "https://sowapps.com",
                     "role": "Developer"
                 }
             ],
@@ -513,11 +513,11 @@
                 {
                     "name": "Florent HAZARD",
 	                "email": "contact@sowapps.com",
-	                "homepage": "http://sowapps.com",
+					"homepage": "https://sowapps.com",
 	                "role": "Developer"
                 }
             ],
-			"description": "Orpheus YAML",
+			"description": "Orpheus Yaml",
 			"keywords": [
 				"orpheus",
 				"yaml"

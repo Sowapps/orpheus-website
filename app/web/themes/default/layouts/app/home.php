@@ -6,70 +6,276 @@
  * @var HttpRoute $route
  */
 
+use App\Entity\User;
 use Orpheus\InputController\HttpController\HttpController;
 use Orpheus\InputController\HttpController\HttpRequest;
 use Orpheus\InputController\HttpController\HttpRoute;
 use Orpheus\Rendering\HtmlRendering;
 
-$rendering->useLayout('page_skeleton');
+$user = User::getActiveUser();
+$rendering->useLayout('layout.public');
+$gettingStartedUrl = u('doc_getting_started');
+
 ?>
-<div class="jumbotron">
-	<div class="container">
-		<h1>Hello PHP Developer !</h1>
-		<p>
-			Welcome to your own Orpheus application,<br>
-			You may want to edit this Controller & View, please see the controller <u>HomeController</u> &amp; the template <u>app/home.php</u>.<br>
-			If you want more information, please visit our website.
-		</p>
-		<p>
-			<a class="btn btn-primary btn-lg" href="http://orpheus-framework.com/" role="button" target="_blank">
-				Get documented <i class="fas fa-angle-double-right fa-sm"></i>
-			</a>
-		</p>
-	</div>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-md-4">
-			<h2>The ElePHPant</h2>
-			<p>
-				Orpheus is developed using PHP and your app is designed using a PHP-only MVC model.
-				With all our love of code, we bring lot of tools to help you to develop a great application.
-				But the greatest help is from the manual, so abuse about it.
+
+<div class="container py-4">
+	<div class="p-5 mb-4 bg-light border rounded-3">
+		<div class="p-3">
+			<h1 class="display-5 fw-bold mb-3">
+				<?php echo t('home.introduction.title', DOMAIN_APP); ?>
+			</h1>
+			<p class="col-md-10 fs-4">
+				<?php echo html(t('home.introduction.legend', DOMAIN_APP)); ?>
 			</p>
-			<p>
-				<a class="btn btn-secondary" href="https://www.php.net/" role="button" target="_blank">
-					PHP Manual <i class="fas fa-angle-double-right fa-sm"></i>
+			<div class="mt-5 text-center">
+				<a class="btn btn-info text-white btn-lg" href="<?php echo $gettingStartedUrl; ?>">
+					<?php echo html(t('home.introduction.startAction', DOMAIN_APP)); ?>
+					<i class="fa-solid fa-play fa-sm ms-2"></i>
 				</a>
-			</p>
-		</div>
-		<div class="col-md-4">
-			<h2>Bootstrap your app</h2>
-			<p>
-				You just started you app and it's already beautiful &amp; responsive.
-				Bootstrap is an awesome CSS framework that help you to organize your UI and make it totally responsive.
-				Bootstrap is our favorite choice but we advise to use your preferred library ! If you want so, get more details with the documentation.
-			</p>
-			<p>
-				<a class="btn btn-secondary" href="https://getbootstrap.com/" role="button" target="_blank">
-					Bootstrap Doc <i class="fas fa-angle-double-right fa-sm"></i>
-				</a>
-			</p>
-		</div>
-		<div class="col-md-4">
-			<h2>The Awesome Font</h2>
-			<p>
-				So now, what about icons ? You need it in all apps, even more if it fits your needs, so we added it to you, if you want so.
-				We love Font Awesome and we ensure that is making your app more iconic !
-				Feel free to read the documentation and browse the gallery.
-			</p>
-			<p>
-				<a class="btn btn-secondary" href="https://fontawesome.com/icons?d=gallery&m=free" role="button" target="_blank">
-					Font Awesome Gallery <i class="fas fa-angle-double-right fa-sm"></i>
-				</a>
-			</p>
+			</div>
 		</div>
 	</div>
 	
-	<hr>
+	<?php
+	if( $user ) {
+		?>
+		<div class="alert alert-info" role="alert">
+			<h3>
+				<?php echo html(t('home.authenticated.title', DOMAIN_APP)); ?>
+			</h3>
+			<p>
+				<?php echo nl2br(t('home.authenticated.legend', DOMAIN_APP, [
+					'user'        => $user,
+					'link_member' => '<a href="' . u('admin_demo') . '">',
+					'link_end'    => '</a>',
+				])); ?>
+			</p>
+		</div>
+		<?php
+	}
+	?>
+	
+	<div class="row mb-4 gap-4 gap-lg-0">
+		<div class="col-lg-4">
+			<div class="d-flex flex-column h-100 px-5 py-5 bg-light border rounded-3">
+				<div class="text-center display-1 mb-4">
+					<i class="fa-brands fa-php fa-2x"></i>
+				</div>
+				<h2>
+					<?php echo t('home.projectPhp.title', DOMAIN_APP); ?>
+				</h2>
+				<p class="mb-5">
+					<?php echo t('home.projectPhp.legend', DOMAIN_APP); ?>
+				</p>
+				<div class="mt-auto text-center">
+					<a class="btn btn-info text-white" href="https://www.php.net/" role="button" target="_blank">
+						<?php echo t('home.projectPhp.action', DOMAIN_APP); ?>
+						<i class="fas fa-angle-double-right fa-xs ms-1"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="d-flex flex-column h-100 px-5 py-5 text-white bg-info rounded-3">
+				<div class="text-center display-1 mb-4">
+					<i class="fa-brands fa-bootstrap fa-2x"></i>
+				</div>
+				<h2>
+					<?php echo t('home.projectBootstrap.title', DOMAIN_APP); ?>
+				</h2>
+				<p class="mb-5">
+					<?php echo t('home.projectBootstrap.legend', DOMAIN_APP); ?>
+				</p>
+				<div class="mt-auto text-center">
+					<a class="btn btn-light text-info" href="https://getbootstrap.com/" role="button" target="_blank">
+						<?php echo t('home.projectBootstrap.action', DOMAIN_APP); ?>
+						<i class="fas fa-angle-double-right fa-xs ms-1"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="d-flex flex-column h-100 px-5 py-5 bg-light border rounded-3">
+				<div class="text-center display-1 mb-4">
+					<i class="fa-solid fa-font-awesome fa-2x"></i>
+				</div>
+				<h2>
+					<?php echo t('home.projectFontAwesome.title', DOMAIN_APP); ?>
+				</h2>
+				<p class="mb-5">
+					<?php echo t('home.projectFontAwesome.legend', DOMAIN_APP); ?>
+				</p>
+				<div class="mt-auto text-center">
+					<a class="btn btn-info text-white" href="https://fontawesome.com/icons?d=gallery&m=free" role="button" target="_blank">
+						<?php echo t('home.projectFontAwesome.action', DOMAIN_APP); ?>
+						<i class="fas fa-angle-double-right fa-xs ms-1"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </div>
+
+<?php
+$rendering->display('component/section.cloud', [
+	'icon'        => 'fa-solid fa-trowel-bricks',
+	'title'       => t('home.advantages.extensible.title', DOMAIN_APP),
+	'legend'      => t('home.advantages.extensible.legend', DOMAIN_APP),
+	'description' => t('home.advantages.extensible.description', DOMAIN_APP),
+]);
+?>
+
+<div class="bg-light py-5 my-5">
+	<div class="container my-5">
+		
+		<div class="row align-items-center">
+			<div class="col-12 col-lg-6">
+				
+				<div class="h-100 d-flex flex-column justify-content-between fs-1">
+					<div class="d-flex justify-content-center py-3">
+						<i class="fa-regular fa-2x px-5 fa-paper-plane text-primary"></i>
+					</div>
+					<div class="d-flex justify-content-around py-4">
+						<i class="fa-regular fa-2x px-5 fa-chess-queen text-warning"></i>
+						<i class="fa-regular fa-2x px-5 fa-hourglass-half text-danger"></i>
+					</div>
+					<div class="d-flex justify-content-center py-4">
+						<i class="fa-regular fa-2x px-5 fa-hand-back-fist text-success"></i>
+						<i class="fa-regular fa-2x px-5 fa-gem text-info"></i>
+					</div>
+				</div>
+			
+			</div>
+			<div class="col-12 col-lg-6 px-5 px-md-0">
+				<h2 class="mb-3">
+					<?php echo t('home.deploy.title', DOMAIN_APP); ?>
+				</h2>
+				<p>
+					<?php echo t('home.deploy.legend', DOMAIN_APP); ?>
+				</p>
+				<div class="d-flex align-items-top mt-4">
+					<i class="fa-regular fa-chess-rook text-warning me-4 fs-1"></i>
+					<div>
+						<h3 class="h5">
+							<?php echo t('home.deploy.continuousIntegration.title', DOMAIN_APP); ?>
+						</h3>
+						<p>
+							<?php echo t('home.deploy.continuousIntegration.legend', DOMAIN_APP); ?>
+						</p>
+					</div>
+				</div>
+				<div class="d-flex align-items-top mt-4">
+					<i class="fa-regular fa-chart-bar text-primary me-4 fs-1"></i>
+					<div>
+						<h3 class="h5">
+							<?php echo t('home.deploy.returnOnInvestment.title', DOMAIN_APP); ?>
+						</h3>
+						<p>
+							<?php echo t('home.deploy.returnOnInvestment.legend', DOMAIN_APP); ?>
+						</p>
+					</div>
+				</div>
+				<div class="mt-4 text-center text-md-start">
+					<a class="btn btn-info text-white btn-lg" href="<?php echo $gettingStartedUrl; ?>" target="_blank">
+						<?php echo t('home.deploy.action', DOMAIN_APP); ?>
+					</a>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+</div>
+
+<?php
+$rendering->display('component/section.cloud', [
+	'icon'        => 'fa-solid fa-shield',
+	'title'       => t('home.advantages.safety.title', DOMAIN_APP),
+	'legend'      => t('home.advantages.safety.legend', DOMAIN_APP),
+	'description' => t('home.advantages.safety.description', DOMAIN_APP),
+]);
+?>
+
+<div class="container py-4">
+	
+	<div class="row gap-5 py-5 mb-4 bg-light justify-content-center border-start border-info border-5">
+		<div class="col-10 col-md-3 d-flex flex-column justify-content-center order-first order-md-last">
+			<div class="text-center display-1 text-info">
+				<i class="fa-solid fa-sun"></i>
+			</div>
+		</div>
+		<div class="col-10 col-md-7">
+			<h2>
+				<?php echo t('home.features.rendering.title', DOMAIN_APP); ?>
+			</h2>
+			<p>
+				<?php echo t('home.features.rendering.legend', DOMAIN_APP); ?>
+			</p>
+		</div>
+	</div>
+	<div class="row gap-5 py-5 mb-5 bg-light justify-content-center align-items-centers border-end border-info border-5">
+		<div class="col-10 col-md-3 d-flex flex-column justify-content-center">
+			<div class="text-center display-1 text-info">
+				<i class="fa-solid fa-font"></i>
+			</div>
+		</div>
+		<div class="col-10 col-md-7">
+			<h2>
+				<?php echo t('home.features.internationalization.title', DOMAIN_APP); ?>
+			</h2>
+			<p>
+				<?php echo t('home.features.internationalization.legend', DOMAIN_APP); ?>
+			</p>
+		</div>
+	</div>
+	<div class="row gap-5 py-5 mb-5 bg-light justify-content-center border-start border-info border-5">
+		<div class="col-10 col-md-3 d-flex flex-column justify-content-center order-first order-md-last">
+			<div class="text-center display-1 text-info">
+				<i class="fa-solid fa-bolt"></i>
+			</div>
+		</div>
+		<div class="col-10 col-md-7">
+			<h2>
+				<?php echo t('home.features.caching.title', DOMAIN_APP); ?>
+			</h2>
+			<p>
+				<?php echo t('home.features.caching.legend', DOMAIN_APP); ?>
+			</p>
+		</div>
+	</div>
+
+</div>
+
+<?php
+$rendering->display('component/section.cloud', [
+	'icon'        => 'fa-solid fa-database',
+	'title'       => t('home.advantages.database.title', DOMAIN_APP),
+	'legend'      => t('home.advantages.database.legend', DOMAIN_APP),
+	'description' => t('home.advantages.database.description', DOMAIN_APP),
+]);
+?>
+
+<div class="container py-4">
+	
+	<h2 class="text-center">
+		<?php echo t('home.history.title', DOMAIN_APP); ?>
+	</h2>
+	<div class="mt-4 mt-md-0">
+		<div>
+			<i class="fa-solid fa-quote-left fa-3x"></i>
+		</div>
+		<div class="bg-light rounded-3 p-4 ms-4">
+			<p class="lead m-0 text-center">
+				<?php echo html(t('home.history.legend', DOMAIN_APP)); ?>
+			</p>
+		</div>
+	</div>
+
+</div>
+
+<style>
+	.title-cloud {
+		font-family: Arial, sans-serif;
+		line-height: 69%;
+	}
+</style>

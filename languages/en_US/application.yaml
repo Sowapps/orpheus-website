@@ -1,0 +1,106 @@
+login:
+    legend: "Do you already have an account ?"
+
+register:
+    legend: "Is this you first time here ?"
+    gdprDisclaimer: |
+        Orpheus framework and this website are Open Source applications, we don't retain any sensitive information about you or your device.
+        The registration has only purpose to allow you to enjoy the authentication system and to grant you access to the admin demo. 
+        Your password is encrypted in a way, we can not restore it but you will be able to change it later.
+
+home:
+    title: "Orpheus, PHP framework for quick and light web applications"
+    description: "Orpheus is a PHP framework composed of reusable components to help developers to build quickly an optimized web application."
+    introduction:
+        title: "Hello PHP Developer !"
+        legend: |
+            Get the power with the new Orpheus, this framework is made for you !
+            We know you want to develop your website quickly with something easy-to-use, optimized, secure and standardized by easiest way to use it and the maximum customizing capabilities.
+        startAction: "Start using Orpheus"
+    authenticated:
+        title: "You are logged in !"
+        legend: |
+            You are currently logged as #user#. Please, have a look on our #link_member#Admin Demo Panel#link_end# (Open Source Template SB Admin).
+    projectPhp:
+        title: "The ElePHPant"
+        legend: |
+            Orpheus is developed using PHP and your app is designed using an MVC design.
+            With all our love of code, we bring many tools to help you to develop a great application.
+            But the greatest help is from the manual, so abuse about it.
+        action: "PHP Manual"
+    projectBootstrap:
+        title: "Bootstrap your app"
+        legend: |
+            You just started your Orpheus app, and it's already beautiful & responsive.
+            Bootstrap is an awesome CSS framework that help you to organize your UI and make it totally responsive.
+            Bootstrap is our favorite choice, but we advise to use your preferred library ! If you want so, get more details with the documentation.
+        action: "Bootstrap Doc"
+    projectFontAwesome:
+        title: "The Awesome Font"
+        legend: |
+            So now, what about icons ? You need it in all apps, even more if it fits your needs, so we added it for you, if you want so.
+            We love Font Awesome, and we ensure that is making your app more iconic !
+            Feel free to read the documentation and browse the gallery.
+        action: "Font Awesome Gallery"
+    advantages:
+        extensible:
+            title: "Extensible"
+            legend: "Modular architecture"
+            description: |
+                Orpheus stands out with its extensible and modular architecture, a cornerstone for developers seeking scalability and customization.
+                This framework offers effortless expansion, allowing easy integration of new features as projects grow.
+                The modular design promotes code reusability and simplifies maintenance, reducing development time and errors.
+                With Orpheus, developers wield the power to create adaptable, high-performing web applications that evolve with changing needs, whether for small projects or complex enterprise systems.
+        safety:
+            title: "Safety"
+            legend: "Performance & Security"
+            description: |
+                Orpheus PHP Framework excels in both security and performance.
+                With built-in security features, it safeguards your applications against common web vulnerabilities, ensuring data integrity and user protection.
+                Moreover, its performance optimization tools, including caching and efficient data management, guarantee swift and responsive applications.
+                Orpheus prioritizes security without compromising speed, providing developers with a secure and high-performing platform for crafting robust web applications.
+        database:
+            title: "Database"
+            legend: "Object-Relational Mapping"
+            description: |
+                Orpheus PHP Framework simplifies database interactions through its powerful database abstraction and ORM capabilities.
+                It offers an intuitive and efficient way to work with databases, reducing the complexities of SQL queries.
+                Orpheus' ORM seamlessly maps database tables to PHP objects, allowing developers to manipulate data using familiar object-oriented principles.
+                This simplifies code, enhances maintainability, and accelerates development.
+    deploy:
+        title: "Unleash your app's full potential"
+        legend: "Integrate your app to the modern architecture and push it to its best life."
+        action: "Get started"
+        continuousIntegration:
+            title: "Integration in CI"
+            legend: "Ensure code stability and automates testing for seamless development with the latest CI tools."
+        returnOnInvestment:
+            title: "Return On Investment"
+            legend: "Follow your market and Orpheus will be the best effort for a short return on investment."
+    features:
+        rendering:
+            title: "A Light & Powerful Rendering system"
+            legend: |
+                Orpheus' rendering system shines with its lightweight and modular design, promoting efficiency and customization.
+                It also offers seamless integration with diverse front-end technologies, simplifying web development.
+                You can control how to render your contents by configuring the renderer from PHP, as the theme you want.
+                Basically, it includes an HTML Renderer to build you web app quickly.
+        internationalization:
+            title: "i18n - Internationalization"
+            legend: |
+                Orpheus' internationalization system is both lightweight and user-friendly, simplifying the process of creating multilingual applications.
+                All features allow you to translate contents using our easy-to-use internationalization library.
+                The translation functions also allow you to pass replacement values from PHP.
+        caching:
+            title: "Caching"
+            legend: |
+                By caching frequently accessed data, Orpheus significantly enhances application performance and reduces server load.
+                This results in faster response times and improved user experiences.
+                Additionally, this feature can lead to substantial cost savings by reducing the need for frequent database queries or resource-intensive computations.
+                For now, Orpheus is able to cache data using APCu or by caching it to the file system.
+    history:
+        title: "History of Orpheus, told by its author"
+        legend: |
+            Prior to 2012, there was no Orpheus framework; instead, a collection of tools had been in development since 2007. In 2012, the framework market was relatively undeveloped, with no standout contenders.
+            Consequently, the need arose to reuse specific features across projects and standardize access to a module (commonly referred to as a controller) responsible for managing control and view aspects. During that time, the project relied on SVN as its Version Control System.
+            Today, Orpheus has integrated the MVC architecture while transitioning to Git and Composer for version control and package management, respectively.

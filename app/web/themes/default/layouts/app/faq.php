@@ -1,9 +1,18 @@
 <?php
+/**
+ * @var HtmlRendering $rendering
+ * @var HttpController $controller
+ * @var HttpRequest $request
+ * @var HttpRoute $route
+ */
 
+use Orpheus\InputController\HttpController\HttpController;
+use Orpheus\InputController\HttpController\HttpRequest;
+use Orpheus\InputController\HttpController\HttpRoute;
 use Orpheus\Rendering\HtmlRendering;
 
-HtmlRendering::addJsFile('base64');
-$rendering->useLayout('page_skeleton');
+$rendering->addJsFile('base64');
+$rendering->useLayout('layout.public-contents');
 ?>
 <h1>Frequently Asked Questions</h1>
 
@@ -11,7 +20,7 @@ $rendering->useLayout('page_skeleton');
 <p>
 The reason is very simple, the orpheus' developer is... a developer and not a web designer.<br />
 As the framework is standardized, per default, it uses bootstrap framework with the simplest theme.<br />
-If you're a webdesigner and you would like to propose a theme, please contact me at <a data-ee="ZGV2ZWxvcGVyQGNhcnRtYW4zNC5mcg=="></a>.
+	If you're a web-designer and you would like to propose a theme, please contact me at <a data-ee="ZGV2ZWxvcGVyQGNhcnRtYW4zNC5mcg=="></a>.
 </p>
 
 <h2>Why this website is (only) in english ?</h2>
@@ -25,7 +34,7 @@ Even if the framework has an internationalization library, its default language 
 Yes, of course. This version is often updated.
 </p>
 
-<h2>How it works ? How can i get started ?</h2>
+<h2>How it works ? How can I get started ?</h2>
 <p>
 Dude, please read <a href="/doc/html/">the manual of Orpheus</a>. ;-)
 </p>
@@ -37,10 +46,10 @@ It helps you to complete your work, without coding again the common base of a we
 The main difference is that Orpheus forces you to follow certain basic rules, allowing you to maintain a secure and optimized application, even if it's designed to be tolerant and extensible.<br />
 With a lot of library, everything is allowed on Orpheus, you can use your own user system, your own config library or import a library from another framework. 
 </p>
-<script type="text/javascript">
+<script>
 $(function() {
 	$("a[data-ee]").each(function() {
-		var e = b64_decode($(this).data("ee"));
+		const e = b64_decode($(this).data("ee"));
 		$(this).attr("href", "mailto:"+e).text(e).removeAttr("data-ee");
 	});
 });

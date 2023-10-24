@@ -1,0 +1,25 @@
+property:
+    id: "#"
+    name: "Name"
+    create_date: "Create Date"
+
+list:
+    title: "List of demo entities"
+    empty: "No demo entity found."
+
+create:
+    title: "New demo entity"
+
+update:
+    title: "Edit a demo entity"
+
+remove:
+    title: "Removing"
+    legend: "Would you really remove entity « {name} »"
+
+user:
+    title: "Get user information"
+    tokenLabel: "Specify user access token to authenticate with"
+    tokenPlaceholder: "(current user)"
+    action: "Retrieve"
+

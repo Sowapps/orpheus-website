@@ -1,0 +1,27 @@
+# Tests only
+providers:
+    - Orpheus\Rest\RestApiGenerator
+
+http:
+    # Tests only
+    api_user_authenticate:
+        path: "/api/user/authenticate"
+        method: "POST"
+        controller: Orpheus\Rest\Controller\UserLoginRestController
+
+    api_wadl:
+        path: "/api/wadl.xml"
+        method: "GET"
+        controller: Orpheus\Rest\Controller\RestApiWadlController
+
+    test_api:
+        path: "/developer/test/api.html"
+        method: "GET"
+        controller: App\Controller\Test\DevTestApiController
+        restrictTo:
+            role: developer
+
+    # Debug only
+    delayed_page:
+        path: "/delayed-page/{slug:page}.html"
+        controller: Orpheus\Controller\DelayedPageController

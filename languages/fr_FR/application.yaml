@@ -1,0 +1,107 @@
+login:
+    legend: "Avez-vous un compte ?"
+
+register:
+    legend: "Est-ce votre première fois ici ?"
+    gdprDisclaimer: |
+        Orpheus framework et ce site web sont des applications Open Source, nous ne conservons aucune donnée sensible sur vous ou votre appareil.
+        L'inscription n'a pour but que de vous permettre de profiter du système d'authentification et d'accéder à la démo de l'administration.
+        Votre mot de passe est encodé de manière à ce que nous ne pouvons pas le restaurer, mais vous serez en mesure de le modifier par la suite.
+
+home:
+    title: "Orpheus, un framework PHP pour développer des applications légères rapidement"
+    description: "Orpheus est un framework PHP composé de fonctionnalités réutilisables conçues pour aider les développeurs à construire des applications optimisées"
+    introduction:
+        title: "Salut développeur PHP !"
+        legend: |
+            Obtenez la puissance avec le nouveau Orpheus, ce framework est fait pour vous !
+            Nous savons que vous voulez développer votre site web rapidement avec quelque chose de facile à utiliser, optimisé, sécurisé et normalisé de la manière la plus simple possible, avec le maximum de possibilités de personnalisation.
+        startAction: "Commencer à utiliser Orpheus"
+    authenticated:
+        title: "Vous êtes connecté !"
+        legend: |
+            Vous êtes actuellement connecté en tant que #user#. Veuillez jeter un œil sur notre #link_member#démonstration de l'administration#link_end# (Template Open Source SB Admin).
+    projectPhp:
+        title: "L'éléPHPant"
+        legend: |
+            Orpheus est développé en utilisant PHP et votre application est conçue en utilisant une architecture MVC.
+            Avec tout notre amour du code, nous mettons à votre disposition de nombreux outils pour vous aider à développer une excellente application.
+            Mais la meilleure aide provient du manuel, alors n'hésitez pas à l'utiliser.
+        action: "Manuel PHP"
+    projectBootstrap:
+        title: "Améliorez votre application avec Bootstrap"
+        legend: |
+            Vous venez de démarrer votre application Orpheus, et elle est déjà belle et responsive.
+            Bootstrap est un framework CSS fantastique qui vous aide à organiser votre interface utilisateur et à la rendre totalement responsive.
+            Bootstrap est notre choix favori, mais nous vous conseillons d'utiliser votre bibliothèque préférée ! Si vous le souhaitez, obtenez plus de détails avec la documentation.
+        action: "Documentation Bootstrap"
+    projectFontAwesome:
+        title: "Font Awesome"
+        legend: |
+            Et maintenant, que pensez-vous des icônes ? Vous en avez besoin dans toutes les applications, d'autant plus si elles correspondent à vos besoins, nous les avons donc ajoutées pour vous, si vous le souhaitez.
+            Nous adorons Font Awesome, et nous nous assurons qu'elle rend votre application plus iconique !
+            N'hésitez pas à consulter la documentation et à parcourir la galerie.
+        action: "Galerie Font Awesome"
+    advantages:
+        extensible:
+            title: "Extensible"
+            legend: "Architecture modulaire"
+            description: |
+                Orpheus se démarque par son architecture extensible et modulaire, un socle pour les développeurs en quête de scalabilité et de personnalisation.
+                Ce framework offre une expansion sans effort, permettant une intégration aisée de nouvelles fonctionnalités à mesure que les projets évoluent.
+                La conception modulaire favorise la réutilisation du code et simplifie la maintenance, réduisant le temps de développement et les erreurs.
+                Avec Orpheus, les développeurs ont le pouvoir de créer des applications web adaptables et performantes qui évoluent avec les besoins changeants, que ce soit pour de petits projets ou des systèmes d'entreprise complexes.
+        safety:
+            title: "Sécurité"
+            legend: "Performance & Sécurité"
+            description: |
+                Le framework PHP Orpheus excelle à la fois en sécurité et en performance.
+                Avec des fonctionnalités de sécurité intégrées, il protège vos applications contre les vulnérabilités web courantes, garantissant l'intégrité des données et la protection des utilisateurs.
+                De plus, ses outils d'optimisation des performances, notamment la mise en cache et une gestion efficace des données, garantissent des applications rapides et réactives.
+                Orpheus privilégie la sécurité sans compromettre la vitesse, offrant aux développeurs une plateforme sécurisée et performante pour la création d'applications web robustes.
+        database:
+            title: "Base de données"
+            legend: "Mapping Objet-Relationnel (ORM)"
+            description: |
+                Le framework PHP Orpheus simplifie les interactions avec les bases de données grâce à sa puissante abstraction de base de données et à ses capacités ORM.
+                Il offre un moyen intuitif et efficace de travailler avec les bases de données, réduisant la complexité des requêtes SQL.
+                L'ORM d'Orpheus mappe de manière transparente les tables de base de données sur des objets PHP, permettant aux développeurs de manipuler les données en utilisant des principes orientés objet familiers.
+                Cela simplifie le code, améliore la maintenabilité et accélère le développement.
+    deploy:
+        title: "Exploitez pleinement le potentiel de votre application"
+        legend: "Intégrez votre application à l'architecture moderne et propulsez-la vers des performances optimales."
+        action: "Commencer"
+        continuousIntegration:
+            title: "Intégration continue (CI)"
+            legend: "Assurez la stabilité du code et automatisez les tests pour un développement sans accroc avec les derniers outils de CI."
+        returnOnInvestment:
+            title: "Retour sur Investissement"
+            legend: "Suivez votre marché et Orpheus sera le meilleur effort pour un retour sur investissement rapide."
+    features:
+        rendering:
+            title: "Un système de rendu léger et puissant"
+            legend: |
+                Le système de rendu d'Orpheus brille par sa conception légère et modulaire, favorisant l'efficacité et la personnalisation.
+                Il offre également une intégration transparente avec diverses technologies frontales, simplifiant le développement web.
+                Vous pouvez contrôler la manière dont vos contenus sont rendus en configurant le rendu depuis PHP, comme le thème que vous souhaitez.
+                Fondamentalement, il inclut un moteur de rendu HTML pour construire rapidement votre application web.
+        internationalization:
+            title: "i18n - Internationalisation"
+            legend: |
+                Le système d'internationalisation d'Orpheus est à la fois léger et convivial, simplifiant le processus de création d'applications multilingues.
+                Toutes les fonctionnalités vous permettent de traduire les contenus à l'aide de notre bibliothèque d'internationalisation facile à utiliser.
+                Les fonctions de traduction vous permettent également de transmettre des valeurs de remplacement depuis PHP.
+        caching:
+            title: "Mise en cache"
+            legend: |
+                En mettant en cache les données fréquemment consultées, Orpheus améliore considérablement les performances de l'application et réduit la charge du serveur.
+                Il en résulte des temps de réponse plus rapides et une meilleure expérience utilisateur.
+                De plus, cette fonctionnalité peut entraîner d'importantes économies en réduisant la nécessité de requêtes fréquentes à la base de données ou de calculs gourmands en ressources.
+                Actuellement, Orpheus est capable de mettre en cache les données en utilisant APCu ou en les mettant en cache sur le système de fichiers.
+    history:
+        title: "L'Histoire d'Orpheus, racontée par son auteur"
+        legend: |
+            Avant 2012, il n'y avait pas de framework Orpheus ; à la place, j'avais développé une collection d'outils avait été développée depuis 2007.
+            En 2012, le marché des frameworks était relativement peu développé, sans concurrent notable.
+            Par conséquent, le besoin s'est fait sentir de réutiliser des fonctionnalités spécifiques entre les projets et de normaliser l'accès à un module (communément appelé contrôleur) responsable de la gestion des aspects de contrôle et de vue. À l'époque, le projet reposait sur SVN comme système de contrôle de version.
+            Aujourd'hui, Orpheus a intégré l'architecture MVC tout en effectuant la transition vers Git et Composer pour la gestion des versions et des packages, respectivement.
