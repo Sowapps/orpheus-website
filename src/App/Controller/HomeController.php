@@ -23,5 +23,5 @@ class HomeController extends HttpController {
 		
 		return $this->renderHtml('app/home');
 	}
-
+	
 }

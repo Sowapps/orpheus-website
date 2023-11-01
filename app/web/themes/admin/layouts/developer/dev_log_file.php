@@ -201,12 +201,12 @@ $rendering->useLayout('layout.admin');
 </div>
 
 <script>
-$(function () {
-	const lastLog = $(".panel.log").last();
-	if( lastLog.length ) {
-		lastLog.attr("id", "lastLog");
-	}
-});
+	$(function () {
+		const lastLog = $(".panel.log").last();
+		if( lastLog.length ) {
+			lastLog.attr("id", "lastLog");
+		}
+	});
 </script>
 
 

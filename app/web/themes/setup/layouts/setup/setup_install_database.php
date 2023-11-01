@@ -151,47 +151,47 @@ $rendering->useLayout('layout.setup');
 </script>
 
 <style>
-.sql_query {
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	font-size: 90%;
-	padding: 10px 20px;
-	background-color: #f7f7f9;
-	border-radius: 4px;
-	margin-bottom: 20px;
-}
-
-.table-operation {
-	margin-bottom: 10px;
-	white-space: pre;
-	tab-size: 4;
-	-moz-tab-size: 4;
-	font-size: 12px;
-}
-
-.query_reservedWord {
-	text-transform: uppercase;
-	font-weight: bold;
-	color: #31b0d5;
-}
-
-.query_command {
-	color: #025aa5;
-}
-
-.query_subCommand {
-	color: #025aa5;
-}
-
-.query_identifier {
-	color: #5cb85c;
-}
-
-.query_columnType {
-	color: #f0ad4e;
-}
-
-.tabulation {
-	display: inline;
-	width: 60px;
-}
+	.sql_query {
+		font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+		font-size: 90%;
+		padding: 10px 20px;
+		background-color: #f7f7f9;
+		border-radius: 4px;
+		margin-bottom: 20px;
+	}
+	
+	.table-operation {
+		margin-bottom: 10px;
+		white-space: pre;
+		tab-size: 4;
+		-moz-tab-size: 4;
+		font-size: 12px;
+	}
+	
+	.query_reservedWord {
+		text-transform: uppercase;
+		font-weight: bold;
+		color: #31b0d5;
+	}
+	
+	.query_command {
+		color: #025aa5;
+	}
+	
+	.query_subCommand {
+		color: #025aa5;
+	}
+	
+	.query_identifier {
+		color: #5cb85c;
+	}
+	
+	.query_columnType {
+		color: #f0ad4e;
+	}
+	
+	.tabulation {
+		display: inline;
+		width: 60px;
+	}
 </style>

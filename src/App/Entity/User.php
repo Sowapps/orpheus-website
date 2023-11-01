@@ -87,7 +87,7 @@ class User extends AbstractUser implements FixtureInterface {
 	}
 	
 	public function getActivationLink(): string {
-		return u(ROUTE_LOGIN) . '?ac=' . $this->activation_code . '&u=' . $this->id();
+		return u(ROUTE_USER_LOGIN) . '?ac=' . $this->activation_code . '&u=' . $this->id();
 	}
 	
 	public function getAdminLink($ref = 0): string {

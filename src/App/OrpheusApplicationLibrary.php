@@ -18,6 +18,7 @@ use Orpheus\InputController\HttpController\HttpRoute;
 use Orpheus\InputController\HttpController\RedirectHttpResponse;
 use Orpheus\InputController\InputRequest;
 use Orpheus\InputController\Locale\LocaleRouting;
+use Orpheus\Publisher\Fixture\FixtureRepository;
 
 class OrpheusApplicationLibrary extends AbstractOrpheusLibrary {
 	
@@ -28,6 +29,8 @@ class OrpheusApplicationLibrary extends AbstractOrpheusLibrary {
 		PermanentEntity::registerEntity(DemoEntity::class);
 		PermanentEntity::registerEntity(File::class);
 		PermanentEntity::registerEntity(User::class);
+		
+		FixtureRepository::register(User::class);
 		
 		User::setUserClass();
 	}
