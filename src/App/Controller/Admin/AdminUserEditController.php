@@ -75,8 +75,6 @@ class AdminUserEditController extends AbstractAdminController {
 		$this->consumeSuccess('userEdit', 'userEdit');
 		$this->consumeSuccess('userEditPassword', 'userEditPassword');
 		
-		$formData = ['user' => $user->all];
-		
 		return $this->renderHtml('admin/admin_user_edit', [
 			'allowUserUpdate'         => $allowUserUpdate,
 			'allowUserPasswordChange' => $allowUserPasswordChange,
